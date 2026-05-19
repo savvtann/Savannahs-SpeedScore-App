@@ -24,8 +24,9 @@
     <!-- Pairing code for watch linking -->
     <property id="pairingCode" type="string"></property>
 
-    <!-- For Settongs Menu -->
-    <property id="bulkEntry" type="boolean">false</property>
+    <!-- For Settings Menu -->
+    <property id="outOfOrderPlay" type="boolean">false</property>
+    <property id="postHoleEntry" type="boolean">false</property>
     <property id="touchInput" type="boolean">false</property>
 
     <property id="courseCache" type="string"></property>
@@ -49,5 +50,8 @@
     <property id="swingVibration" type="boolean">true</property>
     <!-- 0=Low, 1=Medium, 2=High -->
     <property id="swingDetectionSensitivity" type="number">1</property>
+
+    <!-- Timer continues running while the round is paused -->
+    <property id="timerRunsDuringPause" type="boolean">false</property>
 
 </properties>

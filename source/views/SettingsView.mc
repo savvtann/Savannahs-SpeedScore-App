@@ -17,10 +17,17 @@ class SettingsView extends WatchUi.Menu2 {
             {}
         ));
         addItem(new WatchUi.ToggleMenuItem(
-            "Bulk entry",
+            "Out of order play",
             {:enabled => "On", :disabled => "Off"},
-            :bulkEntry,
-            Properties.getValue("bulkEntry") == true,
+            :outOfOrderPlay,
+            Properties.getValue("outOfOrderPlay") == true,
+            {}
+        ));
+        addItem(new WatchUi.ToggleMenuItem(
+            "Post hole entry",
+            {:enabled => "On", :disabled => "Off"},
+            :postHoleEntry,
+            Properties.getValue("postHoleEntry") == true,
             {}
         ));
 
@@ -36,6 +43,13 @@ class SettingsView extends WatchUi.Menu2 {
             {:enabled => "On", :disabled => "Off"},
             :statsAfterHole,
             Properties.getValue("statsAfterHole") == true,
+            {}
+        ));
+        addItem(new WatchUi.ToggleMenuItem(
+            "Timer on pause",
+            {:enabled => "Running", :disabled => "Stopped"},
+            :timerRunsDuringPause,
+            Properties.getValue("timerRunsDuringPause") == true,
             {}
         ));
         addItem(new WatchUi.ToggleMenuItem(

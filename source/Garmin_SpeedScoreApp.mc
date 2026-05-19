@@ -178,7 +178,7 @@ class Garmin_SpeedScoreApp extends Application.AppBase {
     }
 
     function onTick() {
-        if (!_roundState.isPaused) {
+        if (!_roundState.isPaused || timerRunsDuringPause()) {
             _roundState.tick();
         }
         WatchUi.requestUpdate();
@@ -217,7 +217,8 @@ class Garmin_SpeedScoreApp extends Application.AppBase {
     }
 
     // ── SETTINGS HELPERS ────────────────────────────────────
-    function isBulkEntryMode()    { return Properties.getValue("bulkEntry") == true; }
+    function isPostHoleEntryMode()    { return Properties.getValue("postHoleEntry") == true; }
+    function isOutOfOrderPlay()   { return Properties.getValue("outOfOrderPlay") == true; }
     function isTouchInputMode()   { return Properties.getValue("touchInput") == true; }
     function showStatsAfterHole() { return Properties.getValue("statsAfterHole") == true; }
     function isPracticeMode()     { return _selectedCourseId != null && _selectedCourseId.equals("practice"); }
@@ -232,6 +233,7 @@ class Garmin_SpeedScoreApp extends Application.AppBase {
     function useImperial()        { return Properties.getValue("useImperial") != false; }
     function isSwingDetectionEnabled()  { return Properties.getValue("swingDetection") == true; }
     function isSwingVibrationEnabled()  { return Properties.getValue("swingVibration") != false; }
+    function timerRunsDuringPause()     { return Properties.getValue("timerRunsDuringPause") == true; }
     function getSwingDetectionSensitivity() {
         var v = Properties.getValue("swingDetectionSensitivity");
         if (v == null) { return 1; }
@@ -254,17 +256,7 @@ class Garmin_SpeedScoreApp extends Application.AppBase {
     }
 
     function getSortedFavoriteCourses() {
-        var favs = getFavoriteCourses();
-        for (var i = 0; i < favs.size() - 1; i++) {
-            for (var j = 0; j < favs.size() - 1 - i; j++) {
-                if (favs[j]["name"].compare(favs[j + 1]["name"]) > 0) {
-                    var tmp    = favs[j];
-                    favs[j]   = favs[j + 1];
-                    favs[j + 1] = tmp;
-                }
-            }
-        }
-        return favs;
+        return getFavoriteCourses();
     }
 
     function isFavoriteCourse(courseId) {

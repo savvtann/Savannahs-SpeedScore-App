@@ -33,7 +33,9 @@ class RoundState {
         for (var i = 0; i < _holeData.size(); i++) {
             parSoFar += getParForHole(_holeData[i]["number"]);
         }
-        parSoFar += getParForHole(holeNumber);
+        if (!isComplete) {
+            parSoFar += getParForHole(holeNumber);
+        }
         var diff = strokeCount - parSoFar;
         if (diff == 0) { return "E"; }
         if (diff > 0)  { return "+" + diff; }
@@ -59,7 +61,8 @@ class RoundState {
         _holeStartStrokes = strokeCount;
         _holeStartTime    = elapsedSeconds;
 
-        if (_holeData.size() >= totalHoles) {
+        var outOfOrder = Application.Properties.getValue("outOfOrderPlay") == true;
+        if (!outOfOrder && _holeData.size() >= totalHoles) {
             isComplete = true;
         } else if (holeNumber >= totalHoles) {
             holeNumber = 1;
@@ -88,6 +91,18 @@ class RoundState {
     }
 
     function getHoleData() { return _holeData; }
+
+    function applyPostHoleEntry(holeNum, newStrokes) {
+        for (var i = 0; i < _holeData.size(); i++) {
+            if (_holeData[i]["number"] == holeNum) {
+                var oldStrokes = _holeData[i]["strokes"];
+                _holeData[i]["strokes"] = newStrokes;
+                strokeCount = strokeCount - oldStrokes + newStrokes;
+                _holeStartStrokes = strokeCount;
+                return;
+            }
+        }
+    }
 
     function getPar() {
         var idx = holeNumber - 1;
@@ -160,9 +175,7 @@ class RoundState {
     }
 
     function tick() {
-        if (!isPaused) {
-            elapsedSeconds++;
-        }
+        elapsedSeconds++;
     }
 
     function getFormattedTime() {

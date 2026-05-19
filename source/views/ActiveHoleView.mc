@@ -19,17 +19,17 @@ class ActiveHoleView extends BasePageView {
     function onUpdate(dc) {
         var app      = Application.getApp();
         var state    = app.getRoundState();
-        var bulkMode = app.isBulkEntryMode();
+        var postHoleEntryMode = app.isPostHoleEntryMode();
         var w        = dc.getWidth();
         var h        = dc.getHeight();
 
         View.onUpdate(dc);
 
         // Old design mode
-        //_drawFullMode(dc, state, bulkMode, w, h);
+        //_drawFullMode(dc, state, postHoleEntryMode, w, h);
 
         // New grid design mode
-        _drawGridMode(dc, state, bulkMode, w, h);
+        _drawGridMode(dc, state, postHoleEntryMode, w, h);
 
         // === PAUSED OVERLAY === (same for both modes)
         if (state.isPaused) {
@@ -42,7 +42,7 @@ class ActiveHoleView extends BasePageView {
         }
     }
 
-    hidden function _drawFullMode(dc, state, bulkMode, w, h) {
+    hidden function _drawFullMode(dc, state, postHoleEntryMode, w, h) {
         var app = Application.getApp();
         var cx  = w / 2;
 
@@ -50,7 +50,7 @@ class ActiveHoleView extends BasePageView {
         // Only draw shapes for elements that are visible
         var showHole    = app.showHoleNumber();
         var showPar     = app.showPar();
-        var showStrokes = app.showStrokes() && !bulkMode;
+        var showStrokes = app.showStrokes() && !postHoleEntryMode;
 
         dc.setColor(0x7FA3DF, Graphics.COLOR_TRANSPARENT);
         if (showPar) {
@@ -113,7 +113,7 @@ class ActiveHoleView extends BasePageView {
 
     }
 
-    hidden function _drawCleanMode(dc, state, bulkMode, w, h) {
+    hidden function _drawCleanMode(dc, state, postHoleEntryMode, w, h) {
         var cx = w / 2;
         var cy = h / 2;
 
@@ -121,14 +121,14 @@ class ActiveHoleView extends BasePageView {
         dc.setColor(0x7FA3DF, Graphics.COLOR_TRANSPARENT);
         dc.fillRoundedRectangle(162, 22, 130, 55, 15);
         dc.fillCircle(104, 95, 45);
-        if (!bulkMode) {
+        if (!postHoleEntryMode) {
             dc.fillCircle(350, 95, 45);
         }
 
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
         dc.drawText(104, 65, Graphics.FONT_MEDIUM, state.holeNumber.toString(), Graphics.TEXT_JUSTIFY_CENTER);
         dc.drawText(227, 25, Graphics.FONT_SMALL,  "Par: " + state.getPar(),    Graphics.TEXT_JUSTIFY_CENTER);
-        if (!bulkMode) {
+        if (!postHoleEntryMode) {
             dc.drawText(350, 65, Graphics.FONT_MEDIUM, state.getCurrentHoleStrokes().toString(), Graphics.TEXT_JUSTIFY_CENTER);
         }
 

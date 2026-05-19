@@ -54,12 +54,7 @@ class ScreenManager {
     }
 
     function goToLoading() {
-        var app   = Application.getApp();
-        var depth = app._roundFlowDepth;
-        app._roundFlowDepth = 0;
-        for (var i = 0; i < depth; i++) {
-            WatchUi.popView(WatchUi.SLIDE_IMMEDIATE);
-        }
+        Application.getApp()._roundFlowDepth = 0;
         var newView      = new HomeView();
         var newDelegate  = new HomeDelegate(self);
         _currentView     = newView;

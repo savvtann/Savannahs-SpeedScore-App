@@ -12,9 +12,12 @@ class SettingsDelegate extends WatchUi.Menu2InputDelegate {
 
     function onSelect(item) {
         var id = item.getId();
-        if (id == :bulkEntry) {
-            Properties.setValue("bulkEntry", item.isEnabled());
-            System.println("Bulk entry: " + item.isEnabled());
+        if (id == :outOfOrderPlay) {
+            Properties.setValue("outOfOrderPlay", item.isEnabled());
+            System.println("Out of order play: " + item.isEnabled());
+        } else if (id == :postHoleEntry) {
+            Properties.setValue("postHoleEntry", item.isEnabled());
+            System.println("Post-Hole entry: " + item.isEnabled());
         } else if (id == :touchInput) {
             Properties.setValue("touchInput", item.isEnabled());
             System.println("Touch input: " + item.isEnabled());
@@ -40,6 +43,9 @@ class SettingsDelegate extends WatchUi.Menu2InputDelegate {
             var view = new PairingView(null);
             api._pairingView = view;
             WatchUi.pushView(view, new PairingDelegate(view, true), WatchUi.SLIDE_LEFT);
+        } else if (id == :timerRunsDuringPause) {
+            Properties.setValue("timerRunsDuringPause", item.isEnabled());
+            System.println("Timer runs during pause: " + item.isEnabled());
         } else if (id == :swingDetectionSensitivity) {
             // Cycle Low(0) → Medium(1) → High(2) → Low and update the subtitle in place.
             // A sub-menu would leave the Settings subtitle stale after popping back.

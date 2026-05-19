@@ -34,16 +34,22 @@ class StrokeEntryDelegate extends WatchUi.BehaviorDelegate {
         if (key == WatchUi.KEY_ENTER) {
             var strokes    = _view.getStrokes();
             var roundState = Application.getApp().getRoundState();
-            var holeData   = roundState.getHoleData();
-            for (var i = 0; i < holeData.size(); i++) {
-                if (holeData[i]["number"] == _holeNumber) {
-                    holeData[i]["strokes"] = strokes;
-                    roundState.strokeCount += strokes;
-                    break;
-                }
-            }
+            roundState.applyPostHoleEntry(_holeNumber, strokes);
             if (Application.getApp().showStatsAfterHole()) {
                 _screenManager.goToHoleStats(roundState, 8000);
+            } else if (Application.getApp().isOutOfOrderPlay()) {
+                if (roundState.getHoleData().size() >= roundState.totalHoles) {
+                    _screenManager.goToRoundSummary();
+                } else {
+                    _screenManager.goToActiveHole();
+                    WatchUi.pushView(
+                        new HoleJumperView(roundState.totalHoles, roundState.getHoleData()),
+                        new HoleJumperDelegate(roundState),
+                        WatchUi.SLIDE_UP
+                    );
+                }
+            } else if (roundState.isComplete) {
+                _screenManager.goToRoundSummary();
             } else {
                 _screenManager.goToActiveHole();
             }

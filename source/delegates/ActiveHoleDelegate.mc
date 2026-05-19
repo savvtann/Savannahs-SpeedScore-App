@@ -34,7 +34,7 @@ class ActiveHoleDelegate extends WatchUi.BehaviorDelegate {
         }
 
         if (key == WatchUi.KEY_UP) {
-            if (!Application.getApp().isBulkEntryMode()) {
+            if (!Application.getApp().isPostHoleEntryMode()) {
                 _roundState.addStroke();
                 WatchUi.requestUpdate();
             }
@@ -42,7 +42,7 @@ class ActiveHoleDelegate extends WatchUi.BehaviorDelegate {
         }
 
         if (key == WatchUi.KEY_DOWN) {
-            if (!Application.getApp().isBulkEntryMode()) {
+            if (!Application.getApp().isPostHoleEntryMode()) {
                 _roundState.removeStroke();
                 WatchUi.requestUpdate();
             }
@@ -51,12 +51,21 @@ class ActiveHoleDelegate extends WatchUi.BehaviorDelegate {
 
         if (key == WatchUi.KEY_ENTER) {
             _roundState.advanceHole();
-            if (_roundState.isComplete) {
-                _screenManager.goToRoundSummary();
-            } else if (Application.getApp().isBulkEntryMode()) {
-                _screenManager.goToStrokeEntry(_roundState.holeNumber - 1);
-            } else if (Application.getApp().showStatsAfterHole()) {
+            var app = Application.getApp();
+            if (app.isPostHoleEntryMode()) {
+                var hd = _roundState.getHoleData();
+                _screenManager.goToStrokeEntry(hd[hd.size() - 1]["number"]);
+            } else if (app.showStatsAfterHole()) {
                 _screenManager.goToHoleStats(_roundState, 8000);
+            } else if (app.isOutOfOrderPlay()) {
+                if (_roundState.getHoleData().size() >= _roundState.totalHoles) {
+                    _screenManager.goToRoundSummary();
+                } else {
+                    var view = new HoleJumperView(_roundState.totalHoles, _roundState.getHoleData());
+                    WatchUi.pushView(view, new HoleJumperDelegate(_roundState), WatchUi.SLIDE_UP);
+                }
+            } else if (_roundState.isComplete) {
+                _screenManager.goToRoundSummary();
             } else {
                 WatchUi.requestUpdate();
             }

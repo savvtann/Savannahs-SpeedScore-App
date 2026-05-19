@@ -20,7 +20,21 @@ class HoleStatsView extends WatchUi.View {
     function onDismiss() {
         _timer.stop();
         _roundState.resume();
-        _screenManager.goToActiveHole();
+        var app = Application.getApp();
+        if (app.isOutOfOrderPlay() && _roundState.getHoleData().size() < _roundState.totalHoles) {
+            _screenManager.goToActiveHole();
+            WatchUi.pushView(
+                new HoleJumperView(_roundState.totalHoles, _roundState.getHoleData()),
+                new HoleJumperDelegate(_roundState),
+                WatchUi.SLIDE_UP
+            );
+        } else if (app.isOutOfOrderPlay()) {
+            _screenManager.goToRoundSummary();
+        } else if (_roundState.isComplete) {
+            _screenManager.goToRoundSummary();
+        } else {
+            _screenManager.goToActiveHole();
+        }
     }
 
     function onHide() {
@@ -35,9 +49,11 @@ class HoleStatsView extends WatchUi.View {
         dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
         dc.clear();
 
+        var _hd = _roundState.getHoleData();
+        var _completedHole = _hd.size() > 0 ? _hd[_hd.size() - 1]["number"] : _roundState.holeNumber;
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
         dc.drawText(cx, h * 0.12, Graphics.FONT_XTINY,
-            "Hole " + (_roundState.holeNumber - 1) + " complete",
+            "Hole " + _completedHole + " complete",
             Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
 
         dc.setColor(0x444444, Graphics.COLOR_TRANSPARENT);

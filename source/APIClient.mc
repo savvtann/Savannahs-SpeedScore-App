@@ -62,15 +62,95 @@ class APIClient {
         Properties.setValue("authToken", token);
         System.println("JWT saved");
         if (userID == null || userID.equals("") || userID.equals("null")) {
-            fetchUserProfile();
+            var decoded = _decodeJwtUserId(token);
+            if (decoded != null) {
+                userID = decoded;
+                Properties.setValue("userID", userID);
+                System.println("UserID from JWT: " + userID);
+            } else {
+                fetchUserProfile();
+            }
         }
+    }
+
+    // Decodes the JWT payload and extracts the user ID from "sub", "_id", or "id" claim.
+    // Returns a 24-char hex string, or null if not found.
+    hidden function _decodeJwtUserId(jwt) {
+        if (jwt == null) { return null; }
+        var dot1 = -1;
+        var dot2 = -1;
+        var jlen = jwt.length();
+        for (var i = 0; i < jlen; i++) {
+            if (jwt.substring(i, i + 1).equals(".")) {
+                if (dot1 < 0) { dot1 = i; }
+                else           { dot2 = i; break; }
+            }
+        }
+        if (dot1 < 0 || dot2 < 0) { return null; }
+
+        var b64 = jwt.substring(dot1 + 1, dot2);
+        var rem = b64.length() % 4;
+        if      (rem == 2) { b64 = b64 + "=="; }
+        else if (rem == 3) { b64 = b64 + "="; }
+
+        // base64url → base64
+        var std = "";
+        for (var i = 0; i < b64.length(); i++) {
+            var c = b64.substring(i, i + 1);
+            if      (c.equals("-")) { std = std + "+"; }
+            else if (c.equals("_")) { std = std + "/"; }
+            else                    { std = std + c; }
+        }
+
+        var alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+        var decoded = "";
+        var slen = std.length();
+        var i = 0;
+        while (i + 4 <= slen) {
+            var v1 = alpha.find(std.substring(i,     i + 1));
+            var v2 = alpha.find(std.substring(i + 1, i + 2));
+            var v3 = alpha.find(std.substring(i + 2, i + 3));
+            var v4 = alpha.find(std.substring(i + 3, i + 4));
+            if (v1 == null || v2 == null) { break; }
+            if (v3 == null) { v3 = 0; }
+            if (v4 == null) { v4 = 0; }
+            decoded = decoded + ((v1 << 2) | (v2 >> 4)).toChar().toString();
+            if (!std.substring(i + 2, i + 3).equals("=")) {
+                decoded = decoded + (((v2 & 0xF) << 4) | (v3 >> 2)).toChar().toString();
+            }
+            if (!std.substring(i + 3, i + 4).equals("=")) {
+                decoded = decoded + (((v3 & 0x3) << 6) | v4).toChar().toString();
+            }
+            i += 4;
+        }
+
+        System.println("JWT payload: " + (decoded.length() > 80 ? decoded.substring(0, 80) : decoded));
+
+        // Search for common user-ID claim keys in the decoded JSON
+        var keys = ["\"sub\":\"", "\"_id\":\"", "\"id\":\"", "\"userId\":\"", "\"x-user-id\":\""];
+        var hex  = "0123456789abcdefABCDEF";
+        for (var k = 0; k < keys.size(); k++) {
+            var key = keys[k];
+            var idx = decoded.find(key);
+            if (idx == null) { continue; }
+            var start = idx + key.length();
+            if (start + 24 > decoded.length()) { continue; }
+            var candidate = decoded.substring(start, start + 24);
+            var valid = true;
+            for (var j = 0; j < 24; j++) {
+                if (hex.find(candidate.substring(j, j + 1)) == null) { valid = false; break; }
+            }
+            if (valid) { return candidate; }
+        }
+        return null;
     }
 
     // Saves full credentials — used by original login() only
     // That endpoint returns jwtToken + user._id + refreshToken
     function handleLoginSuccess(data) {
         token        = data["jwtToken"];
-        userID       = data["user"]["_id"];
+        var _user    = data["user"];
+        userID       = (_user instanceof Dictionary) ? _user["_id"] : null;
         refreshToken = data["refreshToken"];
         Properties.setValue("authToken", token);
         Properties.setValue("userID", userID);
@@ -100,17 +180,12 @@ class APIClient {
     }
 
     function fetchUserProfile() {
-        // Decode userID from JWT token — it's in the payload
-        // JWT format: header.payload.signature — payload is base64 encoded JSON
-        // For now just call getUsers with a /me endpoint if available,
-        // or fall back to standard login which returns the full profile
         System.println("Fetching user profile for userID...");
         var url = baseUrl + "/users/me";
         var options = {
             :method => Communications.HTTP_REQUEST_METHOD_GET,
             :headers => {
-                "Authorization" => "Bearer " + token,
-                "Content-Type"  => Communications.REQUEST_CONTENT_TYPE_JSON
+                "Authorization" => "Bearer " + token
             },
             :responseType => Communications.HTTP_RESPONSE_CONTENT_TYPE_JSON
         };
@@ -122,9 +197,23 @@ class APIClient {
             userID = data["_id"];
             Properties.setValue("userID", userID);
             System.println("UserID fetched: " + userID);
+            if (_pendingRoundState != null) {
+                var rs = _pendingRoundState;
+                var cb = _pendingRoundCallback;
+                _pendingRoundState    = null;
+                _pendingRoundCallback = null;
+                postRound(rs, cb);
+            }
         } else {
-            System.println("User profile fetch failed: " + responseCode + " — falling back to standard login");
-            login();
+            System.println("User profile fetch failed: " + responseCode);
+            if (_pendingRoundState != null) {
+                System.println("Cannot post round — userID unavailable");
+                if (_pendingRoundCallback != null) {
+                    _pendingRoundCallback.invoke(responseCode, data);
+                }
+                _pendingRoundState    = null;
+                _pendingRoundCallback = null;
+            }
         }
     }
 
@@ -926,6 +1015,20 @@ class APIClient {
 
     function postRound(roundState, callback) {
         if (token == null) { System.println("No token - please log in first"); return; }
+        if (userID == null || userID.equals("") || userID.equals("null")) {
+            var decoded = _decodeJwtUserId(token);
+            if (decoded != null) {
+                userID = decoded;
+                Properties.setValue("userID", userID);
+                System.println("UserID from JWT: " + userID);
+            } else {
+                System.println("UserID not ready — fetching before posting round");
+                _pendingRoundState    = roundState;
+                _pendingRoundCallback = callback;
+                fetchUserProfile();
+                return;
+            }
+        }
         var app      = Application.getApp();
         var courseId = app._selectedCourseId;
         var teesetId = app._selectedTeesetId;
@@ -945,7 +1048,10 @@ class APIClient {
         var info    = Gregorian.info(now, Time.FORMAT_SHORT);
         var dateStr = info.year.format("%04d") + "-" +
                       info.month.format("%02d") + "-" +
-                      info.day.format("%02d") + "T00:00:00.000Z";
+                      info.day.format("%02d") + "T" +
+                      info.hour.format("%02d") + ":" +
+                      info.min.format("%02d") + ":" +
+                      info.sec.format("%02d") + ".000Z";
 
         System.println(dateStr);
         var url  = baseUrl + "/rounds";
@@ -980,56 +1086,16 @@ class APIClient {
     }
 
     function onPostRoundWithHoles(responseCode, data) {
-        // Fire the original caller's callback first
         if (_pendingRoundCallback != null) {
             _pendingRoundCallback.invoke(responseCode, data);
         }
-
-        if ((responseCode == 200 || responseCode == 201) && data instanceof Dictionary) {
-            var roundId = data["id"];
-            System.println("Round posted: " + roundId);
-            if (roundId != null && _pendingRoundState != null) {
-                _postRoundHoles(roundId, _pendingRoundState);
-            }
+        if (responseCode == 200 || responseCode == 201) {
+            System.println("Round posted: " + data["id"]);
         } else {
             System.println("Post round failed: " + responseCode);
         }
-
         _pendingRoundState    = null;
         _pendingRoundCallback = null;
-    }
-
-    hidden function _postRoundHoles(roundId, roundState) {
-        var holeData = roundState.getHoleData();
-        System.println("Posting " + holeData.size() + " holes for round " + roundId);
-        for (var i = 0; i < holeData.size(); i++) {
-            var hole    = holeData[i];
-            var url     = baseUrl + "/rounds/" + roundId + "/holes";
-            var body    = {
-                "number"   => hole["number"],
-                "strokes"  => hole["strokes"],
-                "time"     => hole["time"],
-                "putts"    => 0,
-                "shotInfo" => []
-            };
-            var options = {
-                :method  => Communications.HTTP_REQUEST_METHOD_POST,
-                :headers => {
-                    "Authorization" => "Bearer " + token,
-                    "Content-Type"  => Communications.REQUEST_CONTENT_TYPE_JSON
-                },
-                :responseType => Communications.HTTP_RESPONSE_CONTENT_TYPE_JSON
-            };
-            Communications.makeWebRequest(url, body, options, method(:onPostRoundHoleResponse));
-        }
-    }
-
-    function onPostRoundHoleResponse(responseCode, data) {
-        if (responseCode == 200 || responseCode == 201) {
-            System.println("Hole posted ok");
-        } else {
-            System.println("Post hole failed: " + responseCode + " " + data);
-        }
     }
 
     // ── COMPETITIONS ──────────────────────────────────────────

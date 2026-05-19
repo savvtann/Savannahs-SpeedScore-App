@@ -28,41 +28,10 @@ class ActiveHoleTouchDelegate extends WatchUi.InputDelegate {
         _roundState    = Application.getApp().getRoundState();
     }
 
-    // hidden function _inCircle(tapX, tapY, cx, cy) {
-    //     var dx = tapX - cx;
-    //     var dy = tapY - cy;
-    //     return (dx * dx + dy * dy) <= (RADIUS * RADIUS);
-    // }
-
     hidden function _inRect(tapX, tapY, cx, cy, hw, hh) {
         return tapX >= cx - hw && tapX <= cx + hw &&
             tapY >= cy - hh && tapY <= cy + hh;
     }
-
-    // function onTap(clickEvent) {
-    //     System.println("=== TAP: " + clickEvent.getCoordinates()[0] + ", " + clickEvent.getCoordinates()[1] + " ===");
-    //     if (!Application.getApp().isTouchInputMode()) { return false; }
-    //     if (_roundState.isPaused) { return true; }
-
-    //     var coords = clickEvent.getCoordinates();
-    //     var x      = coords[0];
-    //     var y      = coords[1];
-
-    //     if (_inCircle(x, y, STROKE_X, STROKE_Y)) {
-    //         if (!Application.getApp().isBulkEntryMode()) {
-    //             _roundState.addStroke();
-    //             WatchUi.requestUpdate();
-    //         }
-    //         return true;
-    //     }
-
-    //     if (_inCircle(x, y, HOLE_X, HOLE_Y)) {
-    //         _advanceHole();
-    //         return true;
-    //     }
-
-    //     return false;
-    // }
 
     function onTap(clickEvent) {
         System.println("=== TAP: " + clickEvent.getCoordinates()[0] + ", " + clickEvent.getCoordinates()[1] + " ===");
@@ -85,7 +54,7 @@ class ActiveHoleTouchDelegate extends WatchUi.InputDelegate {
 
         // Tap right cell — add stroke
         if (_inRect(x, y, STROKE_X, STROKE_Y, STROKE_W, STROKE_H)) {
-            if (!Application.getApp().isBulkEntryMode()) {
+            if (!Application.getApp().isPostHoleEntryMode()) {
                 _roundState.addStroke();
                 WatchUi.requestUpdate();
             }
@@ -95,30 +64,6 @@ class ActiveHoleTouchDelegate extends WatchUi.InputDelegate {
         return false;
     }
 
-    // function onHold(clickEvent) {
-    //     if (!Application.getApp().isTouchInputMode()) { return false; }
-    //     if (_roundState.isPaused) { return true; }
-
-    //     var coords = clickEvent.getCoordinates();
-    //     var x      = coords[0];
-    //     var y      = coords[1];
-
-    //     if (_inCircle(x, y, STROKE_X, STROKE_Y)) {
-    //         if (!Application.getApp().isBulkEntryMode()) {
-    //             _roundState.removeStroke();
-    //             WatchUi.requestUpdate();
-    //         }
-    //         return true;
-    //     }
-
-    //     if (_inCircle(x, y, HOLE_X, HOLE_Y)) {
-    //         _roundState.backAHole();
-    //         WatchUi.requestUpdate();
-    //         return true;
-    //     }
-
-    //     return false;
-    // }
 
     function onHold(clickEvent) {
         if (!Application.getApp().isTouchInputMode()) { return false; }
@@ -130,7 +75,7 @@ class ActiveHoleTouchDelegate extends WatchUi.InputDelegate {
 
         // Hold right cell — remove stroke
         if (_inRect(x, y, STROKE_X, STROKE_Y, STROKE_W, STROKE_H)) {
-            if (!Application.getApp().isBulkEntryMode()) {
+            if (!Application.getApp().isPostHoleEntryMode()) {
                 _roundState.removeStroke();
                 WatchUi.requestUpdate();
             }
@@ -170,7 +115,7 @@ class ActiveHoleTouchDelegate extends WatchUi.InputDelegate {
         }
 
         if (key == WatchUi.KEY_UP) {
-            if (!Application.getApp().isBulkEntryMode()) {
+            if (!Application.getApp().isPostHoleEntryMode()) {
                 _roundState.addStroke();
                 WatchUi.requestUpdate();
             }
@@ -178,7 +123,7 @@ class ActiveHoleTouchDelegate extends WatchUi.InputDelegate {
         }
 
         if (key == WatchUi.KEY_DOWN) {
-            if (!Application.getApp().isBulkEntryMode()) {
+            if (!Application.getApp().isPostHoleEntryMode()) {
                 _roundState.removeStroke();
                 WatchUi.requestUpdate();
             }
@@ -202,20 +147,24 @@ class ActiveHoleTouchDelegate extends WatchUi.InputDelegate {
 
     hidden function _advanceHole() {
         _roundState.advanceHole();
-        if (_roundState.isComplete) {
-            _screenManager.goToRoundSummary();
-            return;
-        }
-        if (Application.getApp().isBulkEntryMode()) {
-            _screenManager.goToStrokeEntry(_roundState.holeNumber - 1);
-            return;
-        }
-        if (Application.getApp().showStatsAfterHole()) {
+        var app = Application.getApp();
+        if (app.isPostHoleEntryMode()) {
+            var hd = _roundState.getHoleData();
+            _screenManager.goToStrokeEntry(hd[hd.size() - 1]["number"]);
+        } else if (app.showStatsAfterHole()) {
             _screenManager.goToHoleStats(_roundState, 8000);
-            return;
+        } else if (app.isOutOfOrderPlay()) {
+            if (_roundState.getHoleData().size() >= _roundState.totalHoles) {
+                _screenManager.goToRoundSummary();
+            } else {
+                var view = new HoleJumperView(_roundState.totalHoles, _roundState.getHoleData());
+                WatchUi.pushView(view, new HoleJumperDelegate(_roundState), WatchUi.SLIDE_UP);
+            }
+        } else if (_roundState.isComplete) {
+            _screenManager.goToRoundSummary();
+        } else {
+            WatchUi.requestUpdate();
         }
-        
-        WatchUi.requestUpdate();
     }
 
     hidden function _showPauseMenu() {
