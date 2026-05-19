@@ -1,0 +1,329 @@
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [WatchUi,1,13,20]; @symbol_usingAlias = [Ui,1,24,26]; ]
+using Toybox.WatchUi as :Ui;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [Application,2,13,24]; ]
+using Toybox.Application;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc"; @line = 4; @symbol_classdef = [CompetitionMenuDelegate,4,6,29]; @symbol_extends<0> = [Ui,4,38,40]; @symbol_extends<1> = [Menu2InputDelegate,4,41,59]; ]
+class CompetitionMenuDelegate extends Ui.Menu2InputDelegate {
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc"; @line = 4; ]
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc"; @line = 4; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc"; @line = 5; @position = 15; @symbol_vardef = [_competitions,5,15,28]; ]
+    protected
+    var _competitions;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc"; @line = 7; @symbol_functiondef = [initialize,7,13,23]; @symbol_param<0> = [competitions,7,24,36]; ]
+    function initialize(competitions) as Void {
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_7_38_10_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc" 8 8 ]
+        symbol [ Menu2InputDelegate %tmp.2 8 8 26 ];
+        %tmp.2 = getv ? :Menu2InputDelegate;
+        symbol [ initialize %tmp.3 8 27 37 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc" 9 8 ]
+        %tmp.4 = lgetv %competitions;
+        symbol [ competitions %tmp.4 9 24 36 ];
+        symbol [ _competitions ? 9 8 21 ];
+        putv self :_competitions %tmp.4;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_7_38_10_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc"; @line = 12; @symbol_functiondef = [onSelect,12,13,21]; @symbol_param<0> = [item,12,22,26]; ]
+    function onSelect(item) {
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_12_28_29_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc" 13 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_12_28_29_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_12_28_29_4_stop" ]
+        %idx.1 = local;
+        symbol [ idx %idx.1 13 12 15 ];
+        %tmp.1 = lgetv %item;
+        symbol [ item %tmp.1 13 22 26 ];
+        symbol [ getId %tmp.2 13 27 32 ];
+        %tmp.2 = getv function %tmp.1 :getId;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %idx.1 %tmp.3;
+        symbol [ idx %idx.1 13 12 15 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc" 14 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_12_28_29_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_12_28_29_4_stop" ]
+        %comp.2 = local;
+        symbol [ comp %comp.2 14 12 16 ];
+        symbol [ _competitions %tmp.5 14 22 35 ];
+        %tmp.5 = getv ? :_competitions;
+        %tmp.6 = lgetv %idx.1;
+        symbol [ idx %tmp.6 14 36 39 ];
+        %tmp.7 = agetv %tmp.5 %tmp.6;
+        lputv %comp.2 %tmp.7;
+        symbol [ comp %comp.2 14 12 16 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc" 15 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_12_28_29_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_12_28_29_4_stop" ]
+        %courses.3 = local;
+        symbol [ courses %courses.3 15 12 19 ];
+        %tmp.8 = lgetv %comp.2;
+        symbol [ comp %tmp.8 15 22 26 ];
+        %tmp.9 = "courses";
+        %tmp.10 = agetv %tmp.8 %tmp.9;
+        lputv %courses.3 %tmp.10;
+        symbol [ courses %courses.3 15 12 19 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc" 17 8 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_17_8_28_8_if_stmt:
+        %tmp.11 = lgetv %courses.3;
+        symbol [ courses %tmp.11 17 12 19 ];
+        symbol [ size %tmp.12 17 20 24 ];
+        %tmp.12 = getv function %tmp.11 :size;
+        %tmp.13 = invoke %tmp.11 %tmp.12();
+        %tmp.14 = 1;
+        %tmp.15 = eq %tmp.13 %tmp.14;
+        bf %tmp.15 @C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_17_8_28_8_if_else_false;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_17_8_28_8_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_17_33_22_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc" 18 12 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_17_33_22_8_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_17_33_22_8_stop" ]
+        %courseId.4 = local;
+        symbol [ courseId %courseId.4 18 16 24 ];
+        %tmp.16 = lgetv %courses.3;
+        symbol [ courses %tmp.16 18 27 34 ];
+        %tmp.17 = 0;
+        %tmp.18 = agetv %tmp.16 %tmp.17;
+        %tmp.19 = "courseId";
+        %tmp.20 = agetv %tmp.18 %tmp.19;
+        lputv %courseId.4 %tmp.20;
+        symbol [ courseId %courseId.4 18 16 24 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc" 19 12 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_17_33_22_8_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_17_33_22_8_stop" ]
+        %name.5 = local;
+        symbol [ name %name.5 19 16 20 ];
+        %tmp.21 = lgetv %courses.3;
+        symbol [ courses %tmp.21 19 27 34 ];
+        %tmp.22 = 0;
+        %tmp.23 = agetv %tmp.21 %tmp.22;
+        %tmp.24 = "name";
+        %tmp.25 = agetv %tmp.23 %tmp.24;
+        lputv %name.5 %tmp.25;
+        symbol [ name %name.5 19 16 20 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc" 20 12 ]
+        symbol [ Application %tmp.26 20 12 23 ];
+        %tmp.26 = getm $.Toybox.Application;
+        symbol [ getApp %tmp.27 20 24 30 ];
+        %tmp.27 = getv function %tmp.26 :getApp;
+        %tmp.28 = invoke %tmp.26 %tmp.27();
+        symbol [ setSelectedCourse %tmp.29 20 33 50 ];
+        %tmp.29 = getv function %tmp.28 :setSelectedCourse;
+        %tmp.30 = lgetv %courseId.4;
+        symbol [ courseId %tmp.30 20 51 59 ];
+        %tmp.31 = lgetv %name.5;
+        symbol [ name %tmp.31 20 61 65 ];
+        invoke %tmp.28 %tmp.29(%tmp.30, %tmp.31);
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_17_33_22_8_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_17_8_28_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_17_8_28_8_if_else_false:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_22_15_28_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc" 23 12 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_22_15_28_8_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_22_15_28_8_stop" ]
+        %menu.6 = local;
+        symbol [ menu %menu.6 23 16 20 ];
+        symbol [ Ui %tmp.34 23 27 29 ];
+        %tmp.34 = getm $.Toybox.WatchUi;
+        symbol [ Menu2 %tmp.35 23 30 35 ];
+        %tmp.35 = getv function ? %tmp.34 :Menu2;
+        %tmp.36 = newd 1;
+        %tmp.38 = const :title;
+        symbol [ title %tmp.38 23 38 43 const ];
+        %tmp.39 = "Course";
+        %tmp.40 = dup %tmp.36;
+        %tmp.41 = aputv %tmp.40 %tmp.38 %tmp.39;
+        %tmp.32 = newc %tmp.35 (%tmp.41);
+        lputv %menu.6 %tmp.32;
+        symbol [ menu %menu.6 23 16 20 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc" 24 12 ]
+        for @C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_24_12_26_12_for_test @C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_24_12_26_12_for_incr @C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_24_12_26_12_for_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_24_12_26_12_for_init:
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_24_12_26_12_for_begin" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_24_12_26_12_for_end" ]
+        %i.7 = local;
+        symbol [ i %i.7 24 21 22 ];
+        %tmp.42 = 0;
+        lputv %i.7 %tmp.42;
+        symbol [ i %i.7 24 21 22 ];
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_24_12_26_12_for_test:
+        %tmp.43 = lgetv %i.7;
+        symbol [ i %tmp.43 24 28 29 ];
+        %tmp.44 = lgetv %courses.3;
+        symbol [ courses %tmp.44 24 32 39 ];
+        symbol [ size %tmp.45 24 40 44 ];
+        %tmp.45 = getv function %tmp.44 :size;
+        %tmp.46 = invoke %tmp.44 %tmp.45();
+        %tmp.47 = lt %tmp.43 %tmp.46;
+        bf %tmp.47 @C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_24_12_26_12_for_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_24_12_26_12_for_begin:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_24_53_26_12_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc" 25 16 ]
+        %tmp.48 = lgetv %menu.6;
+        symbol [ menu %tmp.48 25 16 20 ];
+        symbol [ addItem %tmp.49 25 21 28 ];
+        %tmp.49 = getv function %tmp.48 :addItem;
+        symbol [ Ui %tmp.52 25 33 35 ];
+        %tmp.52 = getm $.Toybox.WatchUi;
+        symbol [ MenuItem %tmp.53 25 36 44 ];
+        %tmp.53 = getv function ? %tmp.52 :MenuItem;
+        %tmp.54 = lgetv %courses.3;
+        symbol [ courses %tmp.54 25 45 52 ];
+        %tmp.55 = lgetv %i.7;
+        symbol [ i %tmp.55 25 53 54 ];
+        %tmp.56 = agetv %tmp.54 %tmp.55;
+        %tmp.57 = "name";
+        %tmp.58 = agetv %tmp.56 %tmp.57;
+        %tmp.59 = null;
+        %tmp.60 = lgetv %i.7;
+        symbol [ i %tmp.60 25 71 72 ];
+        %tmp.61 = newd 0;
+        %tmp.50 = newc %tmp.53 (%tmp.58, %tmp.59, %tmp.60, %tmp.61);
+        invoke %tmp.48 %tmp.49(%tmp.50);
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_24_53_26_12_stop:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_24_12_26_12_for_incr:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc" 24 ]
+        %tmp.64 = lgetv %i.7;
+        symbol [ i %tmp.64 24 48 49 ];
+        %tmp.65 = add %tmp.64 1;
+        lputv %i.7 %tmp.65;
+        symbol [ i %i.7 24 48 49 ];
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_24_12_26_12_for_test;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_24_12_26_12_for_end:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc" 27 12 ]
+        symbol [ Ui %tmp.66 27 12 14 ];
+        %tmp.66 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.67 27 15 23 ];
+        %tmp.67 = getv function %tmp.66 :pushView;
+        %tmp.68 = lgetv %menu.6;
+        symbol [ menu %tmp.68 27 24 28 ];
+        symbol [ CourseMenuDelegate %tmp.72 27 34 52 ];
+        %tmp.72 = getv ? :CourseMenuDelegate;
+        %tmp.73 = lgetv %courses.3;
+        symbol [ courses %tmp.73 27 53 60 ];
+        %tmp.69 = newc %tmp.72 (%tmp.73);
+        symbol [ Ui %tmp.74 27 63 65 ];
+        %tmp.74 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_LEFT %tmp.75 27 66 76 ];
+        %tmp.75 = getv %tmp.74 :SLIDE_LEFT;
+        invoke %tmp.66 %tmp.67(%tmp.68, %tmp.69, %tmp.75);
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_22_15_28_8_stop:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_17_8_28_8_if_end:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_12_28_29_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc"; @line = 31; @symbol_functiondef = [onBack,31,13,19]; ]
+    function onBack() {
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_31_22_31_52_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc" 31 24 ]
+        symbol [ Ui %tmp.1 31 24 26 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.2 31 27 34 ];
+        %tmp.2 = getv function %tmp.1 :popView;
+        symbol [ Ui %tmp.3 31 35 37 ];
+        %tmp.3 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_RIGHT %tmp.4 31 38 49 ];
+        %tmp.4 = getv %tmp.3 :SLIDE_RIGHT;
+        invoke %tmp.1 %tmp.2(%tmp.4);
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_31_22_31_52_stop:
+    }
+}
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc"; @line = 34; @symbol_classdef = [CourseMenuDelegate,34,6,24]; @symbol_extends<0> = [Ui,34,33,35]; @symbol_extends<1> = [Menu2InputDelegate,34,36,54]; ]
+class CourseMenuDelegate extends Ui.Menu2InputDelegate {
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc"; @line = 34; ]
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc"; @line = 34; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc"; @line = 35; @position = 15; @symbol_vardef = [_courses,35,15,23]; ]
+    protected
+    var _courses;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc"; @line = 37; @symbol_functiondef = [initialize,37,13,23]; @symbol_param<0> = [courses,37,24,31]; ]
+    function initialize(courses) as Void {
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_37_33_40_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc" 38 8 ]
+        symbol [ Menu2InputDelegate %tmp.2 38 8 26 ];
+        %tmp.2 = getv ? :Menu2InputDelegate;
+        symbol [ initialize %tmp.3 38 27 37 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc" 39 8 ]
+        %tmp.4 = lgetv %courses;
+        symbol [ courses %tmp.4 39 19 26 ];
+        symbol [ _courses ? 39 8 16 ];
+        putv self :_courses %tmp.4;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_37_33_40_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc"; @line = 42; @symbol_functiondef = [onSelect,42,13,21]; @symbol_param<0> = [item,42,22,26]; ]
+    function onSelect(item) {
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_42_28_48_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc" 43 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_42_28_48_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_42_28_48_4_stop" ]
+        %idx.1 = local;
+        symbol [ idx %idx.1 43 12 15 ];
+        %tmp.1 = lgetv %item;
+        symbol [ item %tmp.1 43 23 27 ];
+        symbol [ getId %tmp.2 43 28 33 ];
+        %tmp.2 = getv function %tmp.1 :getId;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %idx.1 %tmp.3;
+        symbol [ idx %idx.1 43 12 15 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc" 44 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_42_28_48_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_42_28_48_4_stop" ]
+        %courseId.2 = local;
+        symbol [ courseId %courseId.2 44 12 20 ];
+        symbol [ _courses %tmp.5 44 23 31 ];
+        %tmp.5 = getv ? :_courses;
+        %tmp.6 = lgetv %idx.1;
+        symbol [ idx %tmp.6 44 32 35 ];
+        %tmp.7 = agetv %tmp.5 %tmp.6;
+        %tmp.8 = "courseId";
+        %tmp.9 = agetv %tmp.7 %tmp.8;
+        lputv %courseId.2 %tmp.9;
+        symbol [ courseId %courseId.2 44 12 20 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc" 45 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_42_28_48_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_42_28_48_4_stop" ]
+        %name.3 = local;
+        symbol [ name %name.3 45 12 16 ];
+        symbol [ _courses %tmp.11 45 23 31 ];
+        %tmp.11 = getv ? :_courses;
+        %tmp.12 = lgetv %idx.1;
+        symbol [ idx %tmp.12 45 32 35 ];
+        %tmp.13 = agetv %tmp.11 %tmp.12;
+        %tmp.14 = "name";
+        %tmp.15 = agetv %tmp.13 %tmp.14;
+        lputv %name.3 %tmp.15;
+        symbol [ name %name.3 45 12 16 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc" 46 8 ]
+        symbol [ Application %tmp.16 46 8 19 ];
+        %tmp.16 = getm $.Toybox.Application;
+        symbol [ getApp %tmp.17 46 20 26 ];
+        %tmp.17 = getv function %tmp.16 :getApp;
+        %tmp.18 = invoke %tmp.16 %tmp.17();
+        symbol [ setSelectedCourse %tmp.19 46 29 46 ];
+        %tmp.19 = getv function %tmp.18 :setSelectedCourse;
+        %tmp.20 = lgetv %courseId.2;
+        symbol [ courseId %tmp.20 46 47 55 ];
+        %tmp.21 = lgetv %name.3;
+        symbol [ name %tmp.21 46 57 61 ];
+        invoke %tmp.18 %tmp.19(%tmp.20, %tmp.21);
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_42_28_48_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc"; @line = 50; @symbol_functiondef = [onBack,50,13,19]; ]
+    function onBack() {
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_50_22_50_52_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc" 50 24 ]
+        symbol [ Ui %tmp.1 50 24 26 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.2 50 27 34 ];
+        %tmp.2 = getv function %tmp.1 :popView;
+        symbol [ Ui %tmp.3 50 35 37 ];
+        %tmp.3 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_RIGHT %tmp.4 50 38 49 ];
+        %tmp.4 = getv %tmp.3 :SLIDE_RIGHT;
+        invoke %tmp.1 %tmp.2(%tmp.4);
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_CompetitionMenuView_mc_50_22_50_52_stop:
+    }
+}
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\CompetitionMenuView.mc"; @line = 1; ]
+<init> {
+}

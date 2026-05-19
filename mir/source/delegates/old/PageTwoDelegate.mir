@@ -1,0 +1,58 @@
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\old\PageTwoDelegate.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [WatchUi,1,13,20]; @symbol_usingAlias = [Ui,1,24,26]; ]
+using Toybox.WatchUi as :Ui;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\old\PageTwoDelegate.mc"; @line = 3; @symbol_classdef = [PageTwoDelegate,3,6,21]; @symbol_extends<0> = [Ui,3,30,32]; @symbol_extends<1> = [BehaviorDelegate,3,33,49]; ]
+class PageTwoDelegate extends Ui.BehaviorDelegate {
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\old\PageTwoDelegate.mc"; @line = 3; ]
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\old\PageTwoDelegate.mc"; @line = 3; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\old\PageTwoDelegate.mc"; @line = 4; @position = 8; @symbol_vardef = [_screenManager,4,8,22]; ]
+    var _screenManager;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\old\PageTwoDelegate.mc"; @line = 6; @symbol_functiondef = [initialize,6,13,23]; @symbol_param<0> = [screenManager,6,24,37]; ]
+    function initialize(screenManager) as Void {
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_old_PageTwoDelegate_mc_6_39_9_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\old\PageTwoDelegate.mc" 7 8 ]
+        symbol [ BehaviorDelegate %tmp.2 7 8 24 ];
+        %tmp.2 = getv ? :BehaviorDelegate;
+        symbol [ initialize %tmp.3 7 25 35 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\old\PageTwoDelegate.mc" 8 8 ]
+        %tmp.4 = lgetv %screenManager;
+        symbol [ screenManager %tmp.4 8 25 38 ];
+        symbol [ _screenManager ? 8 8 22 ];
+        putv self :_screenManager %tmp.4;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_old_PageTwoDelegate_mc_6_39_9_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\old\PageTwoDelegate.mc"; @line = 11; @symbol_functiondef = [onKey,11,13,18]; @symbol_param<0> = [keyEvent,11,19,27]; ]
+    function onKey(keyEvent) {
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_old_PageTwoDelegate_mc_11_29_15_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\old\PageTwoDelegate.mc" 12 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_old_PageTwoDelegate_mc_11_29_15_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_old_PageTwoDelegate_mc_11_29_15_4_stop" ]
+        %key.1 = local;
+        symbol [ key %key.1 12 12 15 ];
+        %tmp.1 = lgetv %keyEvent;
+        symbol [ keyEvent %tmp.1 12 18 26 ];
+        symbol [ getKey %tmp.2 12 27 33 ];
+        %tmp.2 = getv function %tmp.1 :getKey;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %key.1 %tmp.3;
+        symbol [ key %key.1 12 12 15 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\old\PageTwoDelegate.mc" 14 8 ]
+        symbol [ _screenManager %tmp.5 14 15 29 ];
+        %tmp.5 = getv ? :_screenManager;
+        symbol [ switchView %tmp.6 14 30 40 ];
+        %tmp.6 = getv function %tmp.5 :switchView;
+        %tmp.7 = lgetv %key.1;
+        symbol [ key %tmp.7 14 41 44 ];
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        ret %tmp.8;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_old_PageTwoDelegate_mc_11_29_15_4_stop:
+    }
+}
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\old\PageTwoDelegate.mc"; @line = 1; ]
+<init> {
+}

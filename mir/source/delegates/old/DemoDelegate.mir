@@ -1,0 +1,75 @@
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\old\DemoDelegate.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [WatchUi,1,13,20]; @symbol_usingAlias = [Ui,1,24,26]; ]
+using Toybox.WatchUi as :Ui;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\old\DemoDelegate.mc"; @line = 3; @symbol_classdef = [DemoDelegate,3,6,18]; @symbol_extends<0> = [Ui,3,27,29]; @symbol_extends<1> = [BehaviorDelegate,3,30,46]; ]
+class DemoDelegate extends Ui.BehaviorDelegate {
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\old\DemoDelegate.mc"; @line = 3; ]
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\old\DemoDelegate.mc"; @line = 3; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\old\DemoDelegate.mc"; @line = 4; @position = 8; @symbol_vardef = [_screenManager,4,8,22]; ]
+    var _screenManager;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\old\DemoDelegate.mc"; @line = 6; @symbol_functiondef = [initialize,6,13,23]; @symbol_param<0> = [screenManager,6,24,37]; ]
+    function initialize(screenManager) as Void {
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_old_DemoDelegate_mc_6_39_9_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\old\DemoDelegate.mc" 7 8 ]
+        symbol [ BehaviorDelegate %tmp.2 7 8 24 ];
+        %tmp.2 = getv ? :BehaviorDelegate;
+        symbol [ initialize %tmp.3 7 25 35 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\old\DemoDelegate.mc" 8 8 ]
+        %tmp.4 = lgetv %screenManager;
+        symbol [ screenManager %tmp.4 8 25 38 ];
+        symbol [ _screenManager ? 8 8 22 ];
+        putv self :_screenManager %tmp.4;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_old_DemoDelegate_mc_6_39_9_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\old\DemoDelegate.mc"; @line = 11; @symbol_functiondef = [onKey,11,13,18]; @symbol_param<0> = [keyEvent,11,19,27]; ]
+    function onKey(keyEvent) {
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_old_DemoDelegate_mc_11_29_18_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\old\DemoDelegate.mc" 13 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_old_DemoDelegate_mc_11_29_18_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_old_DemoDelegate_mc_11_29_18_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 13 12 16 ];
+        symbol [ _screenManager %tmp.2 13 19 33 ];
+        %tmp.2 = getv ? :_screenManager;
+        symbol [ getCurrentView %tmp.3 13 34 48 ];
+        %tmp.3 = getv function %tmp.2 :getCurrentView;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        lputv %view.1 %tmp.4;
+        symbol [ view %view.1 13 12 16 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\old\DemoDelegate.mc" 14 8 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_old_DemoDelegate_mc_14_8_16_8_if_stmt:
+        %tmp.5 = lgetv %view.1;
+        symbol [ view %tmp.5 14 12 16 ];
+        symbol [ APIDemoView %tmp.7 14 28 39 ];
+        %tmp.7 = getv ? :APIDemoView;
+        %tmp.8 = isa %tmp.5 %tmp.7;
+        bf %tmp.8 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_old_DemoDelegate_mc_14_8_16_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_old_DemoDelegate_mc_14_8_16_8_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_old_DemoDelegate_mc_14_41_16_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\old\DemoDelegate.mc" 15 12 ]
+        %tmp.9 = lgetv %view.1;
+        symbol [ view %tmp.9 15 19 23 ];
+        %tmp.10 = as %tmp.9 { (APIDemoView) };
+        symbol [ onKey %tmp.11 15 24 29 ];
+        %tmp.11 = getv function %tmp.10 :onKey;
+        %tmp.12 = lgetv %keyEvent;
+        symbol [ keyEvent %tmp.12 15 30 38 ];
+        %tmp.13 = invoke %tmp.10 %tmp.11(%tmp.12);
+        ret %tmp.13;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_old_DemoDelegate_mc_14_41_16_8_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_old_DemoDelegate_mc_14_8_16_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_old_DemoDelegate_mc_14_8_16_8_if_end:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\old\DemoDelegate.mc" 17 8 ]
+        %tmp.14 = false;
+        ret %tmp.14;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_old_DemoDelegate_mc_11_29_18_4_stop:
+    }
+}
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\old\DemoDelegate.mc"; @line = 1; ]
+<init> {
+}

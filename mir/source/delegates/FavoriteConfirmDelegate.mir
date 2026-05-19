@@ -1,0 +1,104 @@
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\FavoriteConfirmDelegate.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [WatchUi,1,13,20]; ]
+using Toybox.WatchUi;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\FavoriteConfirmDelegate.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [Application,2,13,24]; ]
+using Toybox.Application;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\FavoriteConfirmDelegate.mc"; @line = 4; @symbol_classdef = [FavoriteConfirmDelegate,4,6,29]; @symbol_extends<0> = [WatchUi,4,38,45]; @symbol_extends<1> = [ConfirmationDelegate,4,46,66]; ]
+class FavoriteConfirmDelegate extends WatchUi.ConfirmationDelegate {
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\FavoriteConfirmDelegate.mc"; @line = 4; ]
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\FavoriteConfirmDelegate.mc"; @line = 4; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\FavoriteConfirmDelegate.mc"; @line = 5; @position = 15; @symbol_vardef = [_courseId,5,15,24]; ]
+    protected
+    var _courseId;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\FavoriteConfirmDelegate.mc"; @line = 6; @position = 15; @symbol_vardef = [_courseName,6,15,26]; ]
+    protected
+    var _courseName;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\FavoriteConfirmDelegate.mc"; @line = 7; @position = 15; @symbol_vardef = [_onDone,7,15,22]; ]
+    protected
+    var _onDone;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\FavoriteConfirmDelegate.mc"; @line = 9; @symbol_functiondef = [initialize,9,13,23]; @symbol_param<0> = [courseId,9,24,32]; @symbol_param<1> = [courseName,9,34,44]; @symbol_param<2> = [onDone,9,46,52]; ]
+    function initialize(courseId, courseName, onDone) as Void {
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_FavoriteConfirmDelegate_mc_9_54_14_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\FavoriteConfirmDelegate.mc" 10 8 ]
+        symbol [ ConfirmationDelegate %tmp.2 10 8 28 ];
+        %tmp.2 = getv ? :ConfirmationDelegate;
+        symbol [ initialize %tmp.3 10 29 39 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\FavoriteConfirmDelegate.mc" 11 8 ]
+        %tmp.4 = lgetv %courseId;
+        symbol [ courseId %tmp.4 11 22 30 ];
+        symbol [ _courseId ? 11 8 17 ];
+        putv self :_courseId %tmp.4;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\FavoriteConfirmDelegate.mc" 12 8 ]
+        %tmp.5 = lgetv %courseName;
+        symbol [ courseName %tmp.5 12 22 32 ];
+        symbol [ _courseName ? 12 8 19 ];
+        putv self :_courseName %tmp.5;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\FavoriteConfirmDelegate.mc" 13 8 ]
+        %tmp.6 = lgetv %onDone;
+        symbol [ onDone %tmp.6 13 22 28 ];
+        symbol [ _onDone ? 13 8 15 ];
+        putv self :_onDone %tmp.6;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_FavoriteConfirmDelegate_mc_9_54_14_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\FavoriteConfirmDelegate.mc"; @line = 16; @symbol_functiondef = [onResponse,16,13,23]; @symbol_param<0> = [response,16,24,32]; ]
+    function onResponse(response) {
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_FavoriteConfirmDelegate_mc_16_34_23_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\FavoriteConfirmDelegate.mc" 17 8 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_FavoriteConfirmDelegate_mc_17_8_22_8_if_stmt:
+        %tmp.1 = lgetv %response;
+        symbol [ response %tmp.1 17 12 20 ];
+        symbol [ WatchUi %tmp.2 17 24 31 ];
+        %tmp.2 = getm $.Toybox.WatchUi;
+        symbol [ CONFIRM_YES %tmp.3 17 32 43 ];
+        %tmp.3 = getv %tmp.2 :CONFIRM_YES;
+        %tmp.4 = eq %tmp.1 %tmp.3;
+        bf %tmp.4 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_FavoriteConfirmDelegate_mc_17_8_22_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_FavoriteConfirmDelegate_mc_17_8_22_8_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_FavoriteConfirmDelegate_mc_17_45_22_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\FavoriteConfirmDelegate.mc" 18 12 ]
+        symbol [ Application %tmp.5 18 12 23 ];
+        %tmp.5 = getm $.Toybox.Application;
+        symbol [ getApp %tmp.6 18 24 30 ];
+        %tmp.6 = getv function %tmp.5 :getApp;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        symbol [ toggleFavoriteCourse %tmp.8 18 33 53 ];
+        %tmp.8 = getv function %tmp.7 :toggleFavoriteCourse;
+        symbol [ _courseId %tmp.10 18 54 63 ];
+        %tmp.10 = getv ? :_courseId;
+        symbol [ _courseName %tmp.12 18 65 76 ];
+        %tmp.12 = getv ? :_courseName;
+        invoke %tmp.7 %tmp.8(%tmp.10, %tmp.12);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\FavoriteConfirmDelegate.mc" 19 12 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_FavoriteConfirmDelegate_mc_19_12_21_12_if_stmt:
+        symbol [ _onDone %tmp.14 19 16 23 ];
+        %tmp.14 = getv ? :_onDone;
+        %tmp.15 = null;
+        %tmp.16 = ne %tmp.14 %tmp.15;
+        bf %tmp.16 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_FavoriteConfirmDelegate_mc_19_12_21_12_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_FavoriteConfirmDelegate_mc_19_12_21_12_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_FavoriteConfirmDelegate_mc_19_33_21_12_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\FavoriteConfirmDelegate.mc" 20 16 ]
+        symbol [ _onDone %tmp.18 20 16 23 ];
+        %tmp.18 = getv ? :_onDone;
+        %tmp.19 = as %tmp.18 { (!Null) };
+        symbol [ invoke %tmp.20 20 24 30 ];
+        %tmp.20 = getv function %tmp.19 :invoke;
+        invoke %tmp.19 %tmp.20();
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_FavoriteConfirmDelegate_mc_19_33_21_12_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_FavoriteConfirmDelegate_mc_19_12_21_12_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_FavoriteConfirmDelegate_mc_19_12_21_12_if_end:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_FavoriteConfirmDelegate_mc_17_45_22_8_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_FavoriteConfirmDelegate_mc_17_8_22_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_FavoriteConfirmDelegate_mc_17_8_22_8_if_end:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_FavoriteConfirmDelegate_mc_16_34_23_4_stop:
+    }
+}
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\FavoriteConfirmDelegate.mc"; @line = 1; ]
+<init> {
+}

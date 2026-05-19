@@ -1,0 +1,127 @@
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\MyCoursesView.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [WatchUi,1,13,20]; ]
+using Toybox.WatchUi;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\MyCoursesView.mc"; @line = 3; @symbol_classdef = [MyCoursesView,3,6,19]; @symbol_extends<0> = [WatchUi,3,28,35]; @symbol_extends<1> = [Menu2,3,36,41]; ]
+class MyCoursesView extends WatchUi.Menu2 {
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\MyCoursesView.mc"; @line = 3; ]
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\MyCoursesView.mc"; @line = 3; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\MyCoursesView.mc"; @line = 4; @symbol_functiondef = [initialize,4,13,23]; @symbol_param<0> = [favs,4,24,28]; ]
+    function initialize(favs) as Void {
+C__Users_roset_OneDrive_Desktop_garmin_source_views_MyCoursesView_mc_4_30_15_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\MyCoursesView.mc" 5 8 ]
+        symbol [ Menu2 %tmp.2 5 8 13 ];
+        %tmp.2 = getv ? :Menu2;
+        symbol [ initialize %tmp.3 5 14 24 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        %tmp.4 = newd 1;
+        %tmp.6 = const :title;
+        symbol [ title %tmp.6 5 27 32 const ];
+        %tmp.7 = "My Courses";
+        %tmp.8 = dup %tmp.4;
+        %tmp.9 = aputv %tmp.8 %tmp.6 %tmp.7;
+        invoke %tmp.2 %tmp.3(%tmp.9);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\MyCoursesView.mc" 7 8 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_views_MyCoursesView_mc_7_8_10_8_if_stmt:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_MyCoursesView_mc_7_12_7_43_begin:
+        %tmp.10 = lgetv %favs;
+        symbol [ favs %tmp.10 7 12 16 ];
+        %tmp.11 = null;
+        %tmp.12 = eq %tmp.10 %tmp.11;
+        bt %tmp.12 @C__Users_roset_OneDrive_Desktop_garmin_source_views_MyCoursesView_mc_7_8_10_8_if_true;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_MyCoursesView_mc_7_28_7_43_false:
+        %tmp.13 = lgetv %favs;
+        symbol [ favs %tmp.13 7 28 32 ];
+        %tmp.14 = as %tmp.13 { (!Null) };
+        symbol [ size %tmp.15 7 33 37 ];
+        %tmp.15 = getv function %tmp.14 :size;
+        %tmp.16 = invoke %tmp.14 %tmp.15();
+        %tmp.17 = 0;
+        %tmp.18 = eq %tmp.16 %tmp.17;
+        push %tmp.18;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_MyCoursesView_mc_7_28_7_43_end:
+        %tmp.19 = phi [%tmp.12 @C__Users_roset_OneDrive_Desktop_garmin_source_views_MyCoursesView_mc_7_12_7_43_begin] [%tmp.18 @C__Users_roset_OneDrive_Desktop_garmin_source_views_MyCoursesView_mc_7_28_7_43_false] [%tmp.19 @C__Users_roset_OneDrive_Desktop_garmin_source_views_MyCoursesView_mc_7_28_7_43_end];
+        bf %tmp.19 @C__Users_roset_OneDrive_Desktop_garmin_source_views_MyCoursesView_mc_7_8_10_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_MyCoursesView_mc_7_8_10_8_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_MyCoursesView_mc_7_46_10_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\MyCoursesView.mc" 8 12 ]
+        %tmp.20 = self;
+        symbol [ addItem %tmp.21 8 12 19 ];
+        %tmp.21 = getv function %tmp.20 :addItem;
+        symbol [ WatchUi %tmp.24 8 24 31 ];
+        %tmp.24 = getm $.Toybox.WatchUi;
+        symbol [ MenuItem %tmp.25 8 32 40 ];
+        %tmp.25 = getv function ? %tmp.24 :MenuItem;
+        %tmp.26 = "No favorites yet";
+        %tmp.27 = "Hold a course to add";
+        %tmp.29 = const :empty;
+        symbol [ empty %tmp.29 8 86 91 const ];
+        %tmp.30 = newd 0;
+        %tmp.22 = newc %tmp.25 (%tmp.26, %tmp.27, %tmp.29, %tmp.30);
+        invoke %tmp.20 %tmp.21(%tmp.22);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\MyCoursesView.mc" 9 12 ]
+        ret ?;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_MyCoursesView_mc_7_46_10_8_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_views_MyCoursesView_mc_7_8_10_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_MyCoursesView_mc_7_8_10_8_if_end:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\MyCoursesView.mc" 12 8 ]
+        for @C__Users_roset_OneDrive_Desktop_garmin_source_views_MyCoursesView_mc_12_8_14_8_for_test @C__Users_roset_OneDrive_Desktop_garmin_source_views_MyCoursesView_mc_12_8_14_8_for_incr @C__Users_roset_OneDrive_Desktop_garmin_source_views_MyCoursesView_mc_12_8_14_8_for_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_MyCoursesView_mc_12_8_14_8_for_init:
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_MyCoursesView_mc_12_8_14_8_for_begin" "C__Users_roset_OneDrive_Desktop_garmin_source_views_MyCoursesView_mc_12_8_14_8_for_end" ]
+        %i.1 = local;
+        symbol [ i %i.1 12 17 18 ];
+        %tmp.31 = 0;
+        lputv %i.1 %tmp.31;
+        symbol [ i %i.1 12 17 18 ];
+C__Users_roset_OneDrive_Desktop_garmin_source_views_MyCoursesView_mc_12_8_14_8_for_test:
+        %tmp.32 = lgetv %i.1;
+        symbol [ i %tmp.32 12 24 25 ];
+        %tmp.33 = lgetv %favs;
+        symbol [ favs %tmp.33 12 28 32 ];
+        symbol [ size %tmp.34 12 33 37 ];
+        %tmp.34 = getv function %tmp.33 :size;
+        %tmp.35 = invoke %tmp.33 %tmp.34();
+        %tmp.36 = lt %tmp.32 %tmp.35;
+        bf %tmp.36 @C__Users_roset_OneDrive_Desktop_garmin_source_views_MyCoursesView_mc_12_8_14_8_for_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_MyCoursesView_mc_12_8_14_8_for_begin:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_MyCoursesView_mc_12_46_14_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\MyCoursesView.mc" 13 12 ]
+        %tmp.37 = self;
+        symbol [ addItem %tmp.38 13 12 19 ];
+        %tmp.38 = getv function %tmp.37 :addItem;
+        symbol [ WatchUi %tmp.41 13 24 31 ];
+        %tmp.41 = getm $.Toybox.WatchUi;
+        symbol [ MenuItem %tmp.42 13 32 40 ];
+        %tmp.42 = getv function ? %tmp.41 :MenuItem;
+        %tmp.43 = lgetv %favs;
+        symbol [ favs %tmp.43 13 41 45 ];
+        %tmp.44 = lgetv %i.1;
+        symbol [ i %tmp.44 13 46 47 ];
+        %tmp.45 = agetv %tmp.43 %tmp.44;
+        %tmp.46 = "name";
+        %tmp.47 = agetv %tmp.45 %tmp.46;
+        %tmp.48 = "?";
+        %tmp.49 = lgetv %i.1;
+        symbol [ i %tmp.49 13 63 64 ];
+        %tmp.50 = newd 0;
+        %tmp.39 = newc %tmp.42 (%tmp.47, %tmp.48, %tmp.49, %tmp.50);
+        invoke %tmp.37 %tmp.38(%tmp.39);
+C__Users_roset_OneDrive_Desktop_garmin_source_views_MyCoursesView_mc_12_46_14_8_stop:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_MyCoursesView_mc_12_8_14_8_for_incr:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\MyCoursesView.mc" 12 ]
+        %tmp.53 = lgetv %i.1;
+        symbol [ i %tmp.53 12 41 42 ];
+        %tmp.54 = add %tmp.53 1;
+        lputv %i.1 %tmp.54;
+        symbol [ i %i.1 12 41 42 ];
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_views_MyCoursesView_mc_12_8_14_8_for_test;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_MyCoursesView_mc_12_8_14_8_for_end:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_MyCoursesView_mc_4_30_15_4_stop:
+    }
+}
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\MyCoursesView.mc"; @line = 1; ]
+<init> {
+}

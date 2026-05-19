@@ -1,0 +1,637 @@
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [WatchUi,1,13,20]; ]
+using Toybox.WatchUi;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [Application,2,13,24]; ]
+using Toybox.Application;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc"; @line = 4; @symbol_classdef = [SearchResultsDelegate,4,6,27]; @symbol_extends<0> = [WatchUi,4,36,43]; @symbol_extends<1> = [Menu2InputDelegate,4,44,62]; ]
+class SearchResultsDelegate extends WatchUi.Menu2InputDelegate {
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc"; @line = 4; ]
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc"; @line = 4; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc"; @line = 5; @position = 15; @symbol_vardef = [_results,5,15,23]; ]
+    protected
+    var _results;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc"; @line = 7; @symbol_functiondef = [initialize,7,13,23]; @symbol_param<0> = [results,7,24,31]; ]
+    function initialize(results) as Void {
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_7_33_10_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 8 8 ]
+        symbol [ Menu2InputDelegate %tmp.2 8 8 26 ];
+        %tmp.2 = getv ? :Menu2InputDelegate;
+        symbol [ initialize %tmp.3 8 27 37 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 9 8 ]
+        %tmp.4 = lgetv %results;
+        symbol [ results %tmp.4 9 19 26 ];
+        symbol [ _results ? 9 8 16 ];
+        putv self :_results %tmp.4;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_7_33_10_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc"; @line = 12; @symbol_functiondef = [onSelect,12,13,21]; @symbol_param<0> = [item,12,22,26]; ]
+    function onSelect(item) {
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_12_28_28_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 13 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_12_28_28_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_12_28_28_4_stop" ]
+        %id.1 = local;
+        symbol [ id %id.1 13 12 14 ];
+        %tmp.1 = lgetv %item;
+        symbol [ item %tmp.1 13 17 21 ];
+        symbol [ getId %tmp.2 13 22 27 ];
+        %tmp.2 = getv function %tmp.1 :getId;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %id.1 %tmp.3;
+        symbol [ id %id.1 13 12 14 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 14 8 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_14_8_16_8_if_stmt:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_14_12_14_94_begin:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_14_12_14_66_begin:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_14_12_14_49_begin:
+        %tmp.4 = lgetv %id.1;
+        symbol [ id %tmp.4 14 12 14 ];
+        %tmp.6 = const :none;
+        symbol [ none %tmp.6 14 19 23 const ];
+        %tmp.7 = eq %tmp.4 %tmp.6;
+        bt %tmp.7 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_14_8_16_8_if_true;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_14_27_14_49_false:
+        %tmp.8 = lgetv %id.1;
+        symbol [ id %tmp.8 14 29 31 ];
+        symbol [ Number %tmp.10 14 43 49 ];
+        %tmp.10 = getv ? :Number;
+        %tmp.11 = isa %tmp.8 %tmp.10;
+        %tmp.12 = not %tmp.11;
+        push %tmp.12;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_14_27_14_49_end:
+        %tmp.13 = phi [%tmp.7 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_14_12_14_49_begin] [%tmp.12 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_14_27_14_49_false] [%tmp.13 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_14_27_14_49_end];
+        bt %tmp.13 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_14_8_16_8_if_true;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_14_54_14_66_false:
+        symbol [ _results %tmp.15 14 54 62 ];
+        %tmp.15 = getv ? :_results;
+        %tmp.16 = null;
+        %tmp.17 = eq %tmp.15 %tmp.16;
+        push %tmp.17;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_14_54_14_66_end:
+        %tmp.18 = phi [%tmp.13 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_14_12_14_66_begin] [%tmp.17 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_14_54_14_66_false] [%tmp.18 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_14_54_14_66_end];
+        bt %tmp.18 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_14_8_16_8_if_true;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_14_74_14_94_false:
+        %tmp.19 = lgetv %id.1;
+        symbol [ id %tmp.19 14 74 76 ];
+        %tmp.20 = as %tmp.19 { (Number) };
+        symbol [ _results %tmp.22 14 80 88 ];
+        %tmp.22 = getv ? :_results;
+        %tmp.23 = as %tmp.22 { (!Null) };
+        symbol [ size %tmp.24 14 89 93 ];
+        %tmp.24 = getv function %tmp.23 :size;
+        %tmp.25 = invoke %tmp.23 %tmp.24();
+        %tmp.26 = gte %tmp.20 %tmp.25;
+        push %tmp.26;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_14_74_14_94_end:
+        %tmp.27 = phi [%tmp.18 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_14_12_14_94_begin] [%tmp.26 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_14_74_14_94_false] [%tmp.27 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_14_74_14_94_end];
+        bf %tmp.27 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_14_8_16_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_14_8_16_8_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_14_97_16_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 15 12 ]
+        ret ?;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_14_97_16_8_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_14_8_16_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_14_8_16_8_if_end:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 17 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_12_28_28_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_12_28_28_4_stop" ]
+        %course.2 = local;
+        symbol [ course %course.2 17 12 18 ];
+        symbol [ _results %tmp.29 17 21 29 ];
+        %tmp.29 = getv ? :_results;
+        %tmp.30 = lgetv %id.1;
+        symbol [ id %tmp.30 17 30 32 ];
+        %tmp.31 = agetv %tmp.29 %tmp.30;
+        lputv %course.2 %tmp.31;
+        symbol [ course %course.2 17 12 18 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 18 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_12_28_28_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_12_28_28_4_stop" ]
+        %app.3 = local;
+        symbol [ app %app.3 18 12 15 ];
+        symbol [ Application %tmp.32 18 21 32 ];
+        %tmp.32 = getm $.Toybox.Application;
+        symbol [ getApp %tmp.33 18 33 39 ];
+        %tmp.33 = getv function %tmp.32 :getApp;
+        %tmp.34 = invoke %tmp.32 %tmp.33();
+        lputv %app.3 %tmp.34;
+        symbol [ app %app.3 18 12 15 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 19 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_12_28_28_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_12_28_28_4_stop" ]
+        %isFav.4 = local;
+        symbol [ isFav %isFav.4 19 12 17 ];
+        %tmp.35 = lgetv %app.3;
+        symbol [ app %tmp.35 19 21 24 ];
+        symbol [ isFavoriteCourse %tmp.36 19 25 41 ];
+        %tmp.36 = getv function %tmp.35 :isFavoriteCourse;
+        %tmp.37 = lgetv %course.2;
+        symbol [ course %tmp.37 19 42 48 ];
+        %tmp.38 = "id";
+        %tmp.39 = agetv %tmp.37 %tmp.38;
+        %tmp.40 = invoke %tmp.35 %tmp.36(%tmp.39);
+        lputv %isFav.4 %tmp.40;
+        symbol [ isFav %isFav.4 19 12 17 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 20 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_12_28_28_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_12_28_28_4_stop" ]
+        %menu.5 = local;
+        symbol [ menu %menu.5 20 12 16 ];
+        symbol [ WatchUi %tmp.43 20 25 32 ];
+        %tmp.43 = getm $.Toybox.WatchUi;
+        symbol [ Menu2 %tmp.44 20 33 38 ];
+        %tmp.44 = getv function ? %tmp.43 :Menu2;
+        %tmp.45 = newd 1;
+        %tmp.47 = const :title;
+        symbol [ title %tmp.47 20 41 46 const ];
+        %tmp.48 = lgetv %course.2;
+        symbol [ course %tmp.48 20 50 56 ];
+        %tmp.49 = "name";
+        %tmp.50 = agetv %tmp.48 %tmp.49;
+        %tmp.51 = dup %tmp.45;
+        %tmp.52 = aputv %tmp.51 %tmp.47 %tmp.50;
+        %tmp.41 = newc %tmp.44 (%tmp.52);
+        lputv %menu.5 %tmp.41;
+        symbol [ menu %menu.5 20 12 16 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 21 8 ]
+        %tmp.53 = lgetv %menu.5;
+        symbol [ menu %tmp.53 21 8 12 ];
+        symbol [ addItem %tmp.54 21 13 20 ];
+        %tmp.54 = getv function %tmp.53 :addItem;
+        symbol [ WatchUi %tmp.57 21 25 32 ];
+        %tmp.57 = getm $.Toybox.WatchUi;
+        symbol [ MenuItem %tmp.58 21 33 41 ];
+        %tmp.58 = getv function ? %tmp.57 :MenuItem;
+        %tmp.59 = "Start Round";
+        %tmp.60 = null;
+        %tmp.62 = const :startRound;
+        symbol [ startRound %tmp.62 21 74 84 const ];
+        %tmp.63 = newd 0;
+        %tmp.55 = newc %tmp.58 (%tmp.59, %tmp.60, %tmp.62, %tmp.63);
+        invoke %tmp.53 %tmp.54(%tmp.55);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 22 8 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_22_8_26_8_if_stmt:
+        %tmp.64 = lgetv %isFav.4;
+        symbol [ isFav %tmp.64 22 12 17 ];
+        bf %tmp.64 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_22_8_26_8_if_else_false;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_22_8_26_8_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_22_19_24_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 23 12 ]
+        %tmp.65 = lgetv %menu.5;
+        symbol [ menu %tmp.65 23 12 16 ];
+        symbol [ addItem %tmp.66 23 17 24 ];
+        %tmp.66 = getv function %tmp.65 :addItem;
+        symbol [ WatchUi %tmp.69 23 29 36 ];
+        %tmp.69 = getm $.Toybox.WatchUi;
+        symbol [ MenuItem %tmp.70 23 37 45 ];
+        %tmp.70 = getv function ? %tmp.69 :MenuItem;
+        %tmp.71 = "Remove from My Courses";
+        %tmp.72 = "★";
+        %tmp.74 = const :toggleFav;
+        symbol [ toggleFav %tmp.74 23 79 88 const ];
+        %tmp.75 = newd 0;
+        %tmp.67 = newc %tmp.70 (%tmp.71, %tmp.72, %tmp.74, %tmp.75);
+        invoke %tmp.65 %tmp.66(%tmp.67);
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_22_19_24_8_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_22_8_26_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_22_8_26_8_if_else_false:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_24_15_26_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 25 12 ]
+        %tmp.76 = lgetv %menu.5;
+        symbol [ menu %tmp.76 25 12 16 ];
+        symbol [ addItem %tmp.77 25 17 24 ];
+        %tmp.77 = getv function %tmp.76 :addItem;
+        symbol [ WatchUi %tmp.80 25 29 36 ];
+        %tmp.80 = getm $.Toybox.WatchUi;
+        symbol [ MenuItem %tmp.81 25 37 45 ];
+        %tmp.81 = getv function ? %tmp.80 :MenuItem;
+        %tmp.82 = "Add to My Courses";
+        %tmp.83 = null;
+        %tmp.85 = const :toggleFav;
+        symbol [ toggleFav %tmp.85 25 79 88 const ];
+        %tmp.86 = newd 0;
+        %tmp.78 = newc %tmp.81 (%tmp.82, %tmp.83, %tmp.85, %tmp.86);
+        invoke %tmp.76 %tmp.77(%tmp.78);
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_24_15_26_8_stop:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_22_8_26_8_if_end:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 27 8 ]
+        symbol [ WatchUi %tmp.87 27 8 15 ];
+        %tmp.87 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.88 27 16 24 ];
+        %tmp.88 = getv function %tmp.87 :pushView;
+        %tmp.89 = lgetv %menu.5;
+        symbol [ menu %tmp.89 27 25 29 ];
+        symbol [ CourseActionDelegate %tmp.93 27 35 55 ];
+        %tmp.93 = getv ? :CourseActionDelegate;
+        %tmp.94 = lgetv %course.2;
+        symbol [ course %tmp.94 27 56 62 ];
+        %tmp.95 = null;
+        %tmp.96 = null;
+        %tmp.97 = self;
+        symbol [ method %tmp.98 27 76 82 ];
+        %tmp.98 = getv function %tmp.97 :method;
+        %tmp.100 = const :_startRound;
+        symbol [ _startRound %tmp.100 27 84 95 const ];
+        %tmp.101 = invoke %tmp.97 %tmp.98(%tmp.100);
+        %tmp.90 = newc %tmp.93 (%tmp.94, %tmp.95, %tmp.96, %tmp.101);
+        symbol [ WatchUi %tmp.102 27 99 106 ];
+        %tmp.102 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_UP %tmp.103 27 107 115 ];
+        %tmp.103 = getv %tmp.102 :SLIDE_UP;
+        invoke %tmp.87 %tmp.88(%tmp.89, %tmp.90, %tmp.103);
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_12_28_28_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc"; @line = 30; @symbol_functiondef = [_startRound,30,13,24]; @symbol_param<0> = [courseId,30,25,33]; @symbol_param<1> = [name,30,35,39]; ]
+    function _startRound(courseId, name) {
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_30_41_36_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 31 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_30_41_36_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_30_41_36_4_stop" ]
+        %app.1 = local;
+        symbol [ app %app.1 31 12 15 ];
+        symbol [ Application %tmp.1 31 18 29 ];
+        %tmp.1 = getm $.Toybox.Application;
+        symbol [ getApp %tmp.2 31 30 36 ];
+        %tmp.2 = getv function %tmp.1 :getApp;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %app.1 %tmp.3;
+        symbol [ app %app.1 31 12 15 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 32 8 ]
+        %tmp.4 = lgetv %app.1;
+        symbol [ app %tmp.4 32 8 11 ];
+        symbol [ setSelectedCourse %tmp.5 32 12 29 ];
+        %tmp.5 = getv function %tmp.4 :setSelectedCourse;
+        %tmp.6 = lgetv %courseId;
+        symbol [ courseId %tmp.6 32 30 38 ];
+        %tmp.7 = lgetv %name;
+        symbol [ name %tmp.7 32 40 44 ];
+        invoke %tmp.4 %tmp.5(%tmp.6, %tmp.7);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 33 8 ]
+        symbol [ WatchUi %tmp.8 33 8 15 ];
+        %tmp.8 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.9 33 16 23 ];
+        %tmp.9 = getv function %tmp.8 :popView;
+        symbol [ WatchUi %tmp.10 33 24 31 ];
+        %tmp.10 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_DOWN %tmp.11 33 32 42 ];
+        %tmp.11 = getv %tmp.10 :SLIDE_DOWN;
+        invoke %tmp.8 %tmp.9(%tmp.11);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 34 8 ]
+        symbol [ WatchUi %tmp.12 34 8 15 ];
+        %tmp.12 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.13 34 16 24 ];
+        %tmp.13 = getv function %tmp.12 :pushView;
+        symbol [ LoadingView %tmp.17 34 29 40 ];
+        %tmp.17 = getv ? :LoadingView;
+        %tmp.18 = "Loading teesets...";
+        %tmp.14 = newc %tmp.17 (%tmp.18);
+        symbol [ LoadingDelegate %tmp.22 34 68 83 ];
+        %tmp.22 = getv ? :LoadingDelegate;
+        %tmp.19 = newc %tmp.22 ();
+        symbol [ WatchUi %tmp.23 34 87 94 ];
+        %tmp.23 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_LEFT %tmp.24 34 95 105 ];
+        %tmp.24 = getv %tmp.23 :SLIDE_LEFT;
+        invoke %tmp.12 %tmp.13(%tmp.14, %tmp.19, %tmp.24);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 35 8 ]
+        %tmp.25 = lgetv %app.1;
+        symbol [ app %tmp.25 35 8 11 ];
+        symbol [ _apiClient %tmp.26 35 12 22 ];
+        %tmp.26 = getv %tmp.25 :_apiClient;
+        symbol [ fetchTeesetsForCourse %tmp.27 35 23 44 ];
+        %tmp.27 = getv function %tmp.26 :fetchTeesetsForCourse;
+        %tmp.28 = lgetv %courseId;
+        symbol [ courseId %tmp.28 35 45 53 ];
+        %tmp.29 = self;
+        symbol [ method %tmp.30 35 55 61 ];
+        %tmp.30 = getv function %tmp.29 :method;
+        %tmp.32 = const :onTeesetsLoaded;
+        symbol [ onTeesetsLoaded %tmp.32 35 63 78 const ];
+        %tmp.33 = invoke %tmp.29 %tmp.30(%tmp.32);
+        invoke %tmp.26 %tmp.27(%tmp.28, %tmp.33);
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_30_41_36_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc"; @line = 38; @symbol_functiondef = [onTeesetsLoaded,38,13,28]; @symbol_param<0> = [teesets,38,29,36]; ]
+    function onTeesetsLoaded(teesets) {
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_38_38_51_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 39 8 ]
+        symbol [ WatchUi %tmp.1 39 8 15 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.2 39 16 23 ];
+        %tmp.2 = getv function %tmp.1 :popView;
+        symbol [ WatchUi %tmp.3 39 24 31 ];
+        %tmp.3 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_DOWN %tmp.4 39 32 42 ];
+        %tmp.4 = getv %tmp.3 :SLIDE_DOWN;
+        invoke %tmp.1 %tmp.2(%tmp.4);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 40 8 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_40_8_50_8_if_stmt:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_40_12_40_48_begin:
+        %tmp.5 = lgetv %teesets;
+        symbol [ teesets %tmp.5 40 12 19 ];
+        %tmp.6 = null;
+        %tmp.7 = ne %tmp.5 %tmp.6;
+        bf %tmp.7 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_40_8_50_8_if_else_false;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_40_31_40_48_true:
+        %tmp.8 = lgetv %teesets;
+        symbol [ teesets %tmp.8 40 31 38 ];
+        %tmp.9 = as %tmp.8 { (!Null) };
+        symbol [ size %tmp.10 40 39 43 ];
+        %tmp.10 = getv function %tmp.9 :size;
+        %tmp.11 = invoke %tmp.9 %tmp.10();
+        %tmp.12 = 0;
+        %tmp.13 = gt %tmp.11 %tmp.12;
+        push %tmp.13;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_40_31_40_48_end:
+        %tmp.14 = phi [%tmp.7 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_40_12_40_48_begin] [%tmp.13 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_40_31_40_48_true] [%tmp.14 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_40_31_40_48_end];
+        bf %tmp.14 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_40_8_50_8_if_else_false;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_40_8_50_8_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_40_51_47_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 41 12 ]
+        symbol [ Application %tmp.15 41 12 23 ];
+        %tmp.15 = getm $.Toybox.Application;
+        symbol [ getApp %tmp.16 41 24 30 ];
+        %tmp.16 = getv function %tmp.15 :getApp;
+        %tmp.17 = invoke %tmp.15 %tmp.16();
+        symbol [ Application %tmp.19 41 12 23 ];
+        %tmp.19 = getm $.Toybox.Application;
+        symbol [ getApp %tmp.20 41 24 30 ];
+        %tmp.20 = getv function %tmp.19 :getApp;
+        %tmp.21 = invoke %tmp.19 %tmp.20();
+        symbol [ _roundFlowDepth %tmp.22 41 33 48 ];
+        %tmp.22 = getv %tmp.21 :_roundFlowDepth;
+        %tmp.23 = add %tmp.22 1;
+        symbol [ _roundFlowDepth ? 41 33 48 ];
+        putv %tmp.17 :_roundFlowDepth dup %tmp.23;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 42 12 ]
+        symbol [ WatchUi %tmp.24 42 12 19 ];
+        %tmp.24 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.25 42 20 28 ];
+        %tmp.25 = getv function %tmp.24 :pushView;
+        symbol [ TeesetPickerView %tmp.29 43 20 36 ];
+        %tmp.29 = getv ? :TeesetPickerView;
+        %tmp.30 = lgetv %teesets;
+        symbol [ teesets %tmp.30 43 37 44 ];
+        %tmp.31 = as %tmp.30 { (!Null) };
+        %tmp.26 = newc %tmp.29 (%tmp.31);
+        symbol [ TeesetMenuDelegate %tmp.35 44 20 38 ];
+        %tmp.35 = getv ? :TeesetMenuDelegate;
+        %tmp.36 = lgetv %teesets;
+        symbol [ teesets %tmp.36 44 39 46 ];
+        %tmp.37 = as %tmp.36 { (!Null) };
+        %tmp.32 = newc %tmp.35 (%tmp.37);
+        symbol [ WatchUi %tmp.38 45 16 23 ];
+        %tmp.38 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_LEFT %tmp.39 45 24 34 ];
+        %tmp.39 = getv %tmp.38 :SLIDE_LEFT;
+        invoke %tmp.24 %tmp.25(%tmp.26, %tmp.32, %tmp.39);
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_40_51_47_8_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_40_8_50_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_40_8_50_8_if_else_false:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_47_15_50_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 48 12 ]
+        symbol [ System %tmp.41 48 12 18 ];
+        %tmp.41 = getv ? :System;
+        symbol [ println %tmp.42 48 19 26 ];
+        %tmp.42 = getv function %tmp.41 :println;
+        %tmp.43 = "TEESETS: none found, starting round without teeset";
+        invoke %tmp.41 %tmp.42(%tmp.43);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 49 12 ]
+        symbol [ Application %tmp.44 49 12 23 ];
+        %tmp.44 = getm $.Toybox.Application;
+        symbol [ getApp %tmp.45 49 24 30 ];
+        %tmp.45 = getv function %tmp.44 :getApp;
+        %tmp.46 = invoke %tmp.44 %tmp.45();
+        symbol [ startRound %tmp.47 49 33 43 ];
+        %tmp.47 = getv function %tmp.46 :startRound;
+        invoke %tmp.46 %tmp.47();
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_47_15_50_8_stop:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_40_8_50_8_if_end:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_38_38_51_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc"; @line = 53; @symbol_functiondef = [onHold,53,13,19]; @symbol_param<0> = [item,53,20,24]; ]
+    function onHold(item) {
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_53_26_67_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 54 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_53_26_67_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_53_26_67_4_stop" ]
+        %id.1 = local;
+        symbol [ id %id.1 54 12 14 ];
+        %tmp.1 = lgetv %item;
+        symbol [ item %tmp.1 54 17 21 ];
+        symbol [ getId %tmp.2 54 22 27 ];
+        %tmp.2 = getv function %tmp.1 :getId;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %id.1 %tmp.3;
+        symbol [ id %id.1 54 12 14 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 55 8 ]
+        symbol [ System %tmp.5 55 8 14 ];
+        %tmp.5 = getv ? :System;
+        symbol [ println %tmp.6 55 15 22 ];
+        %tmp.6 = getv function %tmp.5 :println;
+        %tmp.7 = "HOLD: onHold triggered in SearchResults, id=";
+        %tmp.8 = lgetv %id.1;
+        symbol [ id %tmp.8 55 72 74 ];
+        %tmp.9 = add %tmp.7 %tmp.8;
+        invoke %tmp.5 %tmp.6(%tmp.9);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 56 8 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_56_8_56_107_if_stmt:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_56_12_56_94_begin:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_56_12_56_66_begin:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_56_12_56_49_begin:
+        %tmp.10 = lgetv %id.1;
+        symbol [ id %tmp.10 56 12 14 ];
+        %tmp.12 = const :none;
+        symbol [ none %tmp.12 56 19 23 const ];
+        %tmp.13 = eq %tmp.10 %tmp.12;
+        bt %tmp.13 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_56_8_56_107_if_true;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_56_27_56_49_false:
+        %tmp.14 = lgetv %id.1;
+        symbol [ id %tmp.14 56 29 31 ];
+        symbol [ Number %tmp.16 56 43 49 ];
+        %tmp.16 = getv ? :Number;
+        %tmp.17 = isa %tmp.14 %tmp.16;
+        %tmp.18 = not %tmp.17;
+        push %tmp.18;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_56_27_56_49_end:
+        %tmp.19 = phi [%tmp.13 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_56_12_56_49_begin] [%tmp.18 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_56_27_56_49_false] [%tmp.19 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_56_27_56_49_end];
+        bt %tmp.19 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_56_8_56_107_if_true;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_56_54_56_66_false:
+        symbol [ _results %tmp.21 56 54 62 ];
+        %tmp.21 = getv ? :_results;
+        %tmp.22 = null;
+        %tmp.23 = eq %tmp.21 %tmp.22;
+        push %tmp.23;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_56_54_56_66_end:
+        %tmp.24 = phi [%tmp.19 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_56_12_56_66_begin] [%tmp.23 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_56_54_56_66_false] [%tmp.24 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_56_54_56_66_end];
+        bt %tmp.24 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_56_8_56_107_if_true;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_56_74_56_94_false:
+        %tmp.25 = lgetv %id.1;
+        symbol [ id %tmp.25 56 74 76 ];
+        %tmp.26 = as %tmp.25 { (Number) };
+        symbol [ _results %tmp.28 56 80 88 ];
+        %tmp.28 = getv ? :_results;
+        %tmp.29 = as %tmp.28 { (!Null) };
+        symbol [ size %tmp.30 56 89 93 ];
+        %tmp.30 = getv function %tmp.29 :size;
+        %tmp.31 = invoke %tmp.29 %tmp.30();
+        %tmp.32 = gte %tmp.26 %tmp.31;
+        push %tmp.32;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_56_74_56_94_end:
+        %tmp.33 = phi [%tmp.24 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_56_12_56_94_begin] [%tmp.32 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_56_74_56_94_false] [%tmp.33 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_56_74_56_94_end];
+        bf %tmp.33 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_56_8_56_107_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_56_8_56_107_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_56_97_56_107_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 56 99 ]
+        ret ?;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_56_97_56_107_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_56_8_56_107_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_56_8_56_107_if_end:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 57 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_53_26_67_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_53_26_67_4_stop" ]
+        %course.2 = local;
+        symbol [ course %course.2 57 12 18 ];
+        symbol [ _results %tmp.35 57 21 29 ];
+        %tmp.35 = getv ? :_results;
+        %tmp.36 = lgetv %id.1;
+        symbol [ id %tmp.36 57 30 32 ];
+        %tmp.37 = agetv %tmp.35 %tmp.36;
+        lputv %course.2 %tmp.37;
+        symbol [ course %course.2 57 12 18 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 58 8 ]
+        symbol [ System %tmp.39 58 8 14 ];
+        %tmp.39 = getv ? :System;
+        symbol [ println %tmp.40 58 15 22 ];
+        %tmp.40 = getv function %tmp.39 :println;
+        %tmp.41 = "HOLD: showing confirmation for ";
+        %tmp.42 = lgetv %course.2;
+        symbol [ course %tmp.42 58 59 65 ];
+        %tmp.43 = "name";
+        %tmp.44 = agetv %tmp.42 %tmp.43;
+        %tmp.45 = add %tmp.41 %tmp.44;
+        invoke %tmp.39 %tmp.40(%tmp.45);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 59 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_53_26_67_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_53_26_67_4_stop" ]
+        %app.3 = local;
+        symbol [ app %app.3 59 12 15 ];
+        symbol [ Application %tmp.46 59 21 32 ];
+        %tmp.46 = getm $.Toybox.Application;
+        symbol [ getApp %tmp.47 59 33 39 ];
+        %tmp.47 = getv function %tmp.46 :getApp;
+        %tmp.48 = invoke %tmp.46 %tmp.47();
+        lputv %app.3 %tmp.48;
+        symbol [ app %app.3 59 12 15 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 60 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_53_26_67_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_53_26_67_4_stop" ]
+        %prompt.4 = local;
+        symbol [ prompt %prompt.4 60 12 18 ];
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_60_21_60_126_begin:
+        %tmp.49 = lgetv %app.3;
+        symbol [ app %tmp.49 60 21 24 ];
+        symbol [ isFavoriteCourse %tmp.50 60 25 41 ];
+        %tmp.50 = getv function %tmp.49 :isFavoriteCourse;
+        %tmp.51 = lgetv %course.2;
+        symbol [ course %tmp.51 60 42 48 ];
+        %tmp.52 = "id";
+        %tmp.53 = agetv %tmp.51 %tmp.52;
+        %tmp.54 = invoke %tmp.49 %tmp.50(%tmp.53);
+        bf %tmp.54 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_60_21_60_126_else_false;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_60_21_60_126_true:
+        %tmp.55 = "Remove\n";
+        %tmp.56 = lgetv %course.2;
+        symbol [ course %tmp.56 60 71 77 ];
+        %tmp.57 = "name";
+        %tmp.58 = agetv %tmp.56 %tmp.57;
+        %tmp.59 = add %tmp.55 %tmp.58;
+        %tmp.60 = "?";
+        %tmp.61 = add %tmp.59 %tmp.60;
+        push %tmp.61;
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_60_21_60_126_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_60_21_60_126_else_false:
+        %tmp.62 = "Favorite\n";
+        %tmp.63 = lgetv %course.2;
+        symbol [ course %tmp.63 60 109 115 ];
+        %tmp.64 = "name";
+        %tmp.65 = agetv %tmp.63 %tmp.64;
+        %tmp.66 = add %tmp.62 %tmp.65;
+        %tmp.67 = "?";
+        %tmp.68 = add %tmp.66 %tmp.67;
+        push %tmp.68;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_60_21_60_126_end:
+        %tmp.69 = phi [%tmp.54 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_60_21_60_126_begin] [%tmp.61 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_60_21_60_126_true] [%tmp.68 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_60_21_60_126_else_false] [%tmp.69 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_60_21_60_126_end];
+        lputv %prompt.4 %tmp.69;
+        symbol [ prompt %prompt.4 60 12 18 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 61 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_53_26_67_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_53_26_67_4_stop" ]
+        %dialog.5 = local;
+        symbol [ dialog %dialog.5 61 12 18 ];
+        symbol [ WatchUi %tmp.72 61 25 32 ];
+        %tmp.72 = getm $.Toybox.WatchUi;
+        symbol [ Confirmation %tmp.73 61 33 45 ];
+        %tmp.73 = getv function ? %tmp.72 :Confirmation;
+        %tmp.74 = lgetv %prompt.4;
+        symbol [ prompt %tmp.74 61 46 52 ];
+        %tmp.70 = newc %tmp.73 (%tmp.74);
+        lputv %dialog.5 %tmp.70;
+        symbol [ dialog %dialog.5 61 12 18 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 62 8 ]
+        symbol [ WatchUi %tmp.75 62 8 15 ];
+        %tmp.75 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.76 62 16 24 ];
+        %tmp.76 = getv function %tmp.75 :pushView;
+        %tmp.77 = lgetv %dialog.5;
+        symbol [ dialog %tmp.77 63 12 18 ];
+        symbol [ FavoriteConfirmDelegate %tmp.81 64 16 39 ];
+        %tmp.81 = getv ? :FavoriteConfirmDelegate;
+        %tmp.82 = lgetv %course.2;
+        symbol [ course %tmp.82 64 40 46 ];
+        %tmp.83 = "id";
+        %tmp.84 = agetv %tmp.82 %tmp.83;
+        %tmp.85 = lgetv %course.2;
+        symbol [ course %tmp.85 64 54 60 ];
+        %tmp.86 = "name";
+        %tmp.87 = agetv %tmp.85 %tmp.86;
+        %tmp.88 = self;
+        symbol [ method %tmp.89 64 70 76 ];
+        %tmp.89 = getv function %tmp.88 :method;
+        %tmp.91 = const :onFavToggled;
+        symbol [ onFavToggled %tmp.91 64 78 90 const ];
+        %tmp.92 = invoke %tmp.88 %tmp.89(%tmp.91);
+        %tmp.78 = newc %tmp.81 (%tmp.84, %tmp.87, %tmp.92);
+        symbol [ WatchUi %tmp.93 65 12 19 ];
+        %tmp.93 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_UP %tmp.94 65 20 28 ];
+        %tmp.94 = getv %tmp.93 :SLIDE_UP;
+        invoke %tmp.75 %tmp.76(%tmp.77, %tmp.78, %tmp.94);
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_53_26_67_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc"; @line = 69; @symbol_functiondef = [onFavToggled,69,13,25]; ]
+    function onFavToggled() {
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_69_28_71_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 70 8 ]
+        symbol [ System %tmp.2 70 8 14 ];
+        %tmp.2 = getv ? :System;
+        symbol [ println %tmp.3 70 15 22 ];
+        %tmp.3 = getv function %tmp.2 :println;
+        %tmp.4 = "SEARCH: fav toggled";
+        invoke %tmp.2 %tmp.3(%tmp.4);
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_69_28_71_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc"; @line = 73; @symbol_functiondef = [onBack,73,13,19]; ]
+    function onBack() {
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_73_22_75_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc" 74 8 ]
+        symbol [ WatchUi %tmp.1 74 8 15 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.2 74 16 23 ];
+        %tmp.2 = getv function %tmp.1 :popView;
+        symbol [ WatchUi %tmp.3 74 24 31 ];
+        %tmp.3 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_RIGHT %tmp.4 74 32 43 ];
+        %tmp.4 = getv %tmp.3 :SLIDE_RIGHT;
+        invoke %tmp.1 %tmp.2(%tmp.4);
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_SearchResultsDelegate_mc_73_22_75_4_stop:
+    }
+}
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\SearchResultsDelegate.mc"; @line = 1; ]
+<init> {
+}

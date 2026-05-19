@@ -1,0 +1,601 @@
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [WatchUi,1,13,20]; @symbol_usingAlias = [Ui,1,24,26]; ]
+using Toybox.WatchUi as :Ui;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [System,2,13,19]; @symbol_usingAlias = [Sys,2,23,26]; ]
+using Toybox.System as :Sys;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc"; @line = 4; @symbol_classdef = [ScreenManager,4,6,19]; ]
+class ScreenManager {
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc"; @line = 4; ]
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc"; @line = 4; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc"; @line = 5; @position = 15; @symbol_vardef = [_currentView,5,15,27]; ]
+    protected
+    var _currentView;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc"; @line = 6; @position = 15; @symbol_vardef = [_currentDelegate,6,15,31]; ]
+    protected
+    var _currentDelegate;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc"; @line = 7; @position = 15; @symbol_vardef = [_initialView,7,15,27]; ]
+    protected
+    var _initialView;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc"; @line = 8; @position = 15; @symbol_vardef = [_initialDelegate,8,15,31]; ]
+    protected
+    var _initialDelegate;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc"; @line = 10; @symbol_functiondef = [initialize,10,13,23]; ]
+    function initialize() as Void {
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_10_26_15_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 11 8 ]
+        symbol [ HomeView %tmp.4 11 31 39 ];
+        %tmp.4 = getv ? :HomeView;
+        %tmp.1 = newc %tmp.4 ();
+        symbol [ _initialView ? 11 8 20 ];
+        putv self :_initialView %tmp.1;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 12 8 ]
+        symbol [ _initialView %tmp.6 12 27 39 ];
+        %tmp.6 = getv ? :_initialView;
+        symbol [ _currentView ? 12 8 20 ];
+        putv self :_currentView %tmp.6;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 13 8 ]
+        symbol [ HomeDelegate %tmp.10 13 31 43 ];
+        %tmp.10 = getv ? :HomeDelegate;
+        %tmp.11 = self;
+        symbol [ self %tmp.11 13 44 48 ];
+        %tmp.7 = newc %tmp.10 (%tmp.11);
+        symbol [ _initialDelegate ? 13 8 24 ];
+        putv self :_initialDelegate %tmp.7;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 14 8 ]
+        symbol [ _initialDelegate %tmp.13 14 27 43 ];
+        %tmp.13 = getv ? :_initialDelegate;
+        symbol [ _currentDelegate ? 14 8 24 ];
+        putv self :_currentDelegate %tmp.13;
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_10_26_15_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc"; @line = 18; @symbol_functiondef = [switchView,18,13,23]; @symbol_param<0> = [key,18,24,27]; ]
+    function switchView(key) {
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_18_29_20_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 19 8 ]
+        %tmp.1 = false;
+        ret %tmp.1;
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_18_29_20_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc"; @line = 21; @symbol_functiondef = [getCurrentView,21,13,27]; ]
+    function getCurrentView() {
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_21_30_23_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 22 8 ]
+        symbol [ _currentView %tmp.2 22 15 27 ];
+        %tmp.2 = getv ? :_currentView;
+        ret %tmp.2;
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_21_30_23_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc"; @line = 25; @symbol_functiondef = [getCurrentDelegate,25,13,31]; ]
+    function getCurrentDelegate() {
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_25_34_27_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 26 8 ]
+        symbol [ _currentDelegate %tmp.2 26 15 31 ];
+        %tmp.2 = getv ? :_currentDelegate;
+        ret %tmp.2;
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_25_34_27_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc"; @line = 29; @symbol_functiondef = [getInitialView,29,13,27]; ]
+    function getInitialView() {
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_29_30_31_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 30 8 ]
+        symbol [ _initialView %tmp.2 30 15 27 ];
+        %tmp.2 = getv ? :_initialView;
+        ret %tmp.2;
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_29_30_31_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc"; @line = 33; @symbol_functiondef = [getInitialDelegate,33,13,31]; ]
+    function getInitialDelegate() {
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_33_34_35_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 34 8 ]
+        symbol [ _initialDelegate %tmp.2 34 15 31 ];
+        %tmp.2 = getv ? :_initialDelegate;
+        ret %tmp.2;
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_33_34_35_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc"; @line = 37; @symbol_functiondef = [startRound,37,13,23]; ]
+    function startRound() {
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_37_26_54_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 38 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_37_26_54_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_37_26_54_4_stop" ]
+        %app.1 = local;
+        symbol [ app %app.1 38 12 15 ];
+        symbol [ Application %tmp.2 38 18 29 ];
+        %tmp.2 = getv ? :Application;
+        symbol [ getApp %tmp.3 38 30 36 ];
+        %tmp.3 = getv function %tmp.2 :getApp;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        lputv %app.1 %tmp.4;
+        symbol [ app %app.1 38 12 15 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 39 8 ]
+        %tmp.5 = lgetv %app.1;
+        symbol [ app %tmp.5 39 8 11 ];
+        symbol [ RoundState %tmp.9 39 30 40 ];
+        %tmp.9 = getv ? :RoundState;
+        %tmp.6 = newc %tmp.9 ();
+        symbol [ _roundState ? 39 12 23 ];
+        putv %tmp.5 :_roundState %tmp.6;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 40 8 ]
+        %tmp.10 = lgetv %app.1;
+        symbol [ app %tmp.10 40 8 11 ];
+        symbol [ startTimer %tmp.11 40 12 22 ];
+        %tmp.11 = getv function %tmp.10 :startTimer;
+        invoke %tmp.10 %tmp.11();
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 41 8 ]
+        %tmp.12 = lgetv %app.1;
+        symbol [ app %tmp.12 41 8 11 ];
+        symbol [ startPositioning %tmp.13 41 12 28 ];
+        %tmp.13 = getv function %tmp.12 :startPositioning;
+        invoke %tmp.12 %tmp.13();
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 42 8 ]
+        %tmp.14 = lgetv %app.1;
+        symbol [ app %tmp.14 42 8 11 ];
+        symbol [ startSwingDetector %tmp.15 42 12 30 ];
+        %tmp.15 = getv function %tmp.14 :startSwingDetector;
+        invoke %tmp.14 %tmp.15();
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 44 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_37_26_54_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_37_26_54_4_stop" ]
+        %newView.2 = local;
+        symbol [ newView %newView.2 44 12 19 ];
+        symbol [ ActiveHoleView %tmp.19 44 26 40 ];
+        %tmp.19 = getv ? :ActiveHoleView;
+        %tmp.16 = newc %tmp.19 ();
+        lputv %newView.2 %tmp.16;
+        symbol [ newView %newView.2 44 12 19 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 45 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_37_26_54_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_37_26_54_4_stop" ]
+        %newDelegate.3 = local;
+        symbol [ newDelegate %newDelegate.3 45 12 23 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 46 8 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_46_8_50_8_if_stmt:
+        %tmp.20 = lgetv %app.1;
+        symbol [ app %tmp.20 46 12 15 ];
+        symbol [ isTouchInputMode %tmp.21 46 16 32 ];
+        %tmp.21 = getv function %tmp.20 :isTouchInputMode;
+        %tmp.22 = invoke %tmp.20 %tmp.21();
+        bf %tmp.22 @C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_46_8_50_8_if_else_false;
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_46_8_50_8_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_46_36_48_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 47 12 ]
+        symbol [ ActiveHoleTouchDelegate %tmp.26 47 30 53 ];
+        %tmp.26 = getv ? :ActiveHoleTouchDelegate;
+        %tmp.27 = self;
+        symbol [ self %tmp.27 47 54 58 ];
+        %tmp.23 = newc %tmp.26 (%tmp.27);
+        lputv %newDelegate.3 %tmp.23;
+        symbol [ newDelegate %newDelegate.3 47 12 23 ];
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_46_36_48_8_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_46_8_50_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_46_8_50_8_if_else_false:
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_48_15_50_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 49 12 ]
+        symbol [ ActiveHoleDelegate %tmp.31 49 30 48 ];
+        %tmp.31 = getv ? :ActiveHoleDelegate;
+        %tmp.32 = self;
+        symbol [ self %tmp.32 49 49 53 ];
+        %tmp.28 = newc %tmp.31 (%tmp.32);
+        lputv %newDelegate.3 %tmp.28;
+        symbol [ newDelegate %newDelegate.3 49 12 23 ];
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_48_15_50_8_stop:
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_46_8_50_8_if_end:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 51 8 ]
+        %tmp.33 = lgetv %newView.2;
+        symbol [ newView %tmp.33 51 27 34 ];
+        symbol [ _currentView ? 51 8 20 ];
+        putv self :_currentView %tmp.33;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 52 8 ]
+        %tmp.34 = lgetv %newDelegate.3;
+        symbol [ newDelegate %tmp.34 52 27 38 ];
+        symbol [ _currentDelegate ? 52 8 24 ];
+        putv self :_currentDelegate %tmp.34;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 53 8 ]
+        symbol [ Ui %tmp.35 53 8 10 ];
+        %tmp.35 = getm $.Toybox.WatchUi;
+        symbol [ switchToView %tmp.36 53 11 23 ];
+        %tmp.36 = getv function %tmp.35 :switchToView;
+        %tmp.37 = lgetv %newView.2;
+        symbol [ newView %tmp.37 53 24 31 ];
+        %tmp.38 = lgetv %newDelegate.3;
+        symbol [ newDelegate %tmp.38 53 33 44 ];
+        symbol [ Ui %tmp.39 53 46 48 ];
+        %tmp.39 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_LEFT %tmp.40 53 49 59 ];
+        %tmp.40 = getv %tmp.39 :SLIDE_LEFT;
+        invoke %tmp.35 %tmp.36(%tmp.37, %tmp.38, %tmp.40);
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_37_26_54_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc"; @line = 56; @symbol_functiondef = [goToLoading,56,13,24]; ]
+    function goToLoading() {
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_56_27_68_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 57 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_56_27_68_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_56_27_68_4_stop" ]
+        %app.1 = local;
+        symbol [ app %app.1 57 12 15 ];
+        symbol [ Application %tmp.2 57 20 31 ];
+        %tmp.2 = getv ? :Application;
+        symbol [ getApp %tmp.3 57 32 38 ];
+        %tmp.3 = getv function %tmp.2 :getApp;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        lputv %app.1 %tmp.4;
+        symbol [ app %app.1 57 12 15 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 58 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_56_27_68_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_56_27_68_4_stop" ]
+        %depth.2 = local;
+        symbol [ depth %depth.2 58 12 17 ];
+        %tmp.5 = lgetv %app.1;
+        symbol [ app %tmp.5 58 20 23 ];
+        symbol [ _roundFlowDepth %tmp.6 58 24 39 ];
+        %tmp.6 = getv %tmp.5 :_roundFlowDepth;
+        lputv %depth.2 %tmp.6;
+        symbol [ depth %depth.2 58 12 17 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 59 8 ]
+        %tmp.7 = lgetv %app.1;
+        symbol [ app %tmp.7 59 8 11 ];
+        %tmp.8 = 0;
+        symbol [ _roundFlowDepth ? 59 12 27 ];
+        putv %tmp.7 :_roundFlowDepth %tmp.8;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 60 8 ]
+        for @C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_60_8_62_8_for_test @C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_60_8_62_8_for_incr @C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_60_8_62_8_for_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_60_8_62_8_for_init:
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_60_8_62_8_for_begin" "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_60_8_62_8_for_end" ]
+        %i.3 = local;
+        symbol [ i %i.3 60 17 18 ];
+        %tmp.9 = 0;
+        lputv %i.3 %tmp.9;
+        symbol [ i %i.3 60 17 18 ];
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_60_8_62_8_for_test:
+        %tmp.10 = lgetv %i.3;
+        symbol [ i %tmp.10 60 24 25 ];
+        %tmp.11 = lgetv %depth.2;
+        symbol [ depth %tmp.11 60 28 33 ];
+        %tmp.12 = lt %tmp.10 %tmp.11;
+        bf %tmp.12 @C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_60_8_62_8_for_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_60_8_62_8_for_begin:
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_60_40_62_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 61 12 ]
+        symbol [ WatchUi %tmp.14 61 12 19 ];
+        %tmp.14 = getv ? :WatchUi;
+        symbol [ popView %tmp.15 61 20 27 ];
+        %tmp.15 = getv function %tmp.14 :popView;
+        symbol [ WatchUi %tmp.17 61 28 35 ];
+        %tmp.17 = getv ? :WatchUi;
+        symbol [ SLIDE_IMMEDIATE %tmp.18 61 36 51 ];
+        %tmp.18 = getv %tmp.17 :SLIDE_IMMEDIATE;
+        invoke %tmp.14 %tmp.15(%tmp.18);
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_60_40_62_8_stop:
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_60_8_62_8_for_incr:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 60 ]
+        %tmp.21 = lgetv %i.3;
+        symbol [ i %tmp.21 60 35 36 ];
+        %tmp.22 = add %tmp.21 1;
+        lputv %i.3 %tmp.22;
+        symbol [ i %i.3 60 35 36 ];
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_60_8_62_8_for_test;
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_60_8_62_8_for_end:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 63 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_56_27_68_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_56_27_68_4_stop" ]
+        %newView.4 = local;
+        symbol [ newView %newView.4 63 12 19 ];
+        symbol [ HomeView %tmp.26 63 31 39 ];
+        %tmp.26 = getv ? :HomeView;
+        %tmp.23 = newc %tmp.26 ();
+        lputv %newView.4 %tmp.23;
+        symbol [ newView %newView.4 63 12 19 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 64 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_56_27_68_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_56_27_68_4_stop" ]
+        %newDelegate.5 = local;
+        symbol [ newDelegate %newDelegate.5 64 12 23 ];
+        symbol [ HomeDelegate %tmp.30 64 31 43 ];
+        %tmp.30 = getv ? :HomeDelegate;
+        %tmp.31 = self;
+        symbol [ self %tmp.31 64 44 48 ];
+        %tmp.27 = newc %tmp.30 (%tmp.31);
+        lputv %newDelegate.5 %tmp.27;
+        symbol [ newDelegate %newDelegate.5 64 12 23 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 65 8 ]
+        %tmp.32 = lgetv %newView.4;
+        symbol [ newView %tmp.32 65 27 34 ];
+        symbol [ _currentView ? 65 8 20 ];
+        putv self :_currentView %tmp.32;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 66 8 ]
+        %tmp.33 = lgetv %newDelegate.5;
+        symbol [ newDelegate %tmp.33 66 27 38 ];
+        symbol [ _currentDelegate ? 66 8 24 ];
+        putv self :_currentDelegate %tmp.33;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 67 8 ]
+        symbol [ WatchUi %tmp.35 67 8 15 ];
+        %tmp.35 = getv ? :WatchUi;
+        symbol [ switchToView %tmp.36 67 16 28 ];
+        %tmp.36 = getv function %tmp.35 :switchToView;
+        %tmp.37 = lgetv %newView.4;
+        symbol [ newView %tmp.37 67 29 36 ];
+        %tmp.38 = lgetv %newDelegate.5;
+        symbol [ newDelegate %tmp.38 67 38 49 ];
+        symbol [ WatchUi %tmp.40 67 51 58 ];
+        %tmp.40 = getv ? :WatchUi;
+        symbol [ SLIDE_RIGHT %tmp.41 67 59 70 ];
+        %tmp.41 = getv %tmp.40 :SLIDE_RIGHT;
+        invoke %tmp.35 %tmp.36(%tmp.37, %tmp.38, %tmp.41);
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_56_27_68_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc"; @line = 70; @symbol_functiondef = [goToRoundSummary,70,13,29]; ]
+    function goToRoundSummary() {
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_70_32_77_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 71 8 ]
+        symbol [ Application %tmp.2 71 8 19 ];
+        %tmp.2 = getv ? :Application;
+        symbol [ getApp %tmp.3 71 20 26 ];
+        %tmp.3 = getv function %tmp.2 :getApp;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        symbol [ stopSwingDetector %tmp.5 71 29 46 ];
+        %tmp.5 = getv function %tmp.4 :stopSwingDetector;
+        invoke %tmp.4 %tmp.5();
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 72 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_70_32_77_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_70_32_77_4_stop" ]
+        %newView.1 = local;
+        symbol [ newView %newView.1 72 12 19 ];
+        symbol [ RoundSummaryView %tmp.9 72 31 47 ];
+        %tmp.9 = getv ? :RoundSummaryView;
+        %tmp.6 = newc %tmp.9 ();
+        lputv %newView.1 %tmp.6;
+        symbol [ newView %newView.1 72 12 19 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 73 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_70_32_77_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_70_32_77_4_stop" ]
+        %newDelegate.2 = local;
+        symbol [ newDelegate %newDelegate.2 73 12 23 ];
+        symbol [ RoundSummaryDelegate %tmp.13 73 31 51 ];
+        %tmp.13 = getv ? :RoundSummaryDelegate;
+        %tmp.14 = self;
+        symbol [ self %tmp.14 73 52 56 ];
+        %tmp.15 = lgetv %newView.1;
+        symbol [ newView %tmp.15 73 58 65 ];
+        %tmp.10 = newc %tmp.13 (%tmp.14, %tmp.15);
+        lputv %newDelegate.2 %tmp.10;
+        symbol [ newDelegate %newDelegate.2 73 12 23 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 74 8 ]
+        %tmp.16 = lgetv %newView.1;
+        symbol [ newView %tmp.16 74 27 34 ];
+        symbol [ _currentView ? 74 8 20 ];
+        putv self :_currentView %tmp.16;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 75 8 ]
+        %tmp.17 = lgetv %newDelegate.2;
+        symbol [ newDelegate %tmp.17 75 27 38 ];
+        symbol [ _currentDelegate ? 75 8 24 ];
+        putv self :_currentDelegate %tmp.17;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 76 8 ]
+        symbol [ WatchUi %tmp.19 76 8 15 ];
+        %tmp.19 = getv ? :WatchUi;
+        symbol [ switchToView %tmp.20 76 16 28 ];
+        %tmp.20 = getv function %tmp.19 :switchToView;
+        %tmp.21 = lgetv %newView.1;
+        symbol [ newView %tmp.21 76 29 36 ];
+        %tmp.22 = lgetv %newDelegate.2;
+        symbol [ newDelegate %tmp.22 76 38 49 ];
+        symbol [ WatchUi %tmp.24 76 51 58 ];
+        %tmp.24 = getv ? :WatchUi;
+        symbol [ SLIDE_LEFT %tmp.25 76 59 69 ];
+        %tmp.25 = getv %tmp.24 :SLIDE_LEFT;
+        invoke %tmp.19 %tmp.20(%tmp.21, %tmp.22, %tmp.25);
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_70_32_77_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc"; @line = 79; @symbol_functiondef = [goToSettings,79,13,25]; ]
+    function goToSettings() {
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_79_28_81_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 80 8 ]
+        symbol [ WatchUi %tmp.2 80 8 15 ];
+        %tmp.2 = getv ? :WatchUi;
+        symbol [ pushView %tmp.3 80 16 24 ];
+        %tmp.3 = getv function %tmp.2 :pushView;
+        symbol [ SettingsView %tmp.7 80 29 41 ];
+        %tmp.7 = getv ? :SettingsView;
+        %tmp.4 = newc %tmp.7 ();
+        symbol [ SettingsDelegate %tmp.11 80 49 65 ];
+        %tmp.11 = getv ? :SettingsDelegate;
+        %tmp.12 = self;
+        symbol [ self %tmp.12 80 66 70 ];
+        %tmp.8 = newc %tmp.11 (%tmp.12);
+        symbol [ WatchUi %tmp.14 80 73 80 ];
+        %tmp.14 = getv ? :WatchUi;
+        symbol [ SLIDE_UP %tmp.15 80 81 89 ];
+        %tmp.15 = getv %tmp.14 :SLIDE_UP;
+        invoke %tmp.2 %tmp.3(%tmp.4, %tmp.8, %tmp.15);
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_79_28_81_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc"; @line = 83; @symbol_functiondef = [goToStrokeEntry,83,13,28]; @symbol_param<0> = [holeNumber,83,29,39]; ]
+    function goToStrokeEntry(holeNumber) {
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_83_41_89_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 84 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_83_41_89_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_83_41_89_4_stop" ]
+        %newView.1 = local;
+        symbol [ newView %newView.1 84 12 19 ];
+        symbol [ StrokeEntryView %tmp.4 84 31 46 ];
+        %tmp.4 = getv ? :StrokeEntryView;
+        %tmp.5 = lgetv %holeNumber;
+        symbol [ holeNumber %tmp.5 84 47 57 ];
+        %tmp.1 = newc %tmp.4 (%tmp.5);
+        lputv %newView.1 %tmp.1;
+        symbol [ newView %newView.1 84 12 19 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 85 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_83_41_89_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_83_41_89_4_stop" ]
+        %newDelegate.2 = local;
+        symbol [ newDelegate %newDelegate.2 85 12 23 ];
+        symbol [ StrokeEntryDelegate %tmp.9 85 31 50 ];
+        %tmp.9 = getv ? :StrokeEntryDelegate;
+        %tmp.10 = self;
+        symbol [ self %tmp.10 85 51 55 ];
+        %tmp.11 = lgetv %holeNumber;
+        symbol [ holeNumber %tmp.11 85 57 67 ];
+        %tmp.12 = lgetv %newView.1;
+        symbol [ newView %tmp.12 85 69 76 ];
+        %tmp.6 = newc %tmp.9 (%tmp.10, %tmp.11, %tmp.12);
+        lputv %newDelegate.2 %tmp.6;
+        symbol [ newDelegate %newDelegate.2 85 12 23 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 86 8 ]
+        %tmp.13 = lgetv %newView.1;
+        symbol [ newView %tmp.13 86 27 34 ];
+        symbol [ _currentView ? 86 8 20 ];
+        putv self :_currentView %tmp.13;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 87 8 ]
+        %tmp.14 = lgetv %newDelegate.2;
+        symbol [ newDelegate %tmp.14 87 27 38 ];
+        symbol [ _currentDelegate ? 87 8 24 ];
+        putv self :_currentDelegate %tmp.14;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 88 8 ]
+        symbol [ Ui %tmp.15 88 8 10 ];
+        %tmp.15 = getm $.Toybox.WatchUi;
+        symbol [ switchToView %tmp.16 88 11 23 ];
+        %tmp.16 = getv function %tmp.15 :switchToView;
+        %tmp.17 = lgetv %newView.1;
+        symbol [ newView %tmp.17 88 24 31 ];
+        %tmp.18 = lgetv %newDelegate.2;
+        symbol [ newDelegate %tmp.18 88 33 44 ];
+        symbol [ Ui %tmp.19 88 46 48 ];
+        %tmp.19 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_LEFT %tmp.20 88 49 59 ];
+        %tmp.20 = getv %tmp.19 :SLIDE_LEFT;
+        invoke %tmp.15 %tmp.16(%tmp.17, %tmp.18, %tmp.20);
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_83_41_89_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc"; @line = 91; @symbol_functiondef = [goToActiveHole,91,13,27]; ]
+    function goToActiveHole() {
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_91_30_100_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 92 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_91_30_100_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_91_30_100_4_stop" ]
+        %app.1 = local;
+        symbol [ app %app.1 92 12 15 ];
+        symbol [ Application %tmp.2 92 26 37 ];
+        %tmp.2 = getv ? :Application;
+        symbol [ getApp %tmp.3 92 38 44 ];
+        %tmp.3 = getv function %tmp.2 :getApp;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        lputv %app.1 %tmp.4;
+        symbol [ app %app.1 92 12 15 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 93 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_91_30_100_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_91_30_100_4_stop" ]
+        %newView.2 = local;
+        symbol [ newView %newView.2 93 12 19 ];
+        symbol [ ActiveHoleView %tmp.8 93 30 44 ];
+        %tmp.8 = getv ? :ActiveHoleView;
+        %tmp.5 = newc %tmp.8 ();
+        lputv %newView.2 %tmp.5;
+        symbol [ newView %newView.2 93 12 19 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 94 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_91_30_100_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_91_30_100_4_stop" ]
+        %newDelegate.3 = local;
+        symbol [ newDelegate %newDelegate.3 94 12 23 ];
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_94_26_96_41_begin:
+        %tmp.9 = lgetv %app.1;
+        symbol [ app %tmp.9 94 26 29 ];
+        symbol [ isTouchInputMode %tmp.10 94 30 46 ];
+        %tmp.10 = getv function %tmp.9 :isTouchInputMode;
+        %tmp.11 = invoke %tmp.9 %tmp.10();
+        bf %tmp.11 @C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_94_26_96_41_else_false;
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_94_26_96_41_true:
+        symbol [ ActiveHoleTouchDelegate %tmp.15 95 18 41 ];
+        %tmp.15 = getv ? :ActiveHoleTouchDelegate;
+        %tmp.16 = self;
+        symbol [ self %tmp.16 95 42 46 ];
+        %tmp.12 = newc %tmp.15 (%tmp.16);
+        push %tmp.12;
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_94_26_96_41_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_94_26_96_41_else_false:
+        symbol [ ActiveHoleDelegate %tmp.20 96 18 36 ];
+        %tmp.20 = getv ? :ActiveHoleDelegate;
+        %tmp.21 = self;
+        symbol [ self %tmp.21 96 37 41 ];
+        %tmp.17 = newc %tmp.20 (%tmp.21);
+        push %tmp.17;
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_94_26_96_41_end:
+        %tmp.22 = phi [%tmp.11 @C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_94_26_96_41_begin] [%tmp.12 @C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_94_26_96_41_true] [%tmp.17 @C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_94_26_96_41_else_false] [%tmp.22 @C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_94_26_96_41_end];
+        lputv %newDelegate.3 %tmp.22;
+        symbol [ newDelegate %newDelegate.3 94 12 23 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 97 8 ]
+        %tmp.23 = lgetv %newView.2;
+        symbol [ newView %tmp.23 97 27 34 ];
+        symbol [ _currentView ? 97 8 20 ];
+        putv self :_currentView %tmp.23;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 98 8 ]
+        %tmp.24 = lgetv %newDelegate.3;
+        symbol [ newDelegate %tmp.24 98 27 38 ];
+        symbol [ _currentDelegate ? 98 8 24 ];
+        putv self :_currentDelegate %tmp.24;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 99 8 ]
+        symbol [ Ui %tmp.25 99 8 10 ];
+        %tmp.25 = getm $.Toybox.WatchUi;
+        symbol [ switchToView %tmp.26 99 11 23 ];
+        %tmp.26 = getv function %tmp.25 :switchToView;
+        %tmp.27 = lgetv %newView.2;
+        symbol [ newView %tmp.27 99 24 31 ];
+        %tmp.28 = lgetv %newDelegate.3;
+        symbol [ newDelegate %tmp.28 99 33 44 ];
+        symbol [ Ui %tmp.29 99 46 48 ];
+        %tmp.29 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_RIGHT %tmp.30 99 49 60 ];
+        %tmp.30 = getv %tmp.29 :SLIDE_RIGHT;
+        invoke %tmp.25 %tmp.26(%tmp.27, %tmp.28, %tmp.30);
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_91_30_100_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc"; @line = 102; @symbol_functiondef = [goToHoleStats,102,13,26]; @symbol_param<0> = [roundState,102,27,37]; @symbol_param<1> = [durationMs,102,39,49]; ]
+    function goToHoleStats(roundState, durationMs) {
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_102_51_108_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 103 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_102_51_108_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_102_51_108_4_stop" ]
+        %newView.1 = local;
+        symbol [ newView %newView.1 103 12 19 ];
+        symbol [ HoleStatsView %tmp.4 103 31 44 ];
+        %tmp.4 = getv ? :HoleStatsView;
+        %tmp.5 = lgetv %roundState;
+        symbol [ roundState %tmp.5 103 45 55 ];
+        %tmp.6 = lgetv %durationMs;
+        symbol [ durationMs %tmp.6 103 57 67 ];
+        %tmp.7 = self;
+        symbol [ self %tmp.7 103 69 73 ];
+        %tmp.1 = newc %tmp.4 (%tmp.5, %tmp.6, %tmp.7);
+        lputv %newView.1 %tmp.1;
+        symbol [ newView %newView.1 103 12 19 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 104 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_102_51_108_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_102_51_108_4_stop" ]
+        %newDelegate.2 = local;
+        symbol [ newDelegate %newDelegate.2 104 12 23 ];
+        symbol [ HoleStatsDelegate %tmp.11 104 31 48 ];
+        %tmp.11 = getv ? :HoleStatsDelegate;
+        %tmp.12 = self;
+        symbol [ self %tmp.12 104 49 53 ];
+        %tmp.13 = lgetv %roundState;
+        symbol [ roundState %tmp.13 104 55 65 ];
+        %tmp.8 = newc %tmp.11 (%tmp.12, %tmp.13);
+        lputv %newDelegate.2 %tmp.8;
+        symbol [ newDelegate %newDelegate.2 104 12 23 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 105 8 ]
+        %tmp.14 = lgetv %newView.1;
+        symbol [ newView %tmp.14 105 27 34 ];
+        symbol [ _currentView ? 105 8 20 ];
+        putv self :_currentView %tmp.14;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 106 8 ]
+        %tmp.15 = lgetv %newDelegate.2;
+        symbol [ newDelegate %tmp.15 106 27 38 ];
+        symbol [ _currentDelegate ? 106 8 24 ];
+        putv self :_currentDelegate %tmp.15;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc" 107 8 ]
+        symbol [ Ui %tmp.16 107 8 10 ];
+        %tmp.16 = getm $.Toybox.WatchUi;
+        symbol [ switchToView %tmp.17 107 11 23 ];
+        %tmp.17 = getv function %tmp.16 :switchToView;
+        %tmp.18 = lgetv %newView.1;
+        symbol [ newView %tmp.18 107 24 31 ];
+        %tmp.19 = lgetv %newDelegate.2;
+        symbol [ newDelegate %tmp.19 107 33 44 ];
+        symbol [ Ui %tmp.20 107 46 48 ];
+        %tmp.20 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_UP %tmp.21 107 49 57 ];
+        %tmp.21 = getv %tmp.20 :SLIDE_UP;
+        invoke %tmp.16 %tmp.17(%tmp.18, %tmp.19, %tmp.21);
+C__Users_roset_OneDrive_Desktop_garmin_source_ScreenManager_mc_102_51_108_4_stop:
+    }
+}
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\ScreenManager.mc"; @line = 1; ]
+<init> {
+}

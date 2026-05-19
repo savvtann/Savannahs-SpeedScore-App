@@ -1,0 +1,141 @@
+<resources>
+    <!-- Layout for Page One -->
+    <layout id="PageOne">
+        <!-- Background -->
+        <bitmap
+            id="BackgroundImage"
+            filename="../drawables/background.png"
+            x="center"
+            y="center" />
+
+        <!-- === TOP ROW LABELS === -->
+
+        <!-- Hole number (inside left circle) -->
+        <label
+            id="HoleNumber"
+            text="1"
+            x="50"
+            y="38"
+            font="Graphics.FONT_MEDIUM"
+            color="Graphics.COLOR_WHITE"
+            justification="Graphics.TEXT_JUSTIFY_CENTER" />
+
+        <!-- Par text (inside center rectangle) -->
+        <label
+            id="ParText"
+            text="Par: 4"
+            x="227"
+            y="36"
+            font="Graphics.FONT_SMALL"
+            color="Graphics.COLOR_WHITE"
+            justification="Graphics.TEXT_JUSTIFY_CENTER" />
+
+        <!-- Par differential (inside right circle) -->
+        <label
+            id="ParDiff"
+            text="E"
+            x="404"
+            y="38"
+            font="Graphics.FONT_MEDIUM"
+            color="Graphics.COLOR_WHITE"
+            justification="Graphics.TEXT_JUSTIFY_CENTER" />
+
+        <!-- === CENTER (YARDAGE) === -->
+        <label
+            id="Yards"
+            text="152 Yards"
+            x="center"
+            y="center"
+            font="Graphics.FONT_NUMBER_HOT"
+            color="Graphics.COLOR_WHITE"
+            justification="Graphics.TEXT_JUSTIFY_CENTER" />
+
+        <!-- === BOTTOM ROW === -->
+
+        <!-- Time (centered bottom) -->
+        <label
+            id="Time"
+            text="00:00"
+            x="center"
+            y="80%"
+            font="Graphics.FONT_MEDIUM"
+            color="Graphics.COLOR_LT_GRAY"
+            justification="Graphics.TEXT_JUSTIFY_CENTER" />
+
+        <!-- Strokes (bottom right) -->
+        <label
+            id="Strokes"
+            text="Strokes: 0"
+            x="90%"
+            y="90%"
+            font="Graphics.FONT_SMALL"
+            color="Graphics.COLOR_WHITE"
+            justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+
+        <!-- SpeedScore (bottom left) -->
+        <label
+            id="SpeedScore"
+            text="SCORE: 0.0"
+            x="10%"
+            y="90%"
+            font="Graphics.FONT_SMALL"
+            color="Graphics.COLOR_GREEN"
+            justification="Graphics.TEXT_JUSTIFY_LEFT" />
+    </layout>
+
+    <!-- Layout for Page Two (speed data) -->
+    <layout id="PageTwo">
+            <bitmap
+            id="BackgroundImage"
+            filename="../drawables/background.png"
+            x="center"
+            y="center"
+            
+            />
+        <label 
+            text="Current Speed" 
+            x="center" 
+            y="10" 
+            font="Graphics.FONT_SMALL" />
+        <label 
+            id="SpeedValue"
+            text="0.0" 
+            x="center" 
+            y="center" 
+            font="Graphics.FONT_NUMBER_HOT" />
+    </layout>
+
+    <!-- Layout for Page Three -->
+    <layout id="PageThree">
+            <bitmap
+            id="BackgroundImage"
+            filename="../drawables/background.png"
+            x="center"
+            y="center"
+            
+            />
+        <label 
+            text="Page Three" 
+            x="center" 
+            y="center" 
+            font="Graphics.FONT_MEDIUM" />
+    </layout>
+
+    <!-- Layout for Pretty Page -->
+    <layout id="PrettyPage">
+        <bitmap
+            id="BackgroundImage"
+            filename="../drawables/background.png"
+            x="center"
+            y="center" />
+    </layout>
+
+    <!-- Layout for FinishView Page -->
+    <layout id="FinishPage">
+        <bitmap
+            id="BackgroundImage"
+            filename="../drawables/background.png"
+            x="center"
+            y="center" />
+    </layout>
+</resources>

@@ -1,0 +1,465 @@
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [Attention,1,13,22]; ]
+using Toybox.Attention;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [System,2,13,19]; ]
+using Toybox.System;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc"; @line = 5; @symbol_classdef = [AudioHelper,5,6,17]; ]
+class AudioHelper {
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc"; @line = 5; ]
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc"; @line = 5; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc"; @line = 7; @symbol_functiondef = [playScoreFeedback,7,13,30]; @symbol_param<0> = [strokes,7,31,38]; @symbol_param<1> = [par,7,40,43]; ]
+    function playScoreFeedback(strokes, par) {
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_7_45_30_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc" 8 8 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_8_8_10_8_if_stmt:
+        symbol [ Attention %tmp.1 8 14 23 ];
+        %tmp.1 = getm $.Toybox.Attention;
+        %tmp.3 = const :playTone;
+        symbol [ playTone %tmp.3 8 29 37 const ];
+        %tmp.4 = canhazplz %tmp.1 %tmp.3;
+        %tmp.5 = not %tmp.4;
+        bf %tmp.5 @C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_8_8_10_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_8_8_10_8_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_8_40_10_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc" 9 12 ]
+        ret ?;
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_8_40_10_8_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_8_8_10_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_8_8_10_8_if_end:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc" 12 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_7_45_30_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_7_45_30_4_stop" ]
+        %diff.1 = local;
+        symbol [ diff %diff.1 12 12 16 ];
+        %tmp.6 = lgetv %strokes;
+        symbol [ strokes %tmp.6 12 19 26 ];
+        %tmp.7 = lgetv %par;
+        symbol [ par %tmp.7 12 29 32 ];
+        %tmp.8 = sub %tmp.6 %tmp.7;
+        lputv %diff.1 %tmp.8;
+        symbol [ diff %diff.1 12 12 16 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc" 14 8 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_14_8_29_8_if_stmt:
+        %tmp.9 = lgetv %diff.1;
+        symbol [ diff %tmp.9 14 12 16 ];
+        %tmp.10 = -1;
+        %tmp.11 = lte %tmp.9 %tmp.10;
+        bf %tmp.11 @C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_14_8_29_8_if_false;
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_14_8_29_8_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_14_24_17_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc" 15 12 ]
+        symbol [ Attention %tmp.12 15 12 21 ];
+        %tmp.12 = getm $.Toybox.Attention;
+        symbol [ playTone %tmp.13 15 22 30 ];
+        %tmp.13 = getv function %tmp.12 :playTone;
+        symbol [ Attention %tmp.14 15 31 40 ];
+        %tmp.14 = getm $.Toybox.Attention;
+        symbol [ TONE_SUCCESS %tmp.15 15 41 53 ];
+        %tmp.15 = getv %tmp.14 :TONE_SUCCESS;
+        invoke %tmp.12 %tmp.13(%tmp.15);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc" 16 12 ]
+        symbol [ Attention %tmp.16 16 12 21 ];
+        %tmp.16 = getm $.Toybox.Attention;
+        symbol [ vibrate %tmp.17 16 22 29 ];
+        %tmp.17 = getv function %tmp.16 :vibrate;
+        %tmp.18 = newa 5;
+        symbol [ Attention %tmp.21 16 36 45 ];
+        %tmp.21 = getm $.Toybox.Attention;
+        symbol [ VibeProfile %tmp.22 16 46 57 ];
+        %tmp.22 = getv function ? %tmp.21 :VibeProfile;
+        %tmp.23 = 50;
+        %tmp.24 = 50;
+        %tmp.19 = newc %tmp.22 (%tmp.23, %tmp.24);
+        %tmp.25 = dup %tmp.18;
+        %tmp.26 = aputv %tmp.25 0 %tmp.19;
+        symbol [ Attention %tmp.29 16 71 80 ];
+        %tmp.29 = getm $.Toybox.Attention;
+        symbol [ VibeProfile %tmp.30 16 81 92 ];
+        %tmp.30 = getv function ? %tmp.29 :VibeProfile;
+        %tmp.31 = 0;
+        %tmp.32 = 50;
+        %tmp.27 = newc %tmp.30 (%tmp.31, %tmp.32);
+        %tmp.33 = dup %tmp.26;
+        %tmp.34 = aputv %tmp.33 1 %tmp.27;
+        symbol [ Attention %tmp.37 16 105 114 ];
+        %tmp.37 = getm $.Toybox.Attention;
+        symbol [ VibeProfile %tmp.38 16 115 126 ];
+        %tmp.38 = getv function ? %tmp.37 :VibeProfile;
+        %tmp.39 = 50;
+        %tmp.40 = 50;
+        %tmp.35 = newc %tmp.38 (%tmp.39, %tmp.40);
+        %tmp.41 = dup %tmp.34;
+        %tmp.42 = aputv %tmp.41 2 %tmp.35;
+        symbol [ Attention %tmp.45 16 140 149 ];
+        %tmp.45 = getm $.Toybox.Attention;
+        symbol [ VibeProfile %tmp.46 16 150 161 ];
+        %tmp.46 = getv function ? %tmp.45 :VibeProfile;
+        %tmp.47 = 0;
+        %tmp.48 = 50;
+        %tmp.43 = newc %tmp.46 (%tmp.47, %tmp.48);
+        %tmp.49 = dup %tmp.42;
+        %tmp.50 = aputv %tmp.49 3 %tmp.43;
+        symbol [ Attention %tmp.53 16 174 183 ];
+        %tmp.53 = getm $.Toybox.Attention;
+        symbol [ VibeProfile %tmp.54 16 184 195 ];
+        %tmp.54 = getv function ? %tmp.53 :VibeProfile;
+        %tmp.55 = 50;
+        %tmp.56 = 50;
+        %tmp.51 = newc %tmp.54 (%tmp.55, %tmp.56);
+        %tmp.57 = dup %tmp.50;
+        %tmp.58 = aputv %tmp.57 4 %tmp.51;
+        invoke %tmp.16 %tmp.17(%tmp.58);
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_14_24_17_8_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_14_8_29_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_14_8_29_8_if_false:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc" 18 13 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_18_13_29_8_if_stmt:
+        %tmp.59 = lgetv %diff.1;
+        symbol [ diff %tmp.59 18 17 21 ];
+        %tmp.60 = 0;
+        %tmp.61 = eq %tmp.59 %tmp.60;
+        bf %tmp.61 @C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_18_13_29_8_if_false;
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_18_13_29_8_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_18_28_21_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc" 19 12 ]
+        symbol [ Attention %tmp.62 19 12 21 ];
+        %tmp.62 = getm $.Toybox.Attention;
+        symbol [ playTone %tmp.63 19 22 30 ];
+        %tmp.63 = getv function %tmp.62 :playTone;
+        symbol [ Attention %tmp.64 19 31 40 ];
+        %tmp.64 = getm $.Toybox.Attention;
+        symbol [ TONE_LOUD_BEEP %tmp.65 19 41 55 ];
+        %tmp.65 = getv %tmp.64 :TONE_LOUD_BEEP;
+        invoke %tmp.62 %tmp.63(%tmp.65);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc" 20 12 ]
+        symbol [ Attention %tmp.66 20 12 21 ];
+        %tmp.66 = getm $.Toybox.Attention;
+        symbol [ vibrate %tmp.67 20 22 29 ];
+        %tmp.67 = getv function %tmp.66 :vibrate;
+        %tmp.68 = newa 3;
+        symbol [ Attention %tmp.71 20 36 45 ];
+        %tmp.71 = getm $.Toybox.Attention;
+        symbol [ VibeProfile %tmp.72 20 46 57 ];
+        %tmp.72 = getv function ? %tmp.71 :VibeProfile;
+        %tmp.73 = 50;
+        %tmp.74 = 50;
+        %tmp.69 = newc %tmp.72 (%tmp.73, %tmp.74);
+        %tmp.75 = dup %tmp.68;
+        %tmp.76 = aputv %tmp.75 0 %tmp.69;
+        symbol [ Attention %tmp.79 20 71 80 ];
+        %tmp.79 = getm $.Toybox.Attention;
+        symbol [ VibeProfile %tmp.80 20 81 92 ];
+        %tmp.80 = getv function ? %tmp.79 :VibeProfile;
+        %tmp.81 = 0;
+        %tmp.82 = 50;
+        %tmp.77 = newc %tmp.80 (%tmp.81, %tmp.82);
+        %tmp.83 = dup %tmp.76;
+        %tmp.84 = aputv %tmp.83 1 %tmp.77;
+        symbol [ Attention %tmp.87 20 105 114 ];
+        %tmp.87 = getm $.Toybox.Attention;
+        symbol [ VibeProfile %tmp.88 20 115 126 ];
+        %tmp.88 = getv function ? %tmp.87 :VibeProfile;
+        %tmp.89 = 50;
+        %tmp.90 = 50;
+        %tmp.85 = newc %tmp.88 (%tmp.89, %tmp.90);
+        %tmp.91 = dup %tmp.84;
+        %tmp.92 = aputv %tmp.91 2 %tmp.85;
+        invoke %tmp.66 %tmp.67(%tmp.92);
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_18_28_21_8_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_18_13_29_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_18_13_29_8_if_false:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc" 22 13 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_22_13_29_8_if_stmt:
+        %tmp.93 = lgetv %diff.1;
+        symbol [ diff %tmp.93 22 17 21 ];
+        %tmp.94 = 1;
+        %tmp.95 = eq %tmp.93 %tmp.94;
+        bf %tmp.95 @C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_22_13_29_8_if_else_false;
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_22_13_29_8_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_22_28_25_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc" 23 12 ]
+        symbol [ Attention %tmp.96 23 12 21 ];
+        %tmp.96 = getm $.Toybox.Attention;
+        symbol [ playTone %tmp.97 23 22 30 ];
+        %tmp.97 = getv function %tmp.96 :playTone;
+        symbol [ Attention %tmp.98 23 31 40 ];
+        %tmp.98 = getm $.Toybox.Attention;
+        symbol [ TONE_KEY %tmp.99 23 41 49 ];
+        %tmp.99 = getv %tmp.98 :TONE_KEY;
+        invoke %tmp.96 %tmp.97(%tmp.99);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc" 24 12 ]
+        symbol [ Attention %tmp.100 24 12 21 ];
+        %tmp.100 = getm $.Toybox.Attention;
+        symbol [ vibrate %tmp.101 24 22 29 ];
+        %tmp.101 = getv function %tmp.100 :vibrate;
+        %tmp.102 = newa 1;
+        symbol [ Attention %tmp.105 24 36 45 ];
+        %tmp.105 = getm $.Toybox.Attention;
+        symbol [ VibeProfile %tmp.106 24 46 57 ];
+        %tmp.106 = getv function ? %tmp.105 :VibeProfile;
+        %tmp.107 = 50;
+        %tmp.108 = 200;
+        %tmp.103 = newc %tmp.106 (%tmp.107, %tmp.108);
+        %tmp.109 = dup %tmp.102;
+        %tmp.110 = aputv %tmp.109 0 %tmp.103;
+        invoke %tmp.100 %tmp.101(%tmp.110);
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_22_28_25_8_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_22_13_29_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_22_13_29_8_if_else_false:
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_26_13_29_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc" 27 12 ]
+        symbol [ Attention %tmp.111 27 12 21 ];
+        %tmp.111 = getm $.Toybox.Attention;
+        symbol [ playTone %tmp.112 27 22 30 ];
+        %tmp.112 = getv function %tmp.111 :playTone;
+        symbol [ Attention %tmp.113 27 31 40 ];
+        %tmp.113 = getm $.Toybox.Attention;
+        symbol [ TONE_FAILURE %tmp.114 27 41 53 ];
+        %tmp.114 = getv %tmp.113 :TONE_FAILURE;
+        invoke %tmp.111 %tmp.112(%tmp.114);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc" 28 12 ]
+        symbol [ Attention %tmp.115 28 12 21 ];
+        %tmp.115 = getm $.Toybox.Attention;
+        symbol [ vibrate %tmp.116 28 22 29 ];
+        %tmp.116 = getv function %tmp.115 :vibrate;
+        %tmp.117 = newa 1;
+        symbol [ Attention %tmp.120 28 36 45 ];
+        %tmp.120 = getm $.Toybox.Attention;
+        symbol [ VibeProfile %tmp.121 28 46 57 ];
+        %tmp.121 = getv function ? %tmp.120 :VibeProfile;
+        %tmp.122 = 50;
+        %tmp.123 = 100;
+        %tmp.118 = newc %tmp.121 (%tmp.122, %tmp.123);
+        %tmp.124 = dup %tmp.117;
+        %tmp.125 = aputv %tmp.124 0 %tmp.118;
+        invoke %tmp.115 %tmp.116(%tmp.125);
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_26_13_29_8_stop:
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_22_13_29_8_if_end:
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_18_13_29_8_if_end:
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_14_8_29_8_if_end:
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_7_45_30_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc"; @line = 33; @symbol_functiondef = [holeComplete,33,13,25]; ]
+    function holeComplete() {
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_33_28_41_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc" 34 8 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_34_8_36_8_if_stmt:
+        symbol [ Attention %tmp.1 34 12 21 ];
+        %tmp.1 = getm $.Toybox.Attention;
+        %tmp.3 = const :playTone;
+        symbol [ playTone %tmp.3 34 27 35 const ];
+        %tmp.4 = canhazplz %tmp.1 %tmp.3;
+        bf %tmp.4 @C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_34_8_36_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_34_8_36_8_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_34_37_36_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc" 35 12 ]
+        symbol [ Attention %tmp.5 35 12 21 ];
+        %tmp.5 = getm $.Toybox.Attention;
+        symbol [ playTone %tmp.6 35 22 30 ];
+        %tmp.6 = getv function %tmp.5 :playTone;
+        symbol [ Attention %tmp.7 35 31 40 ];
+        %tmp.7 = getm $.Toybox.Attention;
+        symbol [ TONE_START %tmp.8 35 41 51 ];
+        %tmp.8 = getv %tmp.7 :TONE_START;
+        invoke %tmp.5 %tmp.6(%tmp.8);
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_34_37_36_8_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_34_8_36_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_34_8_36_8_if_end:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc" 38 8 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_38_8_40_8_if_stmt:
+        symbol [ Attention %tmp.9 38 12 21 ];
+        %tmp.9 = getm $.Toybox.Attention;
+        %tmp.11 = const :vibrate;
+        symbol [ vibrate %tmp.11 38 27 34 const ];
+        %tmp.12 = canhazplz %tmp.9 %tmp.11;
+        bf %tmp.12 @C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_38_8_40_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_38_8_40_8_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_38_36_40_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc" 39 12 ]
+        symbol [ Attention %tmp.13 39 12 21 ];
+        %tmp.13 = getm $.Toybox.Attention;
+        symbol [ vibrate %tmp.14 39 22 29 ];
+        %tmp.14 = getv function %tmp.13 :vibrate;
+        %tmp.15 = newa 1;
+        symbol [ Attention %tmp.18 39 36 45 ];
+        %tmp.18 = getm $.Toybox.Attention;
+        symbol [ VibeProfile %tmp.19 39 46 57 ];
+        %tmp.19 = getv function ? %tmp.18 :VibeProfile;
+        %tmp.20 = 50;
+        %tmp.21 = 200;
+        %tmp.16 = newc %tmp.19 (%tmp.20, %tmp.21);
+        %tmp.22 = dup %tmp.15;
+        %tmp.23 = aputv %tmp.22 0 %tmp.16;
+        invoke %tmp.13 %tmp.14(%tmp.23);
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_38_36_40_8_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_38_8_40_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_38_8_40_8_if_end:
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_33_28_41_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc"; @line = 44; @symbol_functiondef = [roundStarted,44,13,25]; ]
+    function roundStarted() {
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_44_28_49_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc" 45 8 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_45_8_48_8_if_stmt:
+        symbol [ Attention %tmp.1 45 12 21 ];
+        %tmp.1 = getm $.Toybox.Attention;
+        %tmp.3 = const :playTone;
+        symbol [ playTone %tmp.3 45 27 35 const ];
+        %tmp.4 = canhazplz %tmp.1 %tmp.3;
+        bf %tmp.4 @C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_45_8_48_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_45_8_48_8_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_45_37_48_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc" 46 12 ]
+        symbol [ Attention %tmp.5 46 12 21 ];
+        %tmp.5 = getm $.Toybox.Attention;
+        symbol [ playTone %tmp.6 46 22 30 ];
+        %tmp.6 = getv function %tmp.5 :playTone;
+        symbol [ Attention %tmp.7 46 31 40 ];
+        %tmp.7 = getm $.Toybox.Attention;
+        symbol [ TONE_LOUD_BEEP %tmp.8 46 41 55 ];
+        %tmp.8 = getv %tmp.7 :TONE_LOUD_BEEP;
+        invoke %tmp.5 %tmp.6(%tmp.8);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc" 47 12 ]
+        symbol [ Attention %tmp.9 47 12 21 ];
+        %tmp.9 = getm $.Toybox.Attention;
+        symbol [ playTone %tmp.10 47 22 30 ];
+        %tmp.10 = getv function %tmp.9 :playTone;
+        symbol [ Attention %tmp.11 47 31 40 ];
+        %tmp.11 = getm $.Toybox.Attention;
+        symbol [ TONE_LOUD_BEEP %tmp.12 47 41 55 ];
+        %tmp.12 = getv %tmp.11 :TONE_LOUD_BEEP;
+        invoke %tmp.9 %tmp.10(%tmp.12);
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_45_37_48_8_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_45_8_48_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_45_8_48_8_if_end:
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_44_28_49_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc"; @line = 52; @symbol_functiondef = [warning,52,13,20]; ]
+    function warning() {
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_52_23_56_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc" 53 8 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_53_8_55_8_if_stmt:
+        symbol [ Attention %tmp.1 53 12 21 ];
+        %tmp.1 = getm $.Toybox.Attention;
+        %tmp.3 = const :playTone;
+        symbol [ playTone %tmp.3 53 27 35 const ];
+        %tmp.4 = canhazplz %tmp.1 %tmp.3;
+        bf %tmp.4 @C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_53_8_55_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_53_8_55_8_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_53_37_55_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc" 54 12 ]
+        symbol [ Attention %tmp.5 54 12 21 ];
+        %tmp.5 = getm $.Toybox.Attention;
+        symbol [ playTone %tmp.6 54 22 30 ];
+        %tmp.6 = getv function %tmp.5 :playTone;
+        symbol [ Attention %tmp.7 54 31 40 ];
+        %tmp.7 = getm $.Toybox.Attention;
+        symbol [ TONE_ERROR %tmp.8 54 41 51 ];
+        %tmp.8 = getv %tmp.7 :TONE_ERROR;
+        invoke %tmp.5 %tmp.6(%tmp.8);
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_53_37_55_8_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_53_8_55_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_53_8_55_8_if_end:
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_52_23_56_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc"; @line = 59; @symbol_functiondef = [confirm,59,13,20]; ]
+    function confirm() {
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_59_23_63_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc" 60 8 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_60_8_62_8_if_stmt:
+        symbol [ Attention %tmp.1 60 12 21 ];
+        %tmp.1 = getm $.Toybox.Attention;
+        %tmp.3 = const :playTone;
+        symbol [ playTone %tmp.3 60 27 35 const ];
+        %tmp.4 = canhazplz %tmp.1 %tmp.3;
+        bf %tmp.4 @C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_60_8_62_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_60_8_62_8_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_60_37_62_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc" 61 12 ]
+        symbol [ Attention %tmp.5 61 12 21 ];
+        %tmp.5 = getm $.Toybox.Attention;
+        symbol [ playTone %tmp.6 61 22 30 ];
+        %tmp.6 = getv function %tmp.5 :playTone;
+        symbol [ Attention %tmp.7 61 31 40 ];
+        %tmp.7 = getm $.Toybox.Attention;
+        symbol [ TONE_KEY %tmp.8 61 41 49 ];
+        %tmp.8 = getv %tmp.7 :TONE_KEY;
+        invoke %tmp.5 %tmp.6(%tmp.8);
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_60_37_62_8_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_60_8_62_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_60_8_62_8_if_end:
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_59_23_63_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc"; @line = 66; @symbol_functiondef = [playChime,66,13,22]; ]
+    function playChime() {
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_66_25_72_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc" 67 8 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_67_8_71_8_if_stmt:
+        symbol [ Attention %tmp.1 67 12 21 ];
+        %tmp.1 = getm $.Toybox.Attention;
+        %tmp.3 = const :playTone;
+        symbol [ playTone %tmp.3 67 27 35 const ];
+        %tmp.4 = canhazplz %tmp.1 %tmp.3;
+        bf %tmp.4 @C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_67_8_71_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_67_8_71_8_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_67_37_71_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc" 69 12 ]
+        symbol [ Attention %tmp.5 69 12 21 ];
+        %tmp.5 = getm $.Toybox.Attention;
+        symbol [ playTone %tmp.6 69 22 30 ];
+        %tmp.6 = getv function %tmp.5 :playTone;
+        symbol [ Attention %tmp.7 69 31 40 ];
+        %tmp.7 = getm $.Toybox.Attention;
+        symbol [ TONE_START %tmp.8 69 41 51 ];
+        %tmp.8 = getv %tmp.7 :TONE_START;
+        invoke %tmp.5 %tmp.6(%tmp.8);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc" 70 12 ]
+        symbol [ Attention %tmp.9 70 12 21 ];
+        %tmp.9 = getm $.Toybox.Attention;
+        symbol [ playTone %tmp.10 70 22 30 ];
+        %tmp.10 = getv function %tmp.9 :playTone;
+        symbol [ Attention %tmp.11 70 31 40 ];
+        %tmp.11 = getm $.Toybox.Attention;
+        symbol [ TONE_LOUD_BEEP %tmp.12 70 41 55 ];
+        %tmp.12 = getv %tmp.11 :TONE_LOUD_BEEP;
+        invoke %tmp.9 %tmp.10(%tmp.12);
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_67_37_71_8_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_67_8_71_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_67_8_71_8_if_end:
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_66_25_72_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc"; @line = 75; @symbol_functiondef = [playError,75,13,22]; ]
+    function playError() {
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_75_25_79_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc" 76 8 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_76_8_78_8_if_stmt:
+        symbol [ Attention %tmp.1 76 12 21 ];
+        %tmp.1 = getm $.Toybox.Attention;
+        %tmp.3 = const :playTone;
+        symbol [ playTone %tmp.3 76 27 35 const ];
+        %tmp.4 = canhazplz %tmp.1 %tmp.3;
+        bf %tmp.4 @C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_76_8_78_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_76_8_78_8_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_76_37_78_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc" 77 12 ]
+        symbol [ Attention %tmp.5 77 12 21 ];
+        %tmp.5 = getm $.Toybox.Attention;
+        symbol [ playTone %tmp.6 77 22 30 ];
+        %tmp.6 = getv function %tmp.5 :playTone;
+        symbol [ Attention %tmp.7 77 31 40 ];
+        %tmp.7 = getm $.Toybox.Attention;
+        symbol [ TONE_FAILURE %tmp.8 77 41 53 ];
+        %tmp.8 = getv %tmp.7 :TONE_FAILURE;
+        invoke %tmp.5 %tmp.6(%tmp.8);
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_76_37_78_8_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_76_8_78_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_76_8_78_8_if_end:
+C__Users_roset_OneDrive_Desktop_garmin_source_Audio_mc_75_25_79_4_stop:
+    }
+}
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\Audio.mc"; @line = 1; ]
+<init> {
+}

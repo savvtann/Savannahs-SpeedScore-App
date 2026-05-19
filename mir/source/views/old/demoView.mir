@@ -1,0 +1,802 @@
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [WatchUi,1,13,20]; ]
+using Toybox.WatchUi;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [Graphics,2,13,21]; ]
+using Toybox.Graphics;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc"; @line = 3; @symbol_usingdef<0> = [Toybox,3,6,12]; @symbol_usingdef<1> = [Application,3,13,24]; ]
+using Toybox.Application;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc"; @line = 4; @symbol_usingdef<0> = [Toybox,4,6,12]; @symbol_usingdef<1> = [System,4,13,19]; ]
+using Toybox.System;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc"; @line = 5; @symbol_usingdef<0> = [Toybox,5,6,12]; @symbol_usingdef<1> = [Timer,5,13,18]; ]
+using Toybox.Timer;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc"; @line = 7; @symbol_classdef = [DemoView,7,6,14]; @symbol_extends<0> = [BasePageView,7,23,35]; ]
+class DemoView extends BasePageView {
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc"; @line = 7; ]
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc"; @line = 7; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc"; @line = 8; @position = 8; @symbol_vardef = [_apiClient,8,8,18]; ]
+    var _apiClient;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc"; @line = 9; @position = 8; @symbol_vardef = [_timer,9,8,14]; ]
+    var _timer;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc"; @line = 11; @position = 8; @symbol_vardef = [_holeNumber,11,8,19]; ]
+    var _holeNumber = 1;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc"; @line = 12; @position = 8; @symbol_vardef = [_holePar,12,8,16]; ]
+    var _holePar = 5;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc"; @line = 13; @position = 8; @symbol_vardef = [_strokes,13,8,16]; ]
+    var _strokes = 0;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc"; @line = 14; @position = 8; @symbol_vardef = [_totalPar,14,8,17]; ]
+    var _totalPar = 55;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc"; @line = 15; @position = 8; @symbol_vardef = [_totalStrokes,15,8,21]; ]
+    var _totalStrokes = 0;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc"; @line = 16; @position = 8; @symbol_vardef = [_totalTime,16,8,18]; ]
+    var _totalTime = 0;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc"; @line = 17; @position = 8; @symbol_vardef = [_overUnder,17,8,18]; ]
+    var _overUnder = 0;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc"; @line = 18; @position = 8; @symbol_vardef = [_yards,18,8,14]; ]
+    var _yards = 152;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc"; @line = 20; @position = 8; @symbol_vardef = [_roundComplete,20,8,22]; ]
+    var _roundComplete = false;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc"; @line = 22; @symbol_functiondef = [initialize,22,13,23]; ]
+    function initialize() as Void {
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_22_26_26_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 23 8 ]
+        symbol [ View %tmp.2 23 8 12 ];
+        %tmp.2 = getv ? :View;
+        symbol [ initialize %tmp.3 23 13 23 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 24 8 ]
+        symbol [ Garmin_SpeedScoreApp %tmp.5 24 23 43 ];
+        %tmp.5 = getv ? :Garmin_SpeedScoreApp;
+        symbol [ getApp %tmp.6 24 45 51 ];
+        %tmp.6 = getv function %tmp.5 :getApp;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        symbol [ getApiClient %tmp.8 24 55 67 ];
+        %tmp.8 = getv function %tmp.7 :getApiClient;
+        %tmp.9 = invoke %tmp.7 %tmp.8();
+        symbol [ _apiClient ? 24 8 18 ];
+        putv self :_apiClient %tmp.9;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 25 8 ]
+        symbol [ Timer %tmp.12 25 21 26 ];
+        %tmp.12 = getm $.Toybox.Timer;
+        symbol [ Timer %tmp.13 25 27 32 ];
+        %tmp.13 = getv function ? %tmp.12 :Timer;
+        %tmp.10 = newc %tmp.13 ();
+        symbol [ _timer ? 25 8 14 ];
+        putv self :_timer %tmp.10;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_22_26_26_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc"; @line = 28; @symbol_functiondef = [onLayout,28,13,21]; @symbol_param<0> = [dc,28,22,24]; ]
+    function onLayout(dc) {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc"; @line = 32; @symbol_functiondef = [onShow,32,13,19]; ]
+    function onShow() {
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_32_22_34_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 33 8 ]
+        symbol [ _timer %tmp.2 33 8 14 ];
+        %tmp.2 = getv ? :_timer;
+        symbol [ start %tmp.3 33 15 20 ];
+        %tmp.3 = getv function %tmp.2 :start;
+        %tmp.4 = self;
+        symbol [ method %tmp.5 33 21 27 ];
+        %tmp.5 = getv function %tmp.4 :method;
+        %tmp.7 = const :onTimerTick;
+        symbol [ onTimerTick %tmp.7 33 29 40 const ];
+        %tmp.8 = invoke %tmp.4 %tmp.5(%tmp.7);
+        %tmp.9 = 1000;
+        %tmp.10 = true;
+        invoke %tmp.2 %tmp.3(%tmp.8, %tmp.9, %tmp.10);
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_32_22_34_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc"; @line = 36; @symbol_functiondef = [onTimerTick,36,13,24]; ]
+    function onTimerTick() {
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_36_27_39_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 37 8 ]
+        symbol [ _totalTime %tmp.3 37 8 18 ];
+        %tmp.3 = getv ? :_totalTime;
+        %tmp.4 = add %tmp.3 1;
+        symbol [ _totalTime ? 37 8 18 ];
+        putv self :_totalTime dup %tmp.4;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 38 8 ]
+        symbol [ WatchUi %tmp.5 38 8 15 ];
+        %tmp.5 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.6 38 16 29 ];
+        %tmp.6 = getv function %tmp.5 :requestUpdate;
+        invoke %tmp.5 %tmp.6();
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_36_27_39_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc"; @line = 41; @symbol_functiondef = [onUpdate,41,13,21]; @symbol_param<0> = [dc,41,22,24]; ]
+    function onUpdate(dc) {
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_41_26_119_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 42 8 ]
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 42 8 10 ];
+        symbol [ setColor %tmp.2 42 11 19 ];
+        %tmp.2 = getv function %tmp.1 :setColor;
+        symbol [ Graphics %tmp.3 42 20 28 ];
+        %tmp.3 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.4 42 29 40 ];
+        %tmp.4 = getv %tmp.3 :COLOR_BLACK;
+        symbol [ Graphics %tmp.5 42 42 50 ];
+        %tmp.5 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.6 42 51 62 ];
+        %tmp.6 = getv %tmp.5 :COLOR_BLACK;
+        invoke %tmp.1 %tmp.2(%tmp.4, %tmp.6);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 43 8 ]
+        %tmp.7 = lgetv %dc;
+        symbol [ dc %tmp.7 43 8 10 ];
+        symbol [ clear %tmp.8 43 11 16 ];
+        %tmp.8 = getv function %tmp.7 :clear;
+        invoke %tmp.7 %tmp.8();
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 45 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_41_26_119_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_41_26_119_4_stop" ]
+        %width.1 = local;
+        symbol [ width %width.1 45 12 17 ];
+        %tmp.9 = lgetv %dc;
+        symbol [ dc %tmp.9 45 20 22 ];
+        symbol [ getWidth %tmp.10 45 23 31 ];
+        %tmp.10 = getv function %tmp.9 :getWidth;
+        %tmp.11 = invoke %tmp.9 %tmp.10();
+        lputv %width.1 %tmp.11;
+        symbol [ width %width.1 45 12 17 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 46 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_41_26_119_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_41_26_119_4_stop" ]
+        %height.2 = local;
+        symbol [ height %height.2 46 12 18 ];
+        %tmp.12 = lgetv %dc;
+        symbol [ dc %tmp.12 46 21 23 ];
+        symbol [ getHeight %tmp.13 46 24 33 ];
+        %tmp.13 = getv function %tmp.12 :getHeight;
+        %tmp.14 = invoke %tmp.12 %tmp.13();
+        lputv %height.2 %tmp.14;
+        symbol [ height %height.2 46 12 18 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 49 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_41_26_119_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_41_26_119_4_stop" ]
+        %mins.3 = local;
+        symbol [ mins %mins.3 49 12 16 ];
+        symbol [ _totalTime %tmp.16 49 19 29 ];
+        %tmp.16 = getv ? :_totalTime;
+        %tmp.17 = 60;
+        %tmp.18 = div %tmp.16 %tmp.17;
+        lputv %mins.3 %tmp.18;
+        symbol [ mins %mins.3 49 12 16 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 50 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_41_26_119_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_41_26_119_4_stop" ]
+        %secs.4 = local;
+        symbol [ secs %secs.4 50 12 16 ];
+        symbol [ _totalTime %tmp.20 50 19 29 ];
+        %tmp.20 = getv ? :_totalTime;
+        %tmp.21 = 60;
+        %tmp.22 = mod %tmp.20 %tmp.21;
+        lputv %secs.4 %tmp.22;
+        symbol [ secs %secs.4 50 12 16 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 51 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_41_26_119_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_41_26_119_4_stop" ]
+        %timeString.5 = local;
+        symbol [ timeString %timeString.5 51 12 22 ];
+        %tmp.23 = lgetv %mins.3;
+        symbol [ mins %tmp.23 51 25 29 ];
+        symbol [ format %tmp.24 51 30 36 ];
+        %tmp.24 = getv function %tmp.23 :format;
+        %tmp.25 = "%02d";
+        %tmp.26 = invoke %tmp.23 %tmp.24(%tmp.25);
+        %tmp.27 = ":";
+        %tmp.28 = add %tmp.26 %tmp.27;
+        %tmp.29 = lgetv %secs.4;
+        symbol [ secs %tmp.29 51 53 57 ];
+        symbol [ format %tmp.30 51 58 64 ];
+        %tmp.30 = getv function %tmp.29 :format;
+        %tmp.31 = "%02d";
+        %tmp.32 = invoke %tmp.29 %tmp.30(%tmp.31);
+        %tmp.33 = add %tmp.28 %tmp.32;
+        lputv %timeString.5 %tmp.33;
+        symbol [ timeString %timeString.5 51 12 22 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 56 8 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_56_8_72_8_if_stmt:
+        symbol [ _roundComplete %tmp.35 56 12 26 ];
+        %tmp.35 = getv ? :_roundComplete;
+        bf %tmp.35 @C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_56_8_72_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_56_8_72_8_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_56_28_72_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 57 12 ]
+        symbol [ _timer %tmp.37 57 12 18 ];
+        %tmp.37 = getv ? :_timer;
+        symbol [ stop %tmp.38 57 19 23 ];
+        %tmp.38 = getv function %tmp.37 :stop;
+        invoke %tmp.37 %tmp.38();
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 59 12 ]
+        %tmp.39 = lgetv %dc;
+        symbol [ dc %tmp.39 59 12 14 ];
+        symbol [ setColor %tmp.40 59 15 23 ];
+        %tmp.40 = getv function %tmp.39 :setColor;
+        symbol [ Graphics %tmp.41 59 24 32 ];
+        %tmp.41 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.42 59 33 44 ];
+        %tmp.42 = getv %tmp.41 :COLOR_WHITE;
+        symbol [ Graphics %tmp.43 59 46 54 ];
+        %tmp.43 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.44 59 55 72 ];
+        %tmp.44 = getv %tmp.43 :COLOR_TRANSPARENT;
+        invoke %tmp.39 %tmp.40(%tmp.42, %tmp.44);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 61 12 ]
+        %tmp.45 = lgetv %dc;
+        symbol [ dc %tmp.45 61 12 14 ];
+        symbol [ drawText %tmp.46 61 15 23 ];
+        %tmp.46 = getv function %tmp.45 :drawText;
+        %tmp.47 = lgetv %width.1;
+        symbol [ width %tmp.47 61 24 29 ];
+        %tmp.48 = 2;
+        %tmp.49 = div %tmp.47 %tmp.48;
+        %tmp.50 = 80;
+        symbol [ Graphics %tmp.51 61 37 45 ];
+        %tmp.51 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.52 61 46 56 ];
+        %tmp.52 = getv %tmp.51 :FONT_SMALL;
+        %tmp.53 = "Round Complete";
+        symbol [ Graphics %tmp.54 61 76 84 ];
+        %tmp.54 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.55 61 85 104 ];
+        %tmp.55 = getv %tmp.54 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.45 %tmp.46(%tmp.49, %tmp.50, %tmp.52, %tmp.53, %tmp.55);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 64 12 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_56_28_72_8_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_56_28_72_8_stop" ]
+        %speedScore.6 = local;
+        symbol [ speedScore %speedScore.6 64 16 26 ];
+        symbol [ _totalStrokes %tmp.57 64 29 42 ];
+        %tmp.57 = getv ? :_totalStrokes;
+        symbol [ _totalTime %tmp.59 64 46 56 ];
+        %tmp.59 = getv ? :_totalTime;
+        %tmp.60 = 60;
+        %tmp.61 = div %tmp.59 %tmp.60;
+        %tmp.62 = add %tmp.57 %tmp.61;
+        lputv %speedScore.6 %tmp.62;
+        symbol [ speedScore %speedScore.6 64 16 26 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 67 12 ]
+        %tmp.63 = lgetv %dc;
+        symbol [ dc %tmp.63 67 12 14 ];
+        symbol [ drawText %tmp.64 67 15 23 ];
+        %tmp.64 = getv function %tmp.63 :drawText;
+        %tmp.65 = lgetv %width.1;
+        symbol [ width %tmp.65 67 24 29 ];
+        %tmp.66 = 2;
+        %tmp.67 = div %tmp.65 %tmp.66;
+        %tmp.68 = 190;
+        symbol [ Graphics %tmp.69 67 38 46 ];
+        %tmp.69 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.70 67 47 57 ];
+        %tmp.70 = getv %tmp.69 :FONT_SMALL;
+        %tmp.71 = "Strokes: ";
+        symbol [ _totalStrokes %tmp.73 67 73 86 ];
+        %tmp.73 = getv ? :_totalStrokes;
+        %tmp.74 = add %tmp.71 %tmp.73;
+        %tmp.75 = " (";
+        %tmp.76 = add %tmp.74 %tmp.75;
+        symbol [ _overUnder %tmp.78 67 96 106 ];
+        %tmp.78 = getv ? :_overUnder;
+        %tmp.79 = add %tmp.76 %tmp.78;
+        %tmp.80 = ")";
+        %tmp.81 = add %tmp.79 %tmp.80;
+        symbol [ Graphics %tmp.82 67 114 122 ];
+        %tmp.82 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.83 67 123 142 ];
+        %tmp.83 = getv %tmp.82 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.63 %tmp.64(%tmp.67, %tmp.68, %tmp.70, %tmp.81, %tmp.83);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 68 12 ]
+        %tmp.84 = lgetv %dc;
+        symbol [ dc %tmp.84 68 12 14 ];
+        symbol [ drawText %tmp.85 68 15 23 ];
+        %tmp.85 = getv function %tmp.84 :drawText;
+        %tmp.86 = lgetv %width.1;
+        symbol [ width %tmp.86 68 24 29 ];
+        %tmp.87 = 2;
+        %tmp.88 = div %tmp.86 %tmp.87;
+        %tmp.89 = 250;
+        symbol [ Graphics %tmp.90 68 38 46 ];
+        %tmp.90 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.91 68 47 57 ];
+        %tmp.91 = getv %tmp.90 :FONT_SMALL;
+        %tmp.92 = "Time: ";
+        %tmp.93 = lgetv %timeString.5;
+        symbol [ timeString %tmp.93 68 70 80 ];
+        %tmp.94 = add %tmp.92 %tmp.93;
+        symbol [ Graphics %tmp.95 68 82 90 ];
+        %tmp.95 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.96 68 91 110 ];
+        %tmp.96 = getv %tmp.95 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.84 %tmp.85(%tmp.88, %tmp.89, %tmp.91, %tmp.94, %tmp.96);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 69 12 ]
+        %tmp.97 = lgetv %dc;
+        symbol [ dc %tmp.97 69 12 14 ];
+        symbol [ drawText %tmp.98 69 15 23 ];
+        %tmp.98 = getv function %tmp.97 :drawText;
+        %tmp.99 = lgetv %width.1;
+        symbol [ width %tmp.99 69 24 29 ];
+        %tmp.100 = 2;
+        %tmp.101 = div %tmp.99 %tmp.100;
+        %tmp.102 = 310;
+        symbol [ Graphics %tmp.103 69 38 46 ];
+        %tmp.103 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.104 69 47 57 ];
+        %tmp.104 = getv %tmp.103 :FONT_SMALL;
+        %tmp.105 = "SpeedScore: ";
+        %tmp.106 = lgetv %speedScore.6;
+        symbol [ speedScore %tmp.106 69 76 86 ];
+        %tmp.107 = add %tmp.105 %tmp.106;
+        symbol [ Graphics %tmp.108 69 88 96 ];
+        %tmp.108 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.109 69 97 116 ];
+        %tmp.109 = getv %tmp.108 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.97 %tmp.98(%tmp.101, %tmp.102, %tmp.104, %tmp.107, %tmp.109);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 71 12 ]
+        ret ?;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_56_28_72_8_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_56_8_72_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_56_8_72_8_if_end:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 76 8 ]
+        %tmp.110 = lgetv %dc;
+        symbol [ dc %tmp.110 76 8 10 ];
+        symbol [ setColor %tmp.111 76 11 19 ];
+        %tmp.111 = getv function %tmp.110 :setColor;
+        symbol [ Graphics %tmp.112 76 20 28 ];
+        %tmp.112 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.113 76 29 40 ];
+        %tmp.113 = getv %tmp.112 :COLOR_WHITE;
+        symbol [ Graphics %tmp.114 76 42 50 ];
+        %tmp.114 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.115 76 51 68 ];
+        %tmp.115 = getv %tmp.114 :COLOR_TRANSPARENT;
+        invoke %tmp.110 %tmp.111(%tmp.113, %tmp.115);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 77 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_41_26_119_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_41_26_119_4_stop" ]
+        %header.7 = local;
+        symbol [ header %header.7 77 12 18 ];
+        %tmp.116 = "H";
+        symbol [ _holeNumber %tmp.118 77 27 38 ];
+        %tmp.118 = getv ? :_holeNumber;
+        %tmp.119 = add %tmp.116 %tmp.118;
+        %tmp.120 = ", P";
+        %tmp.121 = add %tmp.119 %tmp.120;
+        symbol [ _holePar %tmp.123 77 49 57 ];
+        %tmp.123 = getv ? :_holePar;
+        %tmp.124 = add %tmp.121 %tmp.123;
+        %tmp.125 = ": ";
+        %tmp.126 = add %tmp.124 %tmp.125;
+        symbol [ _strokes %tmp.128 77 67 75 ];
+        %tmp.128 = getv ? :_strokes;
+        %tmp.129 = add %tmp.126 %tmp.128;
+        %tmp.130 = "";
+        %tmp.131 = add %tmp.129 %tmp.130;
+        lputv %header.7 %tmp.131;
+        symbol [ header %header.7 77 12 18 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 78 8 ]
+        %tmp.132 = lgetv %dc;
+        symbol [ dc %tmp.132 78 8 10 ];
+        symbol [ drawText %tmp.133 78 11 19 ];
+        %tmp.133 = getv function %tmp.132 :drawText;
+        %tmp.134 = lgetv %width.1;
+        symbol [ width %tmp.134 79 12 17 ];
+        %tmp.135 = 2;
+        %tmp.136 = div %tmp.134 %tmp.135;
+        %tmp.137 = 30;
+        symbol [ Graphics %tmp.138 80 12 20 ];
+        %tmp.138 = getm $.Toybox.Graphics;
+        symbol [ FONT_MEDIUM %tmp.139 80 21 32 ];
+        %tmp.139 = getv %tmp.138 :FONT_MEDIUM;
+        %tmp.140 = lgetv %header.7;
+        symbol [ header %tmp.140 81 12 18 ];
+        symbol [ Graphics %tmp.141 82 12 20 ];
+        %tmp.141 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.142 82 21 40 ];
+        %tmp.142 = getv %tmp.141 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.132 %tmp.133(%tmp.136, %tmp.137, %tmp.139, %tmp.140, %tmp.142);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 86 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_41_26_119_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_41_26_119_4_stop" ]
+        %distance.8 = local;
+        symbol [ distance %distance.8 86 12 20 ];
+        symbol [ _yards %tmp.144 86 23 29 ];
+        %tmp.144 = getv ? :_yards;
+        %tmp.145 = " yards";
+        %tmp.146 = add %tmp.144 %tmp.145;
+        lputv %distance.8 %tmp.146;
+        symbol [ distance %distance.8 86 12 20 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 87 8 ]
+        %tmp.147 = lgetv %dc;
+        symbol [ dc %tmp.147 87 8 10 ];
+        symbol [ setColor %tmp.148 87 11 19 ];
+        %tmp.148 = getv function %tmp.147 :setColor;
+        symbol [ Graphics %tmp.149 87 20 28 ];
+        %tmp.149 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.150 87 29 40 ];
+        %tmp.150 = getv %tmp.149 :COLOR_WHITE;
+        symbol [ Graphics %tmp.151 87 42 50 ];
+        %tmp.151 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.152 87 51 68 ];
+        %tmp.152 = getv %tmp.151 :COLOR_TRANSPARENT;
+        invoke %tmp.147 %tmp.148(%tmp.150, %tmp.152);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 88 8 ]
+        %tmp.153 = lgetv %dc;
+        symbol [ dc %tmp.153 88 8 10 ];
+        symbol [ drawText %tmp.154 88 11 19 ];
+        %tmp.154 = getv function %tmp.153 :drawText;
+        %tmp.155 = lgetv %width.1;
+        symbol [ width %tmp.155 89 12 17 ];
+        %tmp.156 = 2;
+        %tmp.157 = div %tmp.155 %tmp.156;
+        %tmp.158 = lgetv %height.2;
+        symbol [ height %tmp.158 89 23 29 ];
+        %tmp.159 = 2;
+        %tmp.160 = div %tmp.158 %tmp.159;
+        %tmp.161 = 45;
+        %tmp.162 = sub %tmp.160 %tmp.161;
+        symbol [ Graphics %tmp.163 90 12 20 ];
+        %tmp.163 = getm $.Toybox.Graphics;
+        symbol [ FONT_LARGE %tmp.164 90 21 31 ];
+        %tmp.164 = getv %tmp.163 :FONT_LARGE;
+        %tmp.165 = lgetv %distance.8;
+        symbol [ distance %tmp.165 91 12 20 ];
+        symbol [ Graphics %tmp.166 92 12 20 ];
+        %tmp.166 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.167 92 21 40 ];
+        %tmp.167 = getv %tmp.166 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.153 %tmp.154(%tmp.157, %tmp.162, %tmp.164, %tmp.165, %tmp.167);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 96 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_41_26_119_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_41_26_119_4_stop" ]
+        %font.9 = local;
+        symbol [ font %font.9 96 12 16 ];
+        symbol [ Graphics %tmp.168 96 19 27 ];
+        %tmp.168 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.169 96 28 38 ];
+        %tmp.169 = getv %tmp.168 :FONT_SMALL;
+        lputv %font.9 %tmp.169;
+        symbol [ font %font.9 96 12 16 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 97 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_41_26_119_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_41_26_119_4_stop" ]
+        %fontHeight.10 = local;
+        symbol [ fontHeight %fontHeight.10 97 12 22 ];
+        symbol [ Graphics %tmp.170 97 25 33 ];
+        %tmp.170 = getm $.Toybox.Graphics;
+        symbol [ getFontHeight %tmp.171 97 34 47 ];
+        %tmp.171 = getv function %tmp.170 :getFontHeight;
+        %tmp.172 = lgetv %font.9;
+        symbol [ font %tmp.172 97 48 52 ];
+        %tmp.173 = invoke %tmp.170 %tmp.171(%tmp.172);
+        lputv %fontHeight.10 %tmp.173;
+        symbol [ fontHeight %fontHeight.10 97 12 22 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 98 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_41_26_119_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_41_26_119_4_stop" ]
+        %lineSpacing.11 = local;
+        symbol [ lineSpacing %lineSpacing.11 98 12 23 ];
+        %tmp.174 = 5;
+        lputv %lineSpacing.11 %tmp.174;
+        symbol [ lineSpacing %lineSpacing.11 98 12 23 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 99 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_41_26_119_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_41_26_119_4_stop" ]
+        %startY.12 = local;
+        symbol [ startY %startY.12 99 12 18 ];
+        %tmp.175 = lgetv %height.2;
+        symbol [ height %tmp.175 99 21 27 ];
+        %tmp.176 = 2;
+        %tmp.177 = div %tmp.175 %tmp.176;
+        %tmp.178 = 50;
+        %tmp.179 = add %tmp.177 %tmp.178;
+        lputv %startY.12 %tmp.179;
+        symbol [ startY %startY.12 99 12 18 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 102 8 ]
+        %tmp.180 = lgetv %dc;
+        symbol [ dc %tmp.180 102 8 10 ];
+        symbol [ setColor %tmp.181 102 11 19 ];
+        %tmp.181 = getv function %tmp.180 :setColor;
+        symbol [ Graphics %tmp.182 102 20 28 ];
+        %tmp.182 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.183 102 29 40 ];
+        %tmp.183 = getv %tmp.182 :COLOR_WHITE;
+        symbol [ Graphics %tmp.184 102 42 50 ];
+        %tmp.184 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.185 102 51 68 ];
+        %tmp.185 = getv %tmp.184 :COLOR_TRANSPARENT;
+        invoke %tmp.180 %tmp.181(%tmp.183, %tmp.185);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 103 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_41_26_119_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_41_26_119_4_stop" ]
+        %strokesText.13 = local;
+        symbol [ strokesText %strokesText.13 103 12 23 ];
+        %tmp.186 = "Strokes: ";
+        symbol [ _totalStrokes %tmp.188 103 40 53 ];
+        %tmp.188 = getv ? :_totalStrokes;
+        %tmp.189 = add %tmp.186 %tmp.188;
+        lputv %strokesText.13 %tmp.189;
+        symbol [ strokesText %strokesText.13 103 12 23 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 104 8 ]
+        %tmp.190 = lgetv %dc;
+        symbol [ dc %tmp.190 104 8 10 ];
+        symbol [ drawText %tmp.191 104 11 19 ];
+        %tmp.191 = getv function %tmp.190 :drawText;
+        %tmp.192 = lgetv %width.1;
+        symbol [ width %tmp.192 105 12 17 ];
+        %tmp.193 = 2;
+        %tmp.194 = div %tmp.192 %tmp.193;
+        %tmp.195 = lgetv %startY.12;
+        symbol [ startY %tmp.195 105 23 29 ];
+        %tmp.196 = lgetv %font.9;
+        symbol [ font %tmp.196 106 12 16 ];
+        %tmp.197 = lgetv %strokesText.13;
+        symbol [ strokesText %tmp.197 107 12 23 ];
+        symbol [ Graphics %tmp.198 108 12 20 ];
+        %tmp.198 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.199 108 21 40 ];
+        %tmp.199 = getv %tmp.198 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.190 %tmp.191(%tmp.194, %tmp.195, %tmp.196, %tmp.197, %tmp.199);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 112 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_41_26_119_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_41_26_119_4_stop" ]
+        %timeText.14 = local;
+        symbol [ timeText %timeText.14 112 12 20 ];
+        %tmp.200 = "Time: ";
+        %tmp.201 = lgetv %timeString.5;
+        symbol [ timeString %tmp.201 112 34 44 ];
+        %tmp.202 = add %tmp.200 %tmp.201;
+        lputv %timeText.14 %tmp.202;
+        symbol [ timeText %timeText.14 112 12 20 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 113 8 ]
+        %tmp.203 = lgetv %dc;
+        symbol [ dc %tmp.203 113 8 10 ];
+        symbol [ drawText %tmp.204 113 11 19 ];
+        %tmp.204 = getv function %tmp.203 :drawText;
+        %tmp.205 = lgetv %width.1;
+        symbol [ width %tmp.205 114 12 17 ];
+        %tmp.206 = 2;
+        %tmp.207 = div %tmp.205 %tmp.206;
+        %tmp.208 = lgetv %startY.12;
+        symbol [ startY %tmp.208 114 23 29 ];
+        %tmp.209 = lgetv %fontHeight.10;
+        symbol [ fontHeight %tmp.209 114 32 42 ];
+        %tmp.210 = add %tmp.208 %tmp.209;
+        %tmp.211 = lgetv %lineSpacing.11;
+        symbol [ lineSpacing %tmp.211 114 45 56 ];
+        %tmp.212 = add %tmp.210 %tmp.211;
+        %tmp.213 = lgetv %font.9;
+        symbol [ font %tmp.213 115 12 16 ];
+        %tmp.214 = lgetv %timeText.14;
+        symbol [ timeText %tmp.214 116 12 20 ];
+        symbol [ Graphics %tmp.215 117 12 20 ];
+        %tmp.215 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.216 117 21 40 ];
+        %tmp.216 = getv %tmp.215 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.203 %tmp.204(%tmp.207, %tmp.212, %tmp.213, %tmp.214, %tmp.216);
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_41_26_119_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc"; @line = 121; @symbol_functiondef = [onHide,121,13,19]; ]
+    function onHide() {
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_121_22_123_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 122 8 ]
+        symbol [ _timer %tmp.2 122 8 14 ];
+        %tmp.2 = getv ? :_timer;
+        symbol [ stop %tmp.3 122 15 19 ];
+        %tmp.3 = getv function %tmp.2 :stop;
+        invoke %tmp.2 %tmp.3();
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_121_22_123_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc"; @line = 125; @symbol_functiondef = [onKey,125,13,18]; @symbol_param<0> = [keyEvent,125,19,27]; ]
+    function onKey(keyEvent) {
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_125_29_168_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 126 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_125_29_168_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_125_29_168_4_stop" ]
+        %key.1 = local;
+        symbol [ key %key.1 126 12 15 ];
+        %tmp.1 = lgetv %keyEvent;
+        symbol [ keyEvent %tmp.1 126 18 26 ];
+        symbol [ getKey %tmp.2 126 27 33 ];
+        %tmp.2 = getv function %tmp.1 :getKey;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %key.1 %tmp.3;
+        symbol [ key %key.1 126 12 15 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 127 8 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_127_8_166_8_if_stmt:
+        %tmp.4 = lgetv %key.1;
+        symbol [ key %tmp.4 127 12 15 ];
+        symbol [ WatchUi %tmp.5 127 19 26 ];
+        %tmp.5 = getm $.Toybox.WatchUi;
+        symbol [ KEY_UP %tmp.6 127 27 33 ];
+        %tmp.6 = getv %tmp.5 :KEY_UP;
+        %tmp.7 = eq %tmp.4 %tmp.6;
+        bf %tmp.7 @C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_127_8_166_8_if_false;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_127_8_166_8_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_127_35_133_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 128 12 ]
+        symbol [ _strokes %tmp.10 128 12 20 ];
+        %tmp.10 = getv ? :_strokes;
+        %tmp.11 = add %tmp.10 1;
+        symbol [ _strokes ? 128 12 20 ];
+        putv self :_strokes dup %tmp.11;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 129 12 ]
+        symbol [ _totalStrokes %tmp.14 129 12 25 ];
+        %tmp.14 = getv ? :_totalStrokes;
+        %tmp.15 = add %tmp.14 1;
+        symbol [ _totalStrokes ? 129 12 25 ];
+        putv self :_totalStrokes dup %tmp.15;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 130 12 ]
+        symbol [ _totalStrokes %tmp.17 130 25 38 ];
+        %tmp.17 = getv ? :_totalStrokes;
+        symbol [ _totalPar %tmp.19 130 41 50 ];
+        %tmp.19 = getv ? :_totalPar;
+        %tmp.20 = sub %tmp.17 %tmp.19;
+        symbol [ _overUnder ? 130 12 22 ];
+        putv self :_overUnder %tmp.20;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 131 12 ]
+        symbol [ WatchUi %tmp.21 131 12 19 ];
+        %tmp.21 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.22 131 20 33 ];
+        %tmp.22 = getv function %tmp.21 :requestUpdate;
+        invoke %tmp.21 %tmp.22();
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 132 12 ]
+        %tmp.23 = true;
+        ret %tmp.23;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_127_35_133_8_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_127_8_166_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_127_8_166_8_if_false:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 133 15 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_133_15_166_8_if_stmt:
+        %tmp.24 = lgetv %key.1;
+        symbol [ key %tmp.24 133 19 22 ];
+        symbol [ WatchUi %tmp.25 133 26 33 ];
+        %tmp.25 = getm $.Toybox.WatchUi;
+        symbol [ KEY_DOWN %tmp.26 133 34 42 ];
+        %tmp.26 = getv %tmp.25 :KEY_DOWN;
+        %tmp.27 = eq %tmp.24 %tmp.26;
+        bf %tmp.27 @C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_133_15_166_8_if_false;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_133_15_166_8_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_133_44_141_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 134 12 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_134_12_139_12_if_stmt:
+        symbol [ _strokes %tmp.29 134 16 24 ];
+        %tmp.29 = getv ? :_strokes;
+        %tmp.30 = 0;
+        %tmp.31 = gt %tmp.29 %tmp.30;
+        bf %tmp.31 @C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_134_12_139_12_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_134_12_139_12_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_134_30_139_12_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 135 16 ]
+        symbol [ _strokes %tmp.34 135 16 24 ];
+        %tmp.34 = getv ? :_strokes;
+        %tmp.35 = sub %tmp.34 1;
+        symbol [ _strokes ? 135 16 24 ];
+        putv self :_strokes dup %tmp.35;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 136 16 ]
+        symbol [ _totalStrokes %tmp.38 136 16 29 ];
+        %tmp.38 = getv ? :_totalStrokes;
+        %tmp.39 = sub %tmp.38 1;
+        symbol [ _totalStrokes ? 136 16 29 ];
+        putv self :_totalStrokes dup %tmp.39;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 137 16 ]
+        symbol [ _totalStrokes %tmp.41 137 29 42 ];
+        %tmp.41 = getv ? :_totalStrokes;
+        symbol [ _totalPar %tmp.43 137 45 54 ];
+        %tmp.43 = getv ? :_totalPar;
+        %tmp.44 = sub %tmp.41 %tmp.43;
+        symbol [ _overUnder ? 137 16 26 ];
+        putv self :_overUnder %tmp.44;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 138 16 ]
+        symbol [ WatchUi %tmp.45 138 16 23 ];
+        %tmp.45 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.46 138 24 37 ];
+        %tmp.46 = getv function %tmp.45 :requestUpdate;
+        invoke %tmp.45 %tmp.46();
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_134_30_139_12_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_134_12_139_12_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_134_12_139_12_if_end:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 140 12 ]
+        %tmp.47 = true;
+        ret %tmp.47;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_133_44_141_8_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_133_15_166_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_133_15_166_8_if_false:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 141 15 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_141_15_166_8_if_stmt:
+        %tmp.48 = lgetv %key.1;
+        symbol [ key %tmp.48 141 19 22 ];
+        symbol [ WatchUi %tmp.49 141 26 33 ];
+        %tmp.49 = getm $.Toybox.WatchUi;
+        symbol [ KEY_ENTER %tmp.50 141 34 43 ];
+        %tmp.50 = getv %tmp.49 :KEY_ENTER;
+        %tmp.51 = eq %tmp.48 %tmp.50;
+        bf %tmp.51 @C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_141_15_166_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_141_15_166_8_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_141_45_166_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 143 12 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_143_12_152_12_if_stmt:
+        symbol [ _roundComplete %tmp.53 143 16 30 ];
+        %tmp.53 = getv ? :_roundComplete;
+        bf %tmp.53 @C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_143_12_152_12_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_143_12_152_12_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_143_32_152_12_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 145 16 ]
+        %tmp.54 = 1;
+        symbol [ _holeNumber ? 145 16 27 ];
+        putv self :_holeNumber %tmp.54;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 146 16 ]
+        %tmp.55 = 0;
+        symbol [ _strokes ? 146 16 24 ];
+        putv self :_strokes %tmp.55;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 147 16 ]
+        %tmp.56 = 0;
+        symbol [ _totalStrokes ? 147 16 29 ];
+        putv self :_totalStrokes %tmp.56;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 148 16 ]
+        %tmp.57 = 0;
+        symbol [ _totalTime ? 148 16 26 ];
+        putv self :_totalTime %tmp.57;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 149 16 ]
+        %tmp.58 = false;
+        symbol [ _roundComplete ? 149 16 30 ];
+        putv self :_roundComplete %tmp.58;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 150 16 ]
+        symbol [ WatchUi %tmp.59 150 16 23 ];
+        %tmp.59 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.60 150 24 37 ];
+        %tmp.60 = getv function %tmp.59 :requestUpdate;
+        invoke %tmp.59 %tmp.60();
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 151 16 ]
+        %tmp.61 = true;
+        ret %tmp.61;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_143_32_152_12_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_143_12_152_12_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_143_12_152_12_if_end:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 155 12 ]
+        symbol [ _holeNumber %tmp.64 155 12 23 ];
+        %tmp.64 = getv ? :_holeNumber;
+        %tmp.65 = add %tmp.64 1;
+        symbol [ _holeNumber ? 155 12 23 ];
+        putv self :_holeNumber dup %tmp.65;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 156 12 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_156_12_160_12_if_stmt:
+        symbol [ _holeNumber %tmp.67 156 16 27 ];
+        %tmp.67 = getv ? :_holeNumber;
+        %tmp.68 = 9;
+        %tmp.69 = gt %tmp.67 %tmp.68;
+        bf %tmp.69 @C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_156_12_160_12_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_156_12_160_12_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_156_33_160_12_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 157 16 ]
+        %tmp.70 = true;
+        symbol [ _roundComplete ? 157 16 30 ];
+        putv self :_roundComplete %tmp.70;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 158 16 ]
+        symbol [ WatchUi %tmp.71 158 16 23 ];
+        %tmp.71 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.72 158 24 37 ];
+        %tmp.72 = getv function %tmp.71 :requestUpdate;
+        invoke %tmp.71 %tmp.72();
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 159 16 ]
+        %tmp.73 = true;
+        ret %tmp.73;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_156_33_160_12_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_156_12_160_12_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_156_12_160_12_if_end:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 161 12 ]
+        %tmp.74 = 0;
+        symbol [ _strokes ? 161 12 20 ];
+        putv self :_strokes %tmp.74;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 164 12 ]
+        symbol [ WatchUi %tmp.75 164 12 19 ];
+        %tmp.75 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.76 164 20 33 ];
+        %tmp.76 = getv function %tmp.75 :requestUpdate;
+        invoke %tmp.75 %tmp.76();
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 165 12 ]
+        %tmp.77 = true;
+        ret %tmp.77;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_141_45_166_8_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_141_15_166_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_141_15_166_8_if_end:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_133_15_166_8_if_end:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_127_8_166_8_if_end:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc" 167 8 ]
+        %tmp.78 = false;
+        ret %tmp.78;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_demoView_mc_125_29_168_4_stop:
+    }
+}
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\demoView.mc"; @line = 1; ]
+<init> {
+}

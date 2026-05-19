@@ -1,0 +1,81 @@
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PageOneView.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [WatchUi,1,13,20]; ]
+using Toybox.WatchUi;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PageOneView.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [Graphics,2,13,21]; ]
+using Toybox.Graphics;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PageOneView.mc"; @line = 3; @symbol_usingdef<0> = [Toybox,3,6,12]; @symbol_usingdef<1> = [Application,3,13,24]; ]
+using Toybox.Application;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PageOneView.mc"; @line = 5; @symbol_classdef = [PageOneView,5,6,17]; @symbol_extends<0> = [BasePageView,5,26,38]; ]
+class PageOneView extends BasePageView {
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PageOneView.mc"; @line = 5; ]
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PageOneView.mc"; @line = 5; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PageOneView.mc"; @line = 6; @position = 8; @symbol_vardef = [_apiClient,6,8,18]; ]
+    var _apiClient;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PageOneView.mc"; @line = 8; @symbol_functiondef = [initialize,8,13,23]; ]
+    function initialize() as Void {
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PageOneView_mc_8_26_11_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PageOneView.mc" 9 8 ]
+        symbol [ BasePageView %tmp.2 9 8 20 ];
+        %tmp.2 = getv ? :BasePageView;
+        symbol [ initialize %tmp.3 9 21 31 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PageOneView.mc" 10 8 ]
+        symbol [ Garmin_SpeedScoreApp %tmp.5 10 23 43 ];
+        %tmp.5 = getv ? :Garmin_SpeedScoreApp;
+        symbol [ getApp %tmp.6 10 45 51 ];
+        %tmp.6 = getv function %tmp.5 :getApp;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        symbol [ getApiClient %tmp.8 10 55 67 ];
+        %tmp.8 = getv function %tmp.7 :getApiClient;
+        %tmp.9 = invoke %tmp.7 %tmp.8();
+        symbol [ _apiClient ? 10 8 18 ];
+        putv self :_apiClient %tmp.9;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PageOneView_mc_8_26_11_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PageOneView.mc"; @line = 13; @symbol_functiondef = [onLayout,13,13,21]; @symbol_param<0> = [dc,13,22,24]; ]
+    function onLayout(dc) {
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PageOneView_mc_13_26_15_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PageOneView.mc" 14 8 ]
+        %tmp.1 = self;
+        symbol [ setLayout %tmp.2 14 8 17 ];
+        %tmp.2 = getv function %tmp.1 :setLayout;
+        symbol [ Rez %tmp.4 14 18 21 ];
+        %tmp.4 = getv ? :Rez;
+        symbol [ Layouts %tmp.5 14 22 29 ];
+        %tmp.5 = getv %tmp.4 :Layouts;
+        symbol [ PageOne %tmp.6 14 30 37 ];
+        %tmp.6 = getv function %tmp.5 :PageOne;
+        %tmp.7 = lgetv %dc;
+        symbol [ dc %tmp.7 14 38 40 ];
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        invoke %tmp.1 %tmp.2(%tmp.8);
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PageOneView_mc_13_26_15_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PageOneView.mc"; @line = 17; @symbol_functiondef = [onShow,17,13,19]; ]
+    function onShow() {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PageOneView.mc"; @line = 22; @symbol_functiondef = [onUpdate,22,13,21]; @symbol_param<0> = [dc,22,22,24]; ]
+    function onUpdate(dc) {
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PageOneView_mc_22_26_37_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PageOneView.mc" 23 8 ]
+        symbol [ BasePageView %tmp.2 23 8 20 ];
+        %tmp.2 = getv ? :BasePageView;
+        symbol [ onUpdate %tmp.3 23 21 29 ];
+        %tmp.3 = getv function %tmp.2 :onUpdate;
+        %tmp.4 = lgetv %dc;
+        symbol [ dc %tmp.4 23 30 32 ];
+        invoke %tmp.2 %tmp.3(%tmp.4);
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PageOneView_mc_22_26_37_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PageOneView.mc"; @line = 39; @symbol_functiondef = [onHide,39,13,19]; ]
+    function onHide() {
+    }
+}
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PageOneView.mc"; @line = 1; ]
+<init> {
+}

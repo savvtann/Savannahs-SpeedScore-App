@@ -1,0 +1,282 @@
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\CoursePickerView.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [WatchUi,1,13,20]; ]
+using Toybox.WatchUi;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\CoursePickerView.mc"; @line = 3; @symbol_classdef = [CoursePickerView,3,6,22]; @symbol_extends<0> = [WatchUi,3,31,38]; @symbol_extends<1> = [Menu2,3,39,44]; ]
+class CoursePickerView extends WatchUi.Menu2 {
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\CoursePickerView.mc"; @line = 3; ]
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\CoursePickerView.mc"; @line = 3; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\CoursePickerView.mc"; @line = 4; @position = 15; @symbol_vardef = [_courses,4,15,23]; ]
+    protected
+    var _courses;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\CoursePickerView.mc"; @line = 6; @symbol_functiondef = [initialize,6,13,23]; @symbol_param<0> = [courses,6,24,31]; ]
+    function initialize(courses) as Void {
+C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_6_33_26_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\CoursePickerView.mc" 7 8 ]
+        symbol [ Menu2 %tmp.2 7 8 13 ];
+        %tmp.2 = getv ? :Menu2;
+        symbol [ initialize %tmp.3 7 14 24 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        %tmp.4 = newd 1;
+        %tmp.6 = const :title;
+        symbol [ title %tmp.6 7 27 32 const ];
+        %tmp.7 = "Courses";
+        %tmp.8 = dup %tmp.4;
+        %tmp.9 = aputv %tmp.8 %tmp.6 %tmp.7;
+        invoke %tmp.2 %tmp.3(%tmp.9);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\CoursePickerView.mc" 8 8 ]
+        %tmp.10 = lgetv %courses;
+        symbol [ courses %tmp.10 8 19 26 ];
+        symbol [ _courses ? 8 8 16 ];
+        putv self :_courses %tmp.10;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\CoursePickerView.mc" 10 8 ]
+        %tmp.11 = self;
+        symbol [ addItem %tmp.12 10 8 15 ];
+        %tmp.12 = getv function %tmp.11 :addItem;
+        symbol [ WatchUi %tmp.15 10 20 27 ];
+        %tmp.15 = getm $.Toybox.WatchUi;
+        symbol [ MenuItem %tmp.16 10 28 36 ];
+        %tmp.16 = getv function ? %tmp.15 :MenuItem;
+        %tmp.17 = "My Courses";
+        %tmp.18 = null;
+        %tmp.20 = const :myCourses;
+        symbol [ myCourses %tmp.20 10 79 88 const ];
+        %tmp.21 = newd 0;
+        %tmp.13 = newc %tmp.16 (%tmp.17, %tmp.18, %tmp.20, %tmp.21);
+        invoke %tmp.11 %tmp.12(%tmp.13);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\CoursePickerView.mc" 11 8 ]
+        %tmp.22 = self;
+        symbol [ addItem %tmp.23 11 8 15 ];
+        %tmp.23 = getv function %tmp.22 :addItem;
+        symbol [ WatchUi %tmp.26 11 20 27 ];
+        %tmp.26 = getm $.Toybox.WatchUi;
+        symbol [ MenuItem %tmp.27 11 28 36 ];
+        %tmp.27 = getv function ? %tmp.26 :MenuItem;
+        %tmp.28 = "Search by name";
+        %tmp.29 = null;
+        %tmp.31 = const :search;
+        symbol [ search %tmp.31 11 79 85 const ];
+        %tmp.32 = newd 0;
+        %tmp.24 = newc %tmp.27 (%tmp.28, %tmp.29, %tmp.31, %tmp.32);
+        invoke %tmp.22 %tmp.23(%tmp.24);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\CoursePickerView.mc" 12 8 ]
+        %tmp.33 = self;
+        symbol [ addItem %tmp.34 12 8 15 ];
+        %tmp.34 = getv function %tmp.33 :addItem;
+        symbol [ WatchUi %tmp.37 12 20 27 ];
+        %tmp.37 = getm $.Toybox.WatchUi;
+        symbol [ MenuItem %tmp.38 12 28 36 ];
+        %tmp.38 = getv function ? %tmp.37 :MenuItem;
+        %tmp.39 = "Practice round!";
+        %tmp.40 = "no location needed";
+        %tmp.42 = const :practice;
+        symbol [ practice %tmp.42 12 79 87 const ];
+        %tmp.43 = newd 0;
+        %tmp.35 = newc %tmp.38 (%tmp.39, %tmp.40, %tmp.42, %tmp.43);
+        invoke %tmp.33 %tmp.34(%tmp.35);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\CoursePickerView.mc" 14 8 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_14_8_25_8_if_stmt:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_14_12_14_48_begin:
+        %tmp.44 = lgetv %courses;
+        symbol [ courses %tmp.44 14 12 19 ];
+        %tmp.45 = null;
+        %tmp.46 = ne %tmp.44 %tmp.45;
+        bf %tmp.46 @C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_14_8_25_8_if_else_false;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_14_31_14_48_true:
+        %tmp.47 = lgetv %courses;
+        symbol [ courses %tmp.47 14 31 38 ];
+        %tmp.48 = as %tmp.47 { (!Null) };
+        symbol [ size %tmp.49 14 39 43 ];
+        %tmp.49 = getv function %tmp.48 :size;
+        %tmp.50 = invoke %tmp.48 %tmp.49();
+        %tmp.51 = 0;
+        %tmp.52 = gt %tmp.50 %tmp.51;
+        push %tmp.52;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_14_31_14_48_end:
+        %tmp.53 = phi [%tmp.46 @C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_14_12_14_48_begin] [%tmp.52 @C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_14_31_14_48_true] [%tmp.53 @C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_14_31_14_48_end];
+        bf %tmp.53 @C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_14_8_25_8_if_else_false;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_14_8_25_8_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_14_51_23_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\CoursePickerView.mc" 15 12 ]
+        %tmp.54 = self;
+        symbol [ addItem %tmp.55 15 12 19 ];
+        %tmp.55 = getv function %tmp.54 :addItem;
+        symbol [ WatchUi %tmp.58 15 24 31 ];
+        %tmp.58 = getm $.Toybox.WatchUi;
+        symbol [ MenuItem %tmp.59 15 32 40 ];
+        %tmp.59 = getv function ? %tmp.58 :MenuItem;
+        %tmp.60 = "?? Nearby ??";
+        %tmp.61 = null;
+        %tmp.63 = const :header_nearby;
+        symbol [ header_nearby %tmp.63 15 64 77 const ];
+        %tmp.64 = newd 0;
+        %tmp.56 = newc %tmp.59 (%tmp.60, %tmp.61, %tmp.63, %tmp.64);
+        invoke %tmp.54 %tmp.55(%tmp.56);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\CoursePickerView.mc" 16 12 ]
+        for @C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_16_12_22_12_for_test @C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_16_12_22_12_for_incr @C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_16_12_22_12_for_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_16_12_22_12_for_init:
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_16_12_22_12_for_begin" "C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_16_12_22_12_for_end" ]
+        %i.1 = local;
+        symbol [ i %i.1 16 21 22 ];
+        %tmp.65 = 0;
+        lputv %i.1 %tmp.65;
+        symbol [ i %i.1 16 21 22 ];
+C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_16_12_22_12_for_test:
+        %tmp.66 = lgetv %i.1;
+        symbol [ i %tmp.66 16 28 29 ];
+        %tmp.67 = lgetv %courses;
+        symbol [ courses %tmp.67 16 32 39 ];
+        %tmp.68 = as %tmp.67 { (!Null) };
+        symbol [ size %tmp.69 16 40 44 ];
+        %tmp.69 = getv function %tmp.68 :size;
+        %tmp.70 = invoke %tmp.68 %tmp.69();
+        %tmp.71 = lt %tmp.66 %tmp.70;
+        bf %tmp.71 @C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_16_12_22_12_for_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_16_12_22_12_for_begin:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_16_53_22_12_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\CoursePickerView.mc" 17 16 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_16_53_22_12_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_16_53_22_12_stop" ]
+        %name.2 = local;
+        symbol [ name %name.2 17 20 24 ];
+        %tmp.72 = lgetv %courses;
+        symbol [ courses %tmp.72 17 27 34 ];
+        %tmp.73 = as %tmp.72 { (!Null) };
+        %tmp.74 = lgetv %i.1;
+        symbol [ i %tmp.74 17 35 36 ];
+        %tmp.75 = agetv %tmp.73 %tmp.74;
+        %tmp.76 = "name";
+        %tmp.77 = agetv %tmp.75 %tmp.76;
+        lputv %name.2 %tmp.77;
+        symbol [ name %name.2 17 20 24 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\CoursePickerView.mc" 18 16 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_16_53_22_12_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_16_53_22_12_stop" ]
+        %dist.3 = local;
+        symbol [ dist %dist.3 18 20 24 ];
+        %tmp.78 = lgetv %courses;
+        symbol [ courses %tmp.78 18 27 34 ];
+        %tmp.79 = as %tmp.78 { (!Null) };
+        %tmp.80 = lgetv %i.1;
+        symbol [ i %tmp.80 18 35 36 ];
+        %tmp.81 = agetv %tmp.79 %tmp.80;
+        %tmp.82 = "distanceKm";
+        %tmp.83 = agetv %tmp.81 %tmp.82;
+        lputv %dist.3 %tmp.83;
+        symbol [ dist %dist.3 18 20 24 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\CoursePickerView.mc" 19 16 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_19_16_19_64_if_stmt:
+        %tmp.84 = lgetv %dist.3;
+        symbol [ dist %tmp.84 19 20 24 ];
+        %tmp.85 = null;
+        %tmp.86 = eq %tmp.84 %tmp.85;
+        bf %tmp.86 @C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_19_16_19_64_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_19_16_19_64_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_19_34_19_64_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\CoursePickerView.mc" 19 36 ]
+        %tmp.87 = lgetv %courses;
+        symbol [ courses %tmp.87 19 43 50 ];
+        %tmp.88 = as %tmp.87 { (!Null) };
+        %tmp.89 = lgetv %i.1;
+        symbol [ i %tmp.89 19 51 52 ];
+        %tmp.90 = agetv %tmp.88 %tmp.89;
+        %tmp.91 = "_dist";
+        %tmp.92 = agetv %tmp.90 %tmp.91;
+        lputv %dist.3 %tmp.92;
+        symbol [ dist %dist.3 19 36 40 ];
+C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_19_34_19_64_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_19_16_19_64_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_19_16_19_64_if_end:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\CoursePickerView.mc" 20 16 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_16_53_22_12_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_16_53_22_12_stop" ]
+        %distStr.4 = local;
+        symbol [ distStr %distStr.4 20 20 27 ];
+C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_20_30_20_77_begin:
+        %tmp.93 = lgetv %dist.3;
+        symbol [ dist %tmp.93 20 31 35 ];
+        %tmp.94 = null;
+        %tmp.95 = ne %tmp.93 %tmp.94;
+        bf %tmp.95 @C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_20_30_20_77_else_false;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_20_30_20_77_true:
+        %tmp.96 = lgetv %dist.3;
+        symbol [ dist %tmp.96 20 47 51 ];
+        %tmp.97 = as %tmp.96 { (!Null) };
+        symbol [ format %tmp.98 20 52 58 ];
+        %tmp.98 = getv function %tmp.97 :format;
+        %tmp.99 = "%.1f";
+        %tmp.100 = invoke %tmp.97 %tmp.98(%tmp.99);
+        %tmp.101 = " km";
+        %tmp.102 = add %tmp.100 %tmp.101;
+        push %tmp.102;
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_20_30_20_77_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_20_30_20_77_else_false:
+        %tmp.103 = null;
+        push %tmp.103;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_20_30_20_77_end:
+        %tmp.104 = phi [%tmp.95 @C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_20_30_20_77_begin] [%tmp.102 @C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_20_30_20_77_true] [%tmp.103 @C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_20_30_20_77_else_false] [%tmp.104 @C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_20_30_20_77_end];
+        lputv %distStr.4 %tmp.104;
+        symbol [ distStr %distStr.4 20 20 27 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\CoursePickerView.mc" 21 16 ]
+        %tmp.105 = self;
+        symbol [ addItem %tmp.106 21 16 23 ];
+        %tmp.106 = getv function %tmp.105 :addItem;
+        symbol [ WatchUi %tmp.109 21 28 35 ];
+        %tmp.109 = getm $.Toybox.WatchUi;
+        symbol [ MenuItem %tmp.110 21 36 44 ];
+        %tmp.110 = getv function ? %tmp.109 :MenuItem;
+        %tmp.111 = lgetv %name.2;
+        symbol [ name %tmp.111 21 45 49 ];
+        %tmp.112 = lgetv %distStr.4;
+        symbol [ distStr %tmp.112 21 51 58 ];
+        %tmp.113 = lgetv %i.1;
+        symbol [ i %tmp.113 21 60 61 ];
+        %tmp.114 = newd 0;
+        %tmp.107 = newc %tmp.110 (%tmp.111, %tmp.112, %tmp.113, %tmp.114);
+        invoke %tmp.105 %tmp.106(%tmp.107);
+C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_16_53_22_12_stop:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_16_12_22_12_for_incr:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\CoursePickerView.mc" 16 ]
+        %tmp.117 = lgetv %i.1;
+        symbol [ i %tmp.117 16 48 49 ];
+        %tmp.118 = add %tmp.117 1;
+        lputv %i.1 %tmp.118;
+        symbol [ i %i.1 16 48 49 ];
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_16_12_22_12_for_test;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_16_12_22_12_for_end:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_14_51_23_8_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_14_8_25_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_14_8_25_8_if_else_false:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_23_15_25_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\CoursePickerView.mc" 24 12 ]
+        %tmp.119 = self;
+        symbol [ addItem %tmp.120 24 12 19 ];
+        %tmp.120 = getv function %tmp.119 :addItem;
+        symbol [ WatchUi %tmp.123 24 24 31 ];
+        %tmp.123 = getm $.Toybox.WatchUi;
+        symbol [ MenuItem %tmp.124 24 32 40 ];
+        %tmp.124 = getv function ? %tmp.123 :MenuItem;
+        %tmp.125 = "No courses found";
+        %tmp.126 = "Tap to retry";
+        %tmp.128 = const :retry_nearby;
+        symbol [ retry_nearby %tmp.128 24 78 90 const ];
+        %tmp.129 = newd 0;
+        %tmp.121 = newc %tmp.124 (%tmp.125, %tmp.126, %tmp.128, %tmp.129);
+        invoke %tmp.119 %tmp.120(%tmp.121);
+C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_23_15_25_8_stop:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_14_8_25_8_if_end:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_6_33_26_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\CoursePickerView.mc"; @line = 28; @symbol_functiondef = [getCourses,28,13,23]; ]
+    function getCourses() {
+C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_28_26_28_45_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\CoursePickerView.mc" 28 28 ]
+        symbol [ _courses %tmp.2 28 35 43 ];
+        %tmp.2 = getv ? :_courses;
+        ret %tmp.2;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_CoursePickerView_mc_28_26_28_45_stop:
+    }
+}
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\CoursePickerView.mc"; @line = 1; ]
+<init> {
+}

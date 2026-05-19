@@ -1,0 +1,565 @@
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [WatchUi,1,13,20]; ]
+using Toybox.WatchUi;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [Application,2,13,24]; @symbol_usingdef<2> = [Properties,2,25,35]; ]
+using Toybox.Application.Properties;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc"; @line = 4; @symbol_classdef = [DisplayOptionsView,4,6,24]; @symbol_extends<0> = [WatchUi,4,33,40]; @symbol_extends<1> = [Menu2,4,41,46]; ]
+class DisplayOptionsView extends WatchUi.Menu2 {
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc"; @line = 4; ]
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc"; @line = 4; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc"; @line = 5; @symbol_functiondef = [initialize,5,13,23]; ]
+    function initialize() as Void {
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_5_26_71_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc" 6 8 ]
+        symbol [ Menu2 %tmp.2 6 8 13 ];
+        %tmp.2 = getv ? :Menu2;
+        symbol [ initialize %tmp.3 6 14 24 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        %tmp.4 = newd 1;
+        %tmp.6 = const :title;
+        symbol [ title %tmp.6 6 27 32 const ];
+        %tmp.7 = "Display";
+        %tmp.8 = dup %tmp.4;
+        %tmp.9 = aputv %tmp.8 %tmp.6 %tmp.7;
+        invoke %tmp.2 %tmp.3(%tmp.9);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc" 8 8 ]
+        %tmp.10 = self;
+        symbol [ addItem %tmp.11 8 8 15 ];
+        %tmp.11 = getv function %tmp.10 :addItem;
+        symbol [ WatchUi %tmp.14 8 20 27 ];
+        %tmp.14 = getm $.Toybox.WatchUi;
+        symbol [ ToggleMenuItem %tmp.15 8 28 42 ];
+        %tmp.15 = getv function ? %tmp.14 :ToggleMenuItem;
+        %tmp.16 = "Hole number";
+        %tmp.17 = newd 2;
+        %tmp.19 = const :enabled;
+        symbol [ enabled %tmp.19 10 14 21 const ];
+        %tmp.20 = "On";
+        %tmp.21 = dup %tmp.17;
+        %tmp.22 = aputv %tmp.21 %tmp.19 %tmp.20;
+        %tmp.24 = const :disabled;
+        symbol [ disabled %tmp.24 10 32 40 const ];
+        %tmp.25 = "Off";
+        %tmp.26 = dup %tmp.22;
+        %tmp.27 = aputv %tmp.26 %tmp.24 %tmp.25;
+        %tmp.29 = const :showHoleNumber;
+        symbol [ showHoleNumber %tmp.29 11 13 27 const ];
+        symbol [ Properties %tmp.30 12 12 22 ];
+        %tmp.30 = getm $.Toybox.Application.Properties;
+        symbol [ getValue %tmp.31 12 23 31 ];
+        %tmp.31 = getv function %tmp.30 :getValue;
+        %tmp.32 = "showHoleNumber";
+        %tmp.33 = invoke %tmp.30 %tmp.31(%tmp.32);
+        %tmp.34 = false;
+        %tmp.35 = ne %tmp.33 %tmp.34;
+        %tmp.36 = newd 0;
+        %tmp.12 = newc %tmp.15 (%tmp.16, %tmp.27, %tmp.29, %tmp.35, %tmp.36);
+        invoke %tmp.10 %tmp.11(%tmp.12);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc" 16 8 ]
+        %tmp.37 = self;
+        symbol [ addItem %tmp.38 16 8 15 ];
+        %tmp.38 = getv function %tmp.37 :addItem;
+        symbol [ WatchUi %tmp.41 16 20 27 ];
+        %tmp.41 = getm $.Toybox.WatchUi;
+        symbol [ ToggleMenuItem %tmp.42 16 28 42 ];
+        %tmp.42 = getv function ? %tmp.41 :ToggleMenuItem;
+        %tmp.43 = "Par";
+        %tmp.44 = newd 2;
+        %tmp.46 = const :enabled;
+        symbol [ enabled %tmp.46 18 14 21 const ];
+        %tmp.47 = "On";
+        %tmp.48 = dup %tmp.44;
+        %tmp.49 = aputv %tmp.48 %tmp.46 %tmp.47;
+        %tmp.51 = const :disabled;
+        symbol [ disabled %tmp.51 18 32 40 const ];
+        %tmp.52 = "Off";
+        %tmp.53 = dup %tmp.49;
+        %tmp.54 = aputv %tmp.53 %tmp.51 %tmp.52;
+        %tmp.56 = const :showPar;
+        symbol [ showPar %tmp.56 19 13 20 const ];
+        symbol [ Properties %tmp.57 20 12 22 ];
+        %tmp.57 = getm $.Toybox.Application.Properties;
+        symbol [ getValue %tmp.58 20 23 31 ];
+        %tmp.58 = getv function %tmp.57 :getValue;
+        %tmp.59 = "showPar";
+        %tmp.60 = invoke %tmp.57 %tmp.58(%tmp.59);
+        %tmp.61 = false;
+        %tmp.62 = ne %tmp.60 %tmp.61;
+        %tmp.63 = newd 0;
+        %tmp.39 = newc %tmp.42 (%tmp.43, %tmp.54, %tmp.56, %tmp.62, %tmp.63);
+        invoke %tmp.37 %tmp.38(%tmp.39);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc" 24 8 ]
+        %tmp.64 = self;
+        symbol [ addItem %tmp.65 24 8 15 ];
+        %tmp.65 = getv function %tmp.64 :addItem;
+        symbol [ WatchUi %tmp.68 24 20 27 ];
+        %tmp.68 = getm $.Toybox.WatchUi;
+        symbol [ ToggleMenuItem %tmp.69 24 28 42 ];
+        %tmp.69 = getv function ? %tmp.68 :ToggleMenuItem;
+        %tmp.70 = "Strokes";
+        %tmp.71 = newd 2;
+        %tmp.73 = const :enabled;
+        symbol [ enabled %tmp.73 26 14 21 const ];
+        %tmp.74 = "On";
+        %tmp.75 = dup %tmp.71;
+        %tmp.76 = aputv %tmp.75 %tmp.73 %tmp.74;
+        %tmp.78 = const :disabled;
+        symbol [ disabled %tmp.78 26 32 40 const ];
+        %tmp.79 = "Off";
+        %tmp.80 = dup %tmp.76;
+        %tmp.81 = aputv %tmp.80 %tmp.78 %tmp.79;
+        %tmp.83 = const :showStrokes;
+        symbol [ showStrokes %tmp.83 27 13 24 const ];
+        symbol [ Properties %tmp.84 28 12 22 ];
+        %tmp.84 = getm $.Toybox.Application.Properties;
+        symbol [ getValue %tmp.85 28 23 31 ];
+        %tmp.85 = getv function %tmp.84 :getValue;
+        %tmp.86 = "showStrokes";
+        %tmp.87 = invoke %tmp.84 %tmp.85(%tmp.86);
+        %tmp.88 = false;
+        %tmp.89 = ne %tmp.87 %tmp.88;
+        %tmp.90 = newd 0;
+        %tmp.66 = newc %tmp.69 (%tmp.70, %tmp.81, %tmp.83, %tmp.89, %tmp.90);
+        invoke %tmp.64 %tmp.65(%tmp.66);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc" 32 8 ]
+        %tmp.91 = self;
+        symbol [ addItem %tmp.92 32 8 15 ];
+        %tmp.92 = getv function %tmp.91 :addItem;
+        symbol [ WatchUi %tmp.95 32 20 27 ];
+        %tmp.95 = getm $.Toybox.WatchUi;
+        symbol [ ToggleMenuItem %tmp.96 32 28 42 ];
+        %tmp.96 = getv function ? %tmp.95 :ToggleMenuItem;
+        %tmp.97 = "Round Timer";
+        %tmp.98 = newd 2;
+        %tmp.100 = const :enabled;
+        symbol [ enabled %tmp.100 34 14 21 const ];
+        %tmp.101 = "On";
+        %tmp.102 = dup %tmp.98;
+        %tmp.103 = aputv %tmp.102 %tmp.100 %tmp.101;
+        %tmp.105 = const :disabled;
+        symbol [ disabled %tmp.105 34 32 40 const ];
+        %tmp.106 = "Off";
+        %tmp.107 = dup %tmp.103;
+        %tmp.108 = aputv %tmp.107 %tmp.105 %tmp.106;
+        %tmp.110 = const :showRoundTimer;
+        symbol [ showRoundTimer %tmp.110 35 13 27 const ];
+        symbol [ Properties %tmp.111 36 12 22 ];
+        %tmp.111 = getm $.Toybox.Application.Properties;
+        symbol [ getValue %tmp.112 36 23 31 ];
+        %tmp.112 = getv function %tmp.111 :getValue;
+        %tmp.113 = "showRoundTimer";
+        %tmp.114 = invoke %tmp.111 %tmp.112(%tmp.113);
+        %tmp.115 = false;
+        %tmp.116 = ne %tmp.114 %tmp.115;
+        %tmp.117 = newd 0;
+        %tmp.93 = newc %tmp.96 (%tmp.97, %tmp.108, %tmp.110, %tmp.116, %tmp.117);
+        invoke %tmp.91 %tmp.92(%tmp.93);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc" 40 8 ]
+        %tmp.118 = self;
+        symbol [ addItem %tmp.119 40 8 15 ];
+        %tmp.119 = getv function %tmp.118 :addItem;
+        symbol [ WatchUi %tmp.122 40 20 27 ];
+        %tmp.122 = getm $.Toybox.WatchUi;
+        symbol [ ToggleMenuItem %tmp.123 40 28 42 ];
+        %tmp.123 = getv function ? %tmp.122 :ToggleMenuItem;
+        %tmp.124 = "Speed score";
+        %tmp.125 = newd 2;
+        %tmp.127 = const :enabled;
+        symbol [ enabled %tmp.127 42 14 21 const ];
+        %tmp.128 = "On";
+        %tmp.129 = dup %tmp.125;
+        %tmp.130 = aputv %tmp.129 %tmp.127 %tmp.128;
+        %tmp.132 = const :disabled;
+        symbol [ disabled %tmp.132 42 32 40 const ];
+        %tmp.133 = "Off";
+        %tmp.134 = dup %tmp.130;
+        %tmp.135 = aputv %tmp.134 %tmp.132 %tmp.133;
+        %tmp.137 = const :showSpeedScore;
+        symbol [ showSpeedScore %tmp.137 43 13 27 const ];
+        symbol [ Properties %tmp.138 44 12 22 ];
+        %tmp.138 = getm $.Toybox.Application.Properties;
+        symbol [ getValue %tmp.139 44 23 31 ];
+        %tmp.139 = getv function %tmp.138 :getValue;
+        %tmp.140 = "showSpeedScore";
+        %tmp.141 = invoke %tmp.138 %tmp.139(%tmp.140);
+        %tmp.142 = false;
+        %tmp.143 = ne %tmp.141 %tmp.142;
+        %tmp.144 = newd 0;
+        %tmp.120 = newc %tmp.123 (%tmp.124, %tmp.135, %tmp.137, %tmp.143, %tmp.144);
+        invoke %tmp.118 %tmp.119(%tmp.120);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc" 48 8 ]
+        %tmp.145 = self;
+        symbol [ addItem %tmp.146 48 8 15 ];
+        %tmp.146 = getv function %tmp.145 :addItem;
+        symbol [ WatchUi %tmp.149 48 20 27 ];
+        %tmp.149 = getm $.Toybox.WatchUi;
+        symbol [ ToggleMenuItem %tmp.150 48 28 42 ];
+        %tmp.150 = getv function ? %tmp.149 :ToggleMenuItem;
+        %tmp.151 = "Golf score";
+        %tmp.152 = newd 2;
+        %tmp.154 = const :enabled;
+        symbol [ enabled %tmp.154 50 14 21 const ];
+        %tmp.155 = "On";
+        %tmp.156 = dup %tmp.152;
+        %tmp.157 = aputv %tmp.156 %tmp.154 %tmp.155;
+        %tmp.159 = const :disabled;
+        symbol [ disabled %tmp.159 50 32 40 const ];
+        %tmp.160 = "Off";
+        %tmp.161 = dup %tmp.157;
+        %tmp.162 = aputv %tmp.161 %tmp.159 %tmp.160;
+        %tmp.164 = const :showGolfScore;
+        symbol [ showGolfScore %tmp.164 51 13 26 const ];
+        symbol [ Properties %tmp.165 52 12 22 ];
+        %tmp.165 = getm $.Toybox.Application.Properties;
+        symbol [ getValue %tmp.166 52 23 31 ];
+        %tmp.166 = getv function %tmp.165 :getValue;
+        %tmp.167 = "showGolfScore";
+        %tmp.168 = invoke %tmp.165 %tmp.166(%tmp.167);
+        %tmp.169 = false;
+        %tmp.170 = ne %tmp.168 %tmp.169;
+        %tmp.171 = newd 0;
+        %tmp.147 = newc %tmp.150 (%tmp.151, %tmp.162, %tmp.164, %tmp.170, %tmp.171);
+        invoke %tmp.145 %tmp.146(%tmp.147);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc" 56 8 ]
+        %tmp.172 = self;
+        symbol [ addItem %tmp.173 56 8 15 ];
+        %tmp.173 = getv function %tmp.172 :addItem;
+        symbol [ WatchUi %tmp.176 56 20 27 ];
+        %tmp.176 = getm $.Toybox.WatchUi;
+        symbol [ ToggleMenuItem %tmp.177 56 28 42 ];
+        %tmp.177 = getv function ? %tmp.176 :ToggleMenuItem;
+        %tmp.178 = "Compass arrow";
+        %tmp.179 = newd 2;
+        %tmp.181 = const :enabled;
+        symbol [ enabled %tmp.181 58 14 21 const ];
+        %tmp.182 = "On";
+        %tmp.183 = dup %tmp.179;
+        %tmp.184 = aputv %tmp.183 %tmp.181 %tmp.182;
+        %tmp.186 = const :disabled;
+        symbol [ disabled %tmp.186 58 32 40 const ];
+        %tmp.187 = "Off";
+        %tmp.188 = dup %tmp.184;
+        %tmp.189 = aputv %tmp.188 %tmp.186 %tmp.187;
+        %tmp.191 = const :showArrow;
+        symbol [ showArrow %tmp.191 59 13 22 const ];
+        symbol [ Properties %tmp.192 60 12 22 ];
+        %tmp.192 = getm $.Toybox.Application.Properties;
+        symbol [ getValue %tmp.193 60 23 31 ];
+        %tmp.193 = getv function %tmp.192 :getValue;
+        %tmp.194 = "showArrow";
+        %tmp.195 = invoke %tmp.192 %tmp.193(%tmp.194);
+        %tmp.196 = false;
+        %tmp.197 = ne %tmp.195 %tmp.196;
+        %tmp.198 = newd 0;
+        %tmp.174 = newc %tmp.177 (%tmp.178, %tmp.189, %tmp.191, %tmp.197, %tmp.198);
+        invoke %tmp.172 %tmp.173(%tmp.174);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc" 64 8 ]
+        %tmp.199 = self;
+        symbol [ addItem %tmp.200 64 8 15 ];
+        %tmp.200 = getv function %tmp.199 :addItem;
+        symbol [ WatchUi %tmp.203 64 20 27 ];
+        %tmp.203 = getm $.Toybox.WatchUi;
+        symbol [ ToggleMenuItem %tmp.204 64 28 42 ];
+        %tmp.204 = getv function ? %tmp.203 :ToggleMenuItem;
+        %tmp.205 = "Hole Timer";
+        %tmp.206 = newd 2;
+        %tmp.208 = const :enabled;
+        symbol [ enabled %tmp.208 66 14 21 const ];
+        %tmp.209 = "On";
+        %tmp.210 = dup %tmp.206;
+        %tmp.211 = aputv %tmp.210 %tmp.208 %tmp.209;
+        %tmp.213 = const :disabled;
+        symbol [ disabled %tmp.213 66 32 40 const ];
+        %tmp.214 = "Off";
+        %tmp.215 = dup %tmp.211;
+        %tmp.216 = aputv %tmp.215 %tmp.213 %tmp.214;
+        %tmp.218 = const :showHoleTimer;
+        symbol [ showHoleTimer %tmp.218 67 13 26 const ];
+        symbol [ Properties %tmp.219 68 12 22 ];
+        %tmp.219 = getm $.Toybox.Application.Properties;
+        symbol [ getValue %tmp.220 68 23 31 ];
+        %tmp.220 = getv function %tmp.219 :getValue;
+        %tmp.221 = "showHoleTimer";
+        %tmp.222 = invoke %tmp.219 %tmp.220(%tmp.221);
+        %tmp.223 = false;
+        %tmp.224 = ne %tmp.222 %tmp.223;
+        %tmp.225 = newd 0;
+        %tmp.201 = newc %tmp.204 (%tmp.205, %tmp.216, %tmp.218, %tmp.224, %tmp.225);
+        invoke %tmp.199 %tmp.200(%tmp.201);
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_5_26_71_4_stop:
+    }
+}
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc"; @line = 74; @symbol_classdef = [DisplayOptionsDelegate,74,6,28]; @symbol_extends<0> = [WatchUi,74,37,44]; @symbol_extends<1> = [Menu2InputDelegate,74,45,63]; ]
+class DisplayOptionsDelegate extends WatchUi.Menu2InputDelegate {
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc"; @line = 74; ]
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc"; @line = 74; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc"; @line = 75; @position = 15; @symbol_vardef = [_screenManager,75,15,29]; ]
+    protected
+    var _screenManager;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc"; @line = 77; @symbol_functiondef = [initialize,77,13,23]; @symbol_param<0> = [screenManager,77,24,37]; ]
+    function initialize(screenManager) as Void {
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_77_39_80_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc" 78 8 ]
+        symbol [ Menu2InputDelegate %tmp.2 78 8 26 ];
+        %tmp.2 = getv ? :Menu2InputDelegate;
+        symbol [ initialize %tmp.3 78 27 37 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc" 79 8 ]
+        %tmp.4 = lgetv %screenManager;
+        symbol [ screenManager %tmp.4 79 25 38 ];
+        symbol [ _screenManager ? 79 8 22 ];
+        putv self :_screenManager %tmp.4;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_77_39_80_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc"; @line = 82; @symbol_functiondef = [onSelect,82,13,21]; @symbol_param<0> = [item,82,22,26]; ]
+    function onSelect(item) {
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_82_28_95_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc" 83 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_82_28_95_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_82_28_95_4_stop" ]
+        %id.1 = local;
+        symbol [ id %id.1 83 12 14 ];
+        %tmp.1 = lgetv %item;
+        symbol [ item %tmp.1 83 22 26 ];
+        symbol [ getId %tmp.2 83 27 32 ];
+        %tmp.2 = getv function %tmp.1 :getId;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %id.1 %tmp.3;
+        symbol [ id %id.1 83 12 14 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc" 84 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_82_28_95_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_82_28_95_4_stop" ]
+        %enabled.2 = local;
+        symbol [ enabled %enabled.2 84 12 19 ];
+        %tmp.4 = lgetv %item;
+        symbol [ item %tmp.4 84 22 26 ];
+        symbol [ isEnabled %tmp.5 84 27 36 ];
+        %tmp.5 = getv function %tmp.4 :isEnabled;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        lputv %enabled.2 %tmp.6;
+        symbol [ enabled %enabled.2 84 12 19 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc" 86 8 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_86_8_92_92_if_stmt:
+        %tmp.7 = lgetv %id.1;
+        symbol [ id %tmp.7 86 12 14 ];
+        %tmp.9 = const :showHoleNumber;
+        symbol [ showHoleNumber %tmp.9 86 19 33 const ];
+        %tmp.10 = eq %tmp.7 %tmp.9;
+        bf %tmp.10 @C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_86_8_92_92_if_false;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_86_8_92_92_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_86_35_86_85_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc" 86 37 ]
+        symbol [ Properties %tmp.11 86 37 47 ];
+        %tmp.11 = getm $.Toybox.Application.Properties;
+        symbol [ setValue %tmp.12 86 48 56 ];
+        %tmp.12 = getv function %tmp.11 :setValue;
+        %tmp.13 = "showHoleNumber";
+        %tmp.14 = lgetv %enabled.2;
+        symbol [ enabled %tmp.14 86 75 82 ];
+        invoke %tmp.11 %tmp.12(%tmp.13, %tmp.14);
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_86_35_86_85_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_86_8_92_92_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_86_8_92_92_if_false:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc" 87 13 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_87_13_92_92_if_stmt:
+        %tmp.15 = lgetv %id.1;
+        symbol [ id %tmp.15 87 17 19 ];
+        %tmp.17 = const :showPar;
+        symbol [ showPar %tmp.17 87 24 31 const ];
+        %tmp.18 = eq %tmp.15 %tmp.17;
+        bf %tmp.18 @C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_87_13_92_92_if_false;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_87_13_92_92_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_87_41_87_92_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc" 87 43 ]
+        symbol [ Properties %tmp.19 87 43 53 ];
+        %tmp.19 = getm $.Toybox.Application.Properties;
+        symbol [ setValue %tmp.20 87 54 62 ];
+        %tmp.20 = getv function %tmp.19 :setValue;
+        %tmp.21 = "showPar";
+        %tmp.22 = lgetv %enabled.2;
+        symbol [ enabled %tmp.22 87 82 89 ];
+        invoke %tmp.19 %tmp.20(%tmp.21, %tmp.22);
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_87_41_87_92_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_87_13_92_92_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_87_13_92_92_if_false:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc" 88 13 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_88_13_92_92_if_stmt:
+        %tmp.23 = lgetv %id.1;
+        symbol [ id %tmp.23 88 17 19 ];
+        %tmp.25 = const :showStrokes;
+        symbol [ showStrokes %tmp.25 88 24 35 const ];
+        %tmp.26 = eq %tmp.23 %tmp.25;
+        bf %tmp.26 @C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_88_13_92_92_if_false;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_88_13_92_92_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_88_41_88_92_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc" 88 43 ]
+        symbol [ Properties %tmp.27 88 43 53 ];
+        %tmp.27 = getm $.Toybox.Application.Properties;
+        symbol [ setValue %tmp.28 88 54 62 ];
+        %tmp.28 = getv function %tmp.27 :setValue;
+        %tmp.29 = "showStrokes";
+        %tmp.30 = lgetv %enabled.2;
+        symbol [ enabled %tmp.30 88 82 89 ];
+        invoke %tmp.27 %tmp.28(%tmp.29, %tmp.30);
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_88_41_88_92_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_88_13_92_92_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_88_13_92_92_if_false:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc" 89 13 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_89_13_92_92_if_stmt:
+        %tmp.31 = lgetv %id.1;
+        symbol [ id %tmp.31 89 17 19 ];
+        %tmp.33 = const :showRoundTimer;
+        symbol [ showRoundTimer %tmp.33 89 24 38 const ];
+        %tmp.34 = eq %tmp.31 %tmp.33;
+        bf %tmp.34 @C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_89_13_92_92_if_false;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_89_13_92_92_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_89_40_89_90_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc" 89 42 ]
+        symbol [ Properties %tmp.35 89 42 52 ];
+        %tmp.35 = getm $.Toybox.Application.Properties;
+        symbol [ setValue %tmp.36 89 53 61 ];
+        %tmp.36 = getv function %tmp.35 :setValue;
+        %tmp.37 = "showRoundTimer";
+        %tmp.38 = lgetv %enabled.2;
+        symbol [ enabled %tmp.38 89 80 87 ];
+        invoke %tmp.35 %tmp.36(%tmp.37, %tmp.38);
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_89_40_89_90_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_89_13_92_92_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_89_13_92_92_if_false:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc" 90 13 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_90_13_92_92_if_stmt:
+        %tmp.39 = lgetv %id.1;
+        symbol [ id %tmp.39 90 17 19 ];
+        %tmp.41 = const :showHoleTimer;
+        symbol [ showHoleTimer %tmp.41 90 24 37 const ];
+        %tmp.42 = eq %tmp.39 %tmp.41;
+        bf %tmp.42 @C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_90_13_92_92_if_false;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_90_13_92_92_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_90_40_90_90_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc" 90 42 ]
+        symbol [ Properties %tmp.43 90 42 52 ];
+        %tmp.43 = getm $.Toybox.Application.Properties;
+        symbol [ setValue %tmp.44 90 53 61 ];
+        %tmp.44 = getv function %tmp.43 :setValue;
+        %tmp.45 = "showHoleTimer";
+        %tmp.46 = lgetv %enabled.2;
+        symbol [ enabled %tmp.46 90 80 87 ];
+        invoke %tmp.43 %tmp.44(%tmp.45, %tmp.46);
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_90_40_90_90_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_90_13_92_92_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_90_13_92_92_if_false:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc" 90 104 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_90_104_92_92_if_stmt:
+        %tmp.47 = lgetv %id.1;
+        symbol [ id %tmp.47 90 108 110 ];
+        %tmp.49 = const :showSpeedScore;
+        symbol [ showSpeedScore %tmp.49 90 115 129 const ];
+        %tmp.50 = eq %tmp.47 %tmp.49;
+        bf %tmp.50 @C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_90_104_92_92_if_false;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_90_104_92_92_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_90_132_90_183_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc" 90 134 ]
+        symbol [ Properties %tmp.51 90 134 144 ];
+        %tmp.51 = getm $.Toybox.Application.Properties;
+        symbol [ setValue %tmp.52 90 145 153 ];
+        %tmp.52 = getv function %tmp.51 :setValue;
+        %tmp.53 = "showSpeedScore";
+        %tmp.54 = lgetv %enabled.2;
+        symbol [ enabled %tmp.54 90 173 180 ];
+        invoke %tmp.51 %tmp.52(%tmp.53, %tmp.54);
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_90_132_90_183_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_90_104_92_92_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_90_104_92_92_if_false:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc" 91 13 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_91_13_92_92_if_stmt:
+        %tmp.55 = lgetv %id.1;
+        symbol [ id %tmp.55 91 17 19 ];
+        %tmp.57 = const :showGolfScore;
+        symbol [ showGolfScore %tmp.57 91 24 37 const ];
+        %tmp.58 = eq %tmp.55 %tmp.57;
+        bf %tmp.58 @C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_91_13_92_92_if_false;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_91_13_92_92_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_91_41_91_92_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc" 91 43 ]
+        symbol [ Properties %tmp.59 91 43 53 ];
+        %tmp.59 = getm $.Toybox.Application.Properties;
+        symbol [ setValue %tmp.60 91 54 62 ];
+        %tmp.60 = getv function %tmp.59 :setValue;
+        %tmp.61 = "showGolfScore";
+        %tmp.62 = lgetv %enabled.2;
+        symbol [ enabled %tmp.62 91 82 89 ];
+        invoke %tmp.59 %tmp.60(%tmp.61, %tmp.62);
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_91_41_91_92_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_91_13_92_92_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_91_13_92_92_if_false:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc" 92 13 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_92_13_92_92_if_stmt:
+        %tmp.63 = lgetv %id.1;
+        symbol [ id %tmp.63 92 17 19 ];
+        %tmp.65 = const :showArrow;
+        symbol [ showArrow %tmp.65 92 24 33 const ];
+        %tmp.66 = eq %tmp.63 %tmp.65;
+        bf %tmp.66 @C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_92_13_92_92_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_92_13_92_92_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_92_41_92_92_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc" 92 43 ]
+        symbol [ Properties %tmp.67 92 43 53 ];
+        %tmp.67 = getm $.Toybox.Application.Properties;
+        symbol [ setValue %tmp.68 92 54 62 ];
+        %tmp.68 = getv function %tmp.67 :setValue;
+        %tmp.69 = "showArrow";
+        %tmp.70 = lgetv %enabled.2;
+        symbol [ enabled %tmp.70 92 82 89 ];
+        invoke %tmp.67 %tmp.68(%tmp.69, %tmp.70);
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_92_41_92_92_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_92_13_92_92_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_92_13_92_92_if_end:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_91_13_92_92_if_end:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_90_104_92_92_if_end:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_90_13_92_92_if_end:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_89_13_92_92_if_end:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_88_13_92_92_if_end:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_87_13_92_92_if_end:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_86_8_92_92_if_end:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc" 94 8 ]
+        symbol [ System %tmp.72 94 8 14 ];
+        %tmp.72 = getv ? :System;
+        symbol [ println %tmp.73 94 15 22 ];
+        %tmp.73 = getv function %tmp.72 :println;
+        %tmp.74 = lgetv %id.1;
+        symbol [ id %tmp.74 94 23 25 ];
+        %tmp.75 = ": ";
+        %tmp.76 = add %tmp.74 %tmp.75;
+        %tmp.77 = lgetv %enabled.2;
+        symbol [ enabled %tmp.77 94 35 42 ];
+        %tmp.78 = add %tmp.76 %tmp.77;
+        invoke %tmp.72 %tmp.73(%tmp.78);
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_82_28_95_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc"; @line = 97; @symbol_functiondef = [onBack,97,13,19]; ]
+    function onBack() {
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_97_22_99_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc" 98 8 ]
+        symbol [ WatchUi %tmp.1 98 8 15 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.2 98 16 23 ];
+        %tmp.2 = getv function %tmp.1 :popView;
+        symbol [ WatchUi %tmp.3 98 24 31 ];
+        %tmp.3 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_RIGHT %tmp.4 98 32 43 ];
+        %tmp.4 = getv %tmp.3 :SLIDE_RIGHT;
+        invoke %tmp.1 %tmp.2(%tmp.4);
+C__Users_roset_OneDrive_Desktop_garmin_source_views_DisplayOptionsView_mc_97_22_99_4_stop:
+    }
+}
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\DisplayOptionsView.mc"; @line = 1; ]
+<init> {
+}

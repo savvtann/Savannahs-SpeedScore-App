@@ -1,0 +1,454 @@
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [WatchUi,1,13,20]; ]
+using Toybox.WatchUi;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [Graphics,2,13,21]; ]
+using Toybox.Graphics;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc"; @line = 3; @symbol_usingdef<0> = [Toybox,3,6,12]; @symbol_usingdef<1> = [Application,3,13,24]; ]
+using Toybox.Application;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc"; @line = 5; @symbol_classdef = [StrokeEntryView,5,6,21]; @symbol_extends<0> = [BasePageView,5,30,42]; ]
+class StrokeEntryView extends BasePageView {
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc"; @line = 5; ]
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc"; @line = 5; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc"; @line = 6; @position = 15; @symbol_vardef = [_holeNumber,6,15,26]; ]
+    protected
+    var _holeNumber;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc"; @line = 7; @position = 15; @symbol_vardef = [_strokes,7,15,23]; ]
+    protected
+    var _strokes;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc"; @line = 8; @position = 15; @symbol_vardef = [_par,8,15,19]; ]
+    protected
+    var _par;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc"; @line = 10; @symbol_functiondef = [initialize,10,13,23]; @symbol_param<0> = [holeNumber,10,24,34]; ]
+    function initialize(holeNumber) as Void {
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_10_36_15_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc" 11 8 ]
+        symbol [ BasePageView %tmp.2 11 8 20 ];
+        %tmp.2 = getv ? :BasePageView;
+        symbol [ initialize %tmp.3 11 21 31 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc" 12 8 ]
+        %tmp.4 = lgetv %holeNumber;
+        symbol [ holeNumber %tmp.4 12 22 32 ];
+        symbol [ _holeNumber ? 12 8 19 ];
+        putv self :_holeNumber %tmp.4;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc" 13 8 ]
+        %tmp.5 = 0;
+        symbol [ _strokes ? 13 8 16 ];
+        putv self :_strokes %tmp.5;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc" 14 8 ]
+        symbol [ Application %tmp.6 14 22 33 ];
+        %tmp.6 = getm $.Toybox.Application;
+        symbol [ getApp %tmp.7 14 34 40 ];
+        %tmp.7 = getv function %tmp.6 :getApp;
+        %tmp.8 = invoke %tmp.6 %tmp.7();
+        symbol [ getRoundState %tmp.9 14 43 56 ];
+        %tmp.9 = getv function %tmp.8 :getRoundState;
+        %tmp.10 = invoke %tmp.8 %tmp.9();
+        symbol [ getParForHole %tmp.11 14 59 72 ];
+        %tmp.11 = getv function %tmp.10 :getParForHole;
+        %tmp.12 = lgetv %holeNumber;
+        symbol [ holeNumber %tmp.12 14 73 83 ];
+        %tmp.13 = invoke %tmp.10 %tmp.11(%tmp.12);
+        symbol [ _par ? 14 8 12 ];
+        putv self :_par %tmp.13;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_10_36_15_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc"; @line = 17; @symbol_functiondef = [onLayout,17,13,21]; @symbol_param<0> = [dc,17,22,24]; ]
+    function onLayout(dc) {
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_17_26_17_67_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc" 17 28 ]
+        %tmp.1 = self;
+        symbol [ setLayout %tmp.2 17 28 37 ];
+        %tmp.2 = getv function %tmp.1 :setLayout;
+        symbol [ Rez %tmp.4 17 38 41 ];
+        %tmp.4 = getv ? :Rez;
+        symbol [ Layouts %tmp.5 17 42 49 ];
+        %tmp.5 = getv %tmp.4 :Layouts;
+        symbol [ PrettyPage %tmp.6 17 50 60 ];
+        %tmp.6 = getv function %tmp.5 :PrettyPage;
+        %tmp.7 = lgetv %dc;
+        symbol [ dc %tmp.7 17 61 63 ];
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        invoke %tmp.1 %tmp.2(%tmp.8);
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_17_26_17_67_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc"; @line = 18; @symbol_functiondef = [onShow,18,13,19]; ]
+    function onShow() {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc"; @line = 19; @symbol_functiondef = [onHide,19,13,19]; ]
+    function onHide() {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc"; @line = 21; @symbol_functiondef = [addStroke,21,13,22]; ]
+    function addStroke() {
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_21_28_21_42_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc" 21 30 ]
+        symbol [ _strokes %tmp.3 21 30 38 ];
+        %tmp.3 = getv ? :_strokes;
+        %tmp.4 = add %tmp.3 1;
+        symbol [ _strokes ? 21 30 38 ];
+        putv self :_strokes dup %tmp.4;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_21_28_21_42_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc"; @line = 22; @symbol_functiondef = [removeStroke,22,13,25]; ]
+    function removeStroke() {
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_22_28_22_64_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc" 22 30 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_22_30_22_62_if_stmt:
+        symbol [ _strokes %tmp.2 22 34 42 ];
+        %tmp.2 = getv ? :_strokes;
+        %tmp.3 = 0;
+        %tmp.4 = gt %tmp.2 %tmp.3;
+        bf %tmp.4 @C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_22_30_22_62_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_22_30_22_62_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_22_48_22_62_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc" 22 50 ]
+        symbol [ _strokes %tmp.7 22 50 58 ];
+        %tmp.7 = getv ? :_strokes;
+        %tmp.8 = sub %tmp.7 1;
+        symbol [ _strokes ? 22 50 58 ];
+        putv self :_strokes dup %tmp.8;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_22_48_22_62_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_22_30_22_62_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_22_30_22_62_if_end:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_22_28_22_64_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc"; @line = 23; @symbol_functiondef = [getStrokes,23,13,23]; ]
+    function getStrokes() {
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_23_28_23_47_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc" 23 30 ]
+        symbol [ _strokes %tmp.2 23 37 45 ];
+        %tmp.2 = getv ? :_strokes;
+        ret %tmp.2;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_23_28_23_47_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc"; @line = 25; @symbol_functiondef = [onUpdate,25,13,21]; @symbol_param<0> = [dc,25,22,24]; ]
+    function onUpdate(dc) {
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_25_26_60_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc" 26 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_25_26_60_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_25_26_60_4_stop" ]
+        %w.1 = local;
+        symbol [ w %w.1 26 12 13 ];
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 26 17 19 ];
+        symbol [ getWidth %tmp.2 26 20 28 ];
+        %tmp.2 = getv function %tmp.1 :getWidth;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %w.1 %tmp.3;
+        symbol [ w %w.1 26 12 13 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc" 27 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_25_26_60_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_25_26_60_4_stop" ]
+        %h.2 = local;
+        symbol [ h %h.2 27 12 13 ];
+        %tmp.4 = lgetv %dc;
+        symbol [ dc %tmp.4 27 17 19 ];
+        symbol [ getHeight %tmp.5 27 20 29 ];
+        %tmp.5 = getv function %tmp.4 :getHeight;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        lputv %h.2 %tmp.6;
+        symbol [ h %h.2 27 12 13 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc" 28 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_25_26_60_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_25_26_60_4_stop" ]
+        %cx.3 = local;
+        symbol [ cx %cx.3 28 12 14 ];
+        %tmp.7 = lgetv %w.1;
+        symbol [ w %tmp.7 28 17 18 ];
+        %tmp.8 = 2;
+        %tmp.9 = div %tmp.7 %tmp.8;
+        lputv %cx.3 %tmp.9;
+        symbol [ cx %cx.3 28 12 14 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc" 30 8 ]
+        %tmp.10 = lgetv %dc;
+        symbol [ dc %tmp.10 30 8 10 ];
+        symbol [ setColor %tmp.11 30 11 19 ];
+        %tmp.11 = getv function %tmp.10 :setColor;
+        symbol [ Graphics %tmp.12 30 20 28 ];
+        %tmp.12 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.13 30 29 40 ];
+        %tmp.13 = getv %tmp.12 :COLOR_BLACK;
+        symbol [ Graphics %tmp.14 30 42 50 ];
+        %tmp.14 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.15 30 51 62 ];
+        %tmp.15 = getv %tmp.14 :COLOR_BLACK;
+        invoke %tmp.10 %tmp.11(%tmp.13, %tmp.15);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc" 31 8 ]
+        %tmp.16 = lgetv %dc;
+        symbol [ dc %tmp.16 31 8 10 ];
+        symbol [ clear %tmp.17 31 11 16 ];
+        %tmp.17 = getv function %tmp.16 :clear;
+        invoke %tmp.16 %tmp.17();
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc" 34 8 ]
+        %tmp.18 = lgetv %dc;
+        symbol [ dc %tmp.18 34 8 10 ];
+        symbol [ setColor %tmp.19 34 11 19 ];
+        %tmp.19 = getv function %tmp.18 :setColor;
+        symbol [ Graphics %tmp.20 34 20 28 ];
+        %tmp.20 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.21 34 29 40 ];
+        %tmp.21 = getv %tmp.20 :COLOR_WHITE;
+        symbol [ Graphics %tmp.22 34 42 50 ];
+        %tmp.22 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.23 34 51 68 ];
+        %tmp.23 = getv %tmp.22 :COLOR_TRANSPARENT;
+        invoke %tmp.18 %tmp.19(%tmp.21, %tmp.23);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc" 35 8 ]
+        %tmp.24 = lgetv %dc;
+        symbol [ dc %tmp.24 35 8 10 ];
+        symbol [ drawText %tmp.25 35 11 19 ];
+        %tmp.25 = getv function %tmp.24 :drawText;
+        %tmp.26 = lgetv %cx.3;
+        symbol [ cx %tmp.26 35 20 22 ];
+        %tmp.27 = lgetv %h.2;
+        symbol [ h %tmp.27 35 24 25 ];
+        %tmp.28 = 0.15;
+        %tmp.29 = mul %tmp.27 %tmp.28;
+        symbol [ Graphics %tmp.30 35 34 42 ];
+        %tmp.30 = getm $.Toybox.Graphics;
+        symbol [ FONT_TINY %tmp.31 35 43 52 ];
+        %tmp.31 = getv %tmp.30 :FONT_TINY;
+        %tmp.32 = "Hole ";
+        symbol [ _holeNumber %tmp.34 36 22 33 ];
+        %tmp.34 = getv ? :_holeNumber;
+        %tmp.35 = add %tmp.32 %tmp.34;
+        %tmp.36 = " · Par ";
+        %tmp.37 = add %tmp.35 %tmp.36;
+        symbol [ _par %tmp.39 36 48 52 ];
+        %tmp.39 = getv ? :_par;
+        %tmp.40 = add %tmp.37 %tmp.39;
+        symbol [ Graphics %tmp.41 37 12 20 ];
+        %tmp.41 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.42 37 21 40 ];
+        %tmp.42 = getv %tmp.41 :TEXT_JUSTIFY_CENTER;
+        symbol [ Graphics %tmp.43 37 43 51 ];
+        %tmp.43 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_VCENTER %tmp.44 37 52 72 ];
+        %tmp.44 = getv %tmp.43 :TEXT_JUSTIFY_VCENTER;
+        %tmp.45 = bitor %tmp.42 %tmp.44;
+        invoke %tmp.24 %tmp.25(%tmp.26, %tmp.29, %tmp.31, %tmp.40, %tmp.45);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc" 40 8 ]
+        %tmp.46 = lgetv %dc;
+        symbol [ dc %tmp.46 40 8 10 ];
+        symbol [ setColor %tmp.47 40 11 19 ];
+        %tmp.47 = getv function %tmp.46 :setColor;
+        %tmp.48 = 0x444444;
+        symbol [ Graphics %tmp.49 40 30 38 ];
+        %tmp.49 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.50 40 39 56 ];
+        %tmp.50 = getv %tmp.49 :COLOR_TRANSPARENT;
+        invoke %tmp.46 %tmp.47(%tmp.48, %tmp.50);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc" 41 8 ]
+        %tmp.51 = lgetv %dc;
+        symbol [ dc %tmp.51 41 8 10 ];
+        symbol [ drawLine %tmp.52 41 11 19 ];
+        %tmp.52 = getv function %tmp.51 :drawLine;
+        %tmp.53 = lgetv %w.1;
+        symbol [ w %tmp.53 41 20 21 ];
+        %tmp.54 = 0.12;
+        %tmp.55 = mul %tmp.53 %tmp.54;
+        %tmp.56 = lgetv %h.2;
+        symbol [ h %tmp.56 41 30 31 ];
+        %tmp.57 = 0.22;
+        %tmp.58 = mul %tmp.56 %tmp.57;
+        %tmp.59 = lgetv %w.1;
+        symbol [ w %tmp.59 41 40 41 ];
+        %tmp.60 = 0.88;
+        %tmp.61 = mul %tmp.59 %tmp.60;
+        %tmp.62 = lgetv %h.2;
+        symbol [ h %tmp.62 41 50 51 ];
+        %tmp.63 = 0.22;
+        %tmp.64 = mul %tmp.62 %tmp.63;
+        invoke %tmp.51 %tmp.52(%tmp.55, %tmp.58, %tmp.61, %tmp.64);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc" 42 8 ]
+        %tmp.65 = lgetv %dc;
+        symbol [ dc %tmp.65 42 8 10 ];
+        symbol [ drawLine %tmp.66 42 11 19 ];
+        %tmp.66 = getv function %tmp.65 :drawLine;
+        %tmp.67 = lgetv %w.1;
+        symbol [ w %tmp.67 42 20 21 ];
+        %tmp.68 = 0.12;
+        %tmp.69 = mul %tmp.67 %tmp.68;
+        %tmp.70 = lgetv %h.2;
+        symbol [ h %tmp.70 42 30 31 ];
+        %tmp.71 = 0.78;
+        %tmp.72 = mul %tmp.70 %tmp.71;
+        %tmp.73 = lgetv %w.1;
+        symbol [ w %tmp.73 42 40 41 ];
+        %tmp.74 = 0.88;
+        %tmp.75 = mul %tmp.73 %tmp.74;
+        %tmp.76 = lgetv %h.2;
+        symbol [ h %tmp.76 42 50 51 ];
+        %tmp.77 = 0.78;
+        %tmp.78 = mul %tmp.76 %tmp.77;
+        invoke %tmp.65 %tmp.66(%tmp.69, %tmp.72, %tmp.75, %tmp.78);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc" 45 8 ]
+        %tmp.79 = lgetv %dc;
+        symbol [ dc %tmp.79 45 8 10 ];
+        symbol [ setColor %tmp.80 45 11 19 ];
+        %tmp.80 = getv function %tmp.79 :setColor;
+        %tmp.81 = 0x888888;
+        symbol [ Graphics %tmp.82 45 30 38 ];
+        %tmp.82 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.83 45 39 56 ];
+        %tmp.83 = getv %tmp.82 :COLOR_TRANSPARENT;
+        invoke %tmp.79 %tmp.80(%tmp.81, %tmp.83);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc" 46 8 ]
+        %tmp.84 = lgetv %dc;
+        symbol [ dc %tmp.84 46 8 10 ];
+        symbol [ drawText %tmp.85 46 11 19 ];
+        %tmp.85 = getv function %tmp.84 :drawText;
+        %tmp.86 = lgetv %cx.3;
+        symbol [ cx %tmp.86 46 20 22 ];
+        %tmp.87 = lgetv %h.2;
+        symbol [ h %tmp.87 46 24 25 ];
+        %tmp.88 = 0.35;
+        %tmp.89 = mul %tmp.87 %tmp.88;
+        symbol [ Graphics %tmp.90 46 34 42 ];
+        %tmp.90 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.91 46 43 53 ];
+        %tmp.91 = getv %tmp.90 :FONT_XTINY;
+        %tmp.92 = "Strokes this hole";
+        symbol [ Graphics %tmp.93 47 12 20 ];
+        %tmp.93 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.94 47 21 40 ];
+        %tmp.94 = getv %tmp.93 :TEXT_JUSTIFY_CENTER;
+        symbol [ Graphics %tmp.95 47 43 51 ];
+        %tmp.95 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_VCENTER %tmp.96 47 52 72 ];
+        %tmp.96 = getv %tmp.95 :TEXT_JUSTIFY_VCENTER;
+        %tmp.97 = bitor %tmp.94 %tmp.96;
+        invoke %tmp.84 %tmp.85(%tmp.86, %tmp.89, %tmp.91, %tmp.92, %tmp.97);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc" 50 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_25_26_60_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_25_26_60_4_stop" ]
+        %diff.4 = local;
+        symbol [ diff %diff.4 50 12 16 ];
+        symbol [ _strokes %tmp.99 50 26 34 ];
+        %tmp.99 = getv ? :_strokes;
+        symbol [ _par %tmp.101 50 37 41 ];
+        %tmp.101 = getv ? :_par;
+        %tmp.102 = sub %tmp.99 %tmp.101;
+        lputv %diff.4 %tmp.102;
+        symbol [ diff %diff.4 50 12 16 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc" 51 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_25_26_60_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_25_26_60_4_stop" ]
+        %strokeColor.5 = local;
+        symbol [ strokeColor %strokeColor.5 51 12 23 ];
+        symbol [ Graphics %tmp.103 51 26 34 ];
+        %tmp.103 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.104 51 35 46 ];
+        %tmp.104 = getv %tmp.103 :COLOR_WHITE;
+        lputv %strokeColor.5 %tmp.104;
+        symbol [ strokeColor %strokeColor.5 51 12 23 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc" 52 8 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_52_8_56_8_if_stmt:
+        symbol [ _strokes %tmp.106 52 12 20 ];
+        %tmp.106 = getv ? :_strokes;
+        %tmp.107 = 0;
+        %tmp.108 = gt %tmp.106 %tmp.107;
+        bf %tmp.108 @C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_52_8_56_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_52_8_56_8_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_52_26_56_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc" 53 12 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_53_12_55_58_if_stmt:
+        %tmp.109 = lgetv %diff.4;
+        symbol [ diff %tmp.109 53 16 20 ];
+        %tmp.110 = 0;
+        %tmp.111 = lt %tmp.109 %tmp.110;
+        bf %tmp.111 @C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_53_12_55_58_if_false;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_53_12_55_58_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_53_32_53_58_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc" 53 34 ]
+        %tmp.112 = 0x5DCAA5;
+        lputv %strokeColor.5 %tmp.112;
+        symbol [ strokeColor %strokeColor.5 53 34 45 ];
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_53_32_53_58_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_53_12_55_58_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_53_12_55_58_if_false:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc" 54 17 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_54_17_55_58_if_stmt:
+        %tmp.113 = lgetv %diff.4;
+        symbol [ diff %tmp.113 54 21 25 ];
+        %tmp.114 = 1;
+        %tmp.115 = eq %tmp.113 %tmp.114;
+        bf %tmp.115 @C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_54_17_55_58_if_false;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_54_17_55_58_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_54_32_54_58_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc" 54 34 ]
+        %tmp.116 = 0xEF9F27;
+        lputv %strokeColor.5 %tmp.116;
+        symbol [ strokeColor %strokeColor.5 54 34 45 ];
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_54_32_54_58_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_54_17_55_58_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_54_17_55_58_if_false:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc" 55 17 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_55_17_55_58_if_stmt:
+        %tmp.117 = lgetv %diff.4;
+        symbol [ diff %tmp.117 55 21 25 ];
+        %tmp.118 = 1;
+        %tmp.119 = gt %tmp.117 %tmp.118;
+        bf %tmp.119 @C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_55_17_55_58_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_55_17_55_58_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_55_32_55_58_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc" 55 34 ]
+        %tmp.120 = 0xF09595;
+        lputv %strokeColor.5 %tmp.120;
+        symbol [ strokeColor %strokeColor.5 55 34 45 ];
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_55_32_55_58_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_55_17_55_58_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_55_17_55_58_if_end:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_54_17_55_58_if_end:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_53_12_55_58_if_end:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_52_26_56_8_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_52_8_56_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_52_8_56_8_if_end:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc" 57 8 ]
+        %tmp.121 = lgetv %dc;
+        symbol [ dc %tmp.121 57 8 10 ];
+        symbol [ setColor %tmp.122 57 11 19 ];
+        %tmp.122 = getv function %tmp.121 :setColor;
+        %tmp.123 = lgetv %strokeColor.5;
+        symbol [ strokeColor %tmp.123 57 20 31 ];
+        symbol [ Graphics %tmp.124 57 33 41 ];
+        %tmp.124 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.125 57 42 59 ];
+        %tmp.125 = getv %tmp.124 :COLOR_TRANSPARENT;
+        invoke %tmp.121 %tmp.122(%tmp.123, %tmp.125);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc" 58 8 ]
+        %tmp.126 = lgetv %dc;
+        symbol [ dc %tmp.126 58 8 10 ];
+        symbol [ drawText %tmp.127 58 11 19 ];
+        %tmp.127 = getv function %tmp.126 :drawText;
+        %tmp.128 = lgetv %cx.3;
+        symbol [ cx %tmp.128 58 20 22 ];
+        %tmp.129 = lgetv %h.2;
+        symbol [ h %tmp.129 58 24 25 ];
+        %tmp.130 = 0.55;
+        %tmp.131 = mul %tmp.129 %tmp.130;
+        symbol [ Graphics %tmp.132 58 34 42 ];
+        %tmp.132 = getm $.Toybox.Graphics;
+        symbol [ FONT_NUMBER_HOT %tmp.133 58 43 58 ];
+        %tmp.133 = getv %tmp.132 :FONT_NUMBER_HOT;
+        symbol [ _strokes %tmp.135 58 60 68 ];
+        %tmp.135 = getv ? :_strokes;
+        symbol [ toString %tmp.136 58 69 77 ];
+        %tmp.136 = getv function %tmp.135 :toString;
+        %tmp.137 = invoke %tmp.135 %tmp.136();
+        symbol [ Graphics %tmp.138 59 12 20 ];
+        %tmp.138 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.139 59 21 40 ];
+        %tmp.139 = getv %tmp.138 :TEXT_JUSTIFY_CENTER;
+        symbol [ Graphics %tmp.140 59 43 51 ];
+        %tmp.140 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_VCENTER %tmp.141 59 52 72 ];
+        %tmp.141 = getv %tmp.140 :TEXT_JUSTIFY_VCENTER;
+        %tmp.142 = bitor %tmp.139 %tmp.141;
+        invoke %tmp.126 %tmp.127(%tmp.128, %tmp.131, %tmp.133, %tmp.137, %tmp.142);
+C__Users_roset_OneDrive_Desktop_garmin_source_views_StrokeEntryView_mc_25_26_60_4_stop:
+    }
+}
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\StrokeEntryView.mc"; @line = 1; ]
+<init> {
+}

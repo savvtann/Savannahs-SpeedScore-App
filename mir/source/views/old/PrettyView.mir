@@ -1,0 +1,850 @@
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [WatchUi,1,13,20]; ]
+using Toybox.WatchUi;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [Graphics,2,13,21]; ]
+using Toybox.Graphics;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc"; @line = 3; @symbol_usingdef<0> = [Toybox,3,6,12]; @symbol_usingdef<1> = [Application,3,13,24]; ]
+using Toybox.Application;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc"; @line = 4; @symbol_usingdef<0> = [Toybox,4,6,12]; @symbol_usingdef<1> = [Math,4,13,17]; ]
+using Toybox.Math;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc"; @line = 6; @symbol_classdef = [PrettyView,6,6,16]; @symbol_extends<0> = [BasePageView,6,25,37]; ]
+class PrettyView extends BasePageView {
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc"; @line = 6; ]
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc"; @line = 6; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc"; @line = 8; @symbol_functiondef = [initialize,8,13,23]; ]
+    function initialize() as Void {
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_8_26_10_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 9 8 ]
+        symbol [ BasePageView %tmp.2 9 8 20 ];
+        %tmp.2 = getv ? :BasePageView;
+        symbol [ initialize %tmp.3 9 21 31 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_8_26_10_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc"; @line = 12; @symbol_functiondef = [onLayout,12,13,21]; @symbol_param<0> = [dc,12,22,24]; ]
+    function onLayout(dc) {
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_12_26_14_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 13 8 ]
+        %tmp.1 = self;
+        symbol [ setLayout %tmp.2 13 8 17 ];
+        %tmp.2 = getv function %tmp.1 :setLayout;
+        symbol [ Rez %tmp.4 13 18 21 ];
+        %tmp.4 = getv ? :Rez;
+        symbol [ Layouts %tmp.5 13 22 29 ];
+        %tmp.5 = getv %tmp.4 :Layouts;
+        symbol [ PrettyPage %tmp.6 13 30 40 ];
+        %tmp.6 = getv function %tmp.5 :PrettyPage;
+        %tmp.7 = lgetv %dc;
+        symbol [ dc %tmp.7 13 41 43 ];
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        invoke %tmp.1 %tmp.2(%tmp.8);
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_12_26_14_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc"; @line = 16; @symbol_functiondef = [onShow,16,13,19]; ]
+    function onShow() {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc"; @line = 18; @symbol_functiondef = [onUpdate,18,13,21]; @symbol_param<0> = [dc,18,22,24]; ]
+    function onUpdate(dc) {
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 19 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_stop" ]
+        %app.1 = local;
+        symbol [ app %app.1 19 12 15 ];
+        symbol [ Application %tmp.1 19 20 31 ];
+        %tmp.1 = getm $.Toybox.Application;
+        symbol [ getApp %tmp.2 19 32 38 ];
+        %tmp.2 = getv function %tmp.1 :getApp;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %app.1 %tmp.3;
+        symbol [ app %app.1 19 12 15 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 20 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_stop" ]
+        %state.2 = local;
+        symbol [ state %state.2 20 12 17 ];
+        %tmp.4 = lgetv %app.1;
+        symbol [ app %tmp.4 20 20 23 ];
+        symbol [ getRoundState %tmp.5 20 24 37 ];
+        %tmp.5 = getv function %tmp.4 :getRoundState;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        lputv %state.2 %tmp.6;
+        symbol [ state %state.2 20 12 17 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 21 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_stop" ]
+        %w.3 = local;
+        symbol [ w %w.3 21 12 13 ];
+        %tmp.7 = lgetv %dc;
+        symbol [ dc %tmp.7 21 20 22 ];
+        symbol [ getWidth %tmp.8 21 23 31 ];
+        %tmp.8 = getv function %tmp.7 :getWidth;
+        %tmp.9 = invoke %tmp.7 %tmp.8();
+        lputv %w.3 %tmp.9;
+        symbol [ w %w.3 21 12 13 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 22 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_stop" ]
+        %h.4 = local;
+        symbol [ h %h.4 22 12 13 ];
+        %tmp.10 = lgetv %dc;
+        symbol [ dc %tmp.10 22 20 22 ];
+        symbol [ getHeight %tmp.11 22 23 32 ];
+        %tmp.11 = getv function %tmp.10 :getHeight;
+        %tmp.12 = invoke %tmp.10 %tmp.11();
+        lputv %h.4 %tmp.12;
+        symbol [ h %h.4 22 12 13 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 25 8 ]
+        symbol [ View %tmp.14 25 8 12 ];
+        %tmp.14 = getv ? :View;
+        symbol [ onUpdate %tmp.15 25 13 21 ];
+        %tmp.15 = getv function %tmp.14 :onUpdate;
+        %tmp.16 = lgetv %dc;
+        symbol [ dc %tmp.16 25 22 24 ];
+        invoke %tmp.14 %tmp.15(%tmp.16);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 28 8 ]
+        %tmp.17 = lgetv %dc;
+        symbol [ dc %tmp.17 28 8 10 ];
+        symbol [ setColor %tmp.18 28 11 19 ];
+        %tmp.18 = getv function %tmp.17 :setColor;
+        %tmp.19 = 0x7FA3DF;
+        symbol [ Graphics %tmp.20 28 30 38 ];
+        %tmp.20 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.21 28 39 56 ];
+        %tmp.21 = getv %tmp.20 :COLOR_TRANSPARENT;
+        invoke %tmp.17 %tmp.18(%tmp.19, %tmp.21);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 29 8 ]
+        %tmp.22 = lgetv %dc;
+        symbol [ dc %tmp.22 29 8 10 ];
+        symbol [ fillRoundedRectangle %tmp.23 29 11 31 ];
+        %tmp.23 = getv function %tmp.22 :fillRoundedRectangle;
+        %tmp.24 = 162;
+        %tmp.25 = 22;
+        %tmp.26 = 130;
+        %tmp.27 = 55;
+        %tmp.28 = 15;
+        invoke %tmp.22 %tmp.23(%tmp.24, %tmp.25, %tmp.26, %tmp.27, %tmp.28);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 30 8 ]
+        %tmp.29 = lgetv %dc;
+        symbol [ dc %tmp.29 30 8 10 ];
+        symbol [ fillCircle %tmp.30 30 11 21 ];
+        %tmp.30 = getv function %tmp.29 :fillCircle;
+        %tmp.31 = 104;
+        %tmp.32 = 95;
+        %tmp.33 = 45;
+        invoke %tmp.29 %tmp.30(%tmp.31, %tmp.32, %tmp.33);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 31 8 ]
+        %tmp.34 = lgetv %dc;
+        symbol [ dc %tmp.34 31 8 10 ];
+        symbol [ fillCircle %tmp.35 31 11 21 ];
+        %tmp.35 = getv function %tmp.34 :fillCircle;
+        %tmp.36 = 350;
+        %tmp.37 = 95;
+        %tmp.38 = 45;
+        invoke %tmp.34 %tmp.35(%tmp.36, %tmp.37, %tmp.38);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 34 8 ]
+        %tmp.39 = lgetv %dc;
+        symbol [ dc %tmp.39 34 8 10 ];
+        symbol [ setColor %tmp.40 34 11 19 ];
+        %tmp.40 = getv function %tmp.39 :setColor;
+        symbol [ Graphics %tmp.41 34 20 28 ];
+        %tmp.41 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.42 34 29 40 ];
+        %tmp.42 = getv %tmp.41 :COLOR_WHITE;
+        symbol [ Graphics %tmp.43 34 42 50 ];
+        %tmp.43 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.44 34 51 68 ];
+        %tmp.44 = getv %tmp.43 :COLOR_TRANSPARENT;
+        invoke %tmp.39 %tmp.40(%tmp.42, %tmp.44);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 35 8 ]
+        %tmp.45 = lgetv %dc;
+        symbol [ dc %tmp.45 35 8 10 ];
+        symbol [ drawText %tmp.46 35 11 19 ];
+        %tmp.46 = getv function %tmp.45 :drawText;
+        %tmp.47 = 104;
+        %tmp.48 = 65;
+        symbol [ Graphics %tmp.49 35 29 37 ];
+        %tmp.49 = getm $.Toybox.Graphics;
+        symbol [ FONT_MEDIUM %tmp.50 35 38 49 ];
+        %tmp.50 = getv %tmp.49 :FONT_MEDIUM;
+        %tmp.51 = lgetv %state.2;
+        symbol [ state %tmp.51 35 51 56 ];
+        symbol [ holeNumber %tmp.52 35 57 67 ];
+        %tmp.52 = getv %tmp.51 :holeNumber;
+        symbol [ toString %tmp.53 35 68 76 ];
+        %tmp.53 = getv function %tmp.52 :toString;
+        %tmp.54 = invoke %tmp.52 %tmp.53();
+        symbol [ Graphics %tmp.55 35 80 88 ];
+        %tmp.55 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.56 35 89 108 ];
+        %tmp.56 = getv %tmp.55 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.45 %tmp.46(%tmp.47, %tmp.48, %tmp.50, %tmp.54, %tmp.56);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 36 8 ]
+        %tmp.57 = lgetv %dc;
+        symbol [ dc %tmp.57 36 8 10 ];
+        symbol [ drawText %tmp.58 36 11 19 ];
+        %tmp.58 = getv function %tmp.57 :drawText;
+        %tmp.59 = 227;
+        %tmp.60 = 25;
+        symbol [ Graphics %tmp.61 36 29 37 ];
+        %tmp.61 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.62 36 38 48 ];
+        %tmp.62 = getv %tmp.61 :FONT_SMALL;
+        %tmp.63 = "Par: ";
+        %tmp.64 = lgetv %state.2;
+        symbol [ state %tmp.64 36 61 66 ];
+        symbol [ getPar %tmp.65 36 67 73 ];
+        %tmp.65 = getv function %tmp.64 :getPar;
+        %tmp.66 = invoke %tmp.64 %tmp.65();
+        %tmp.67 = add %tmp.63 %tmp.66;
+        symbol [ Graphics %tmp.68 36 80 88 ];
+        %tmp.68 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.69 36 89 108 ];
+        %tmp.69 = getv %tmp.68 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.57 %tmp.58(%tmp.59, %tmp.60, %tmp.62, %tmp.67, %tmp.69);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 37 8 ]
+        %tmp.70 = lgetv %dc;
+        symbol [ dc %tmp.70 37 8 10 ];
+        symbol [ drawText %tmp.71 37 11 19 ];
+        %tmp.71 = getv function %tmp.70 :drawText;
+        %tmp.72 = 350;
+        %tmp.73 = 65;
+        symbol [ Graphics %tmp.74 37 29 37 ];
+        %tmp.74 = getm $.Toybox.Graphics;
+        symbol [ FONT_MEDIUM %tmp.75 37 38 49 ];
+        %tmp.75 = getv %tmp.74 :FONT_MEDIUM;
+        %tmp.76 = lgetv %state.2;
+        symbol [ state %tmp.76 37 51 56 ];
+        symbol [ getParDiff %tmp.77 37 57 67 ];
+        %tmp.77 = getv function %tmp.76 :getParDiff;
+        %tmp.78 = invoke %tmp.76 %tmp.77();
+        symbol [ Graphics %tmp.79 37 80 88 ];
+        %tmp.79 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.80 37 89 108 ];
+        %tmp.80 = getv %tmp.79 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.70 %tmp.71(%tmp.72, %tmp.73, %tmp.75, %tmp.78, %tmp.80);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 40 8 ]
+        %tmp.81 = lgetv %dc;
+        symbol [ dc %tmp.81 40 8 10 ];
+        symbol [ setColor %tmp.82 40 11 19 ];
+        %tmp.82 = getv function %tmp.81 :setColor;
+        symbol [ Graphics %tmp.83 40 20 28 ];
+        %tmp.83 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.84 40 29 40 ];
+        %tmp.84 = getv %tmp.83 :COLOR_WHITE;
+        symbol [ Graphics %tmp.85 40 42 50 ];
+        %tmp.85 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.86 40 51 68 ];
+        %tmp.86 = getv %tmp.85 :COLOR_TRANSPARENT;
+        invoke %tmp.81 %tmp.82(%tmp.84, %tmp.86);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 41 8 ]
+        %tmp.87 = lgetv %dc;
+        symbol [ dc %tmp.87 41 8 10 ];
+        symbol [ drawText %tmp.88 41 11 19 ];
+        %tmp.88 = getv function %tmp.87 :drawText;
+        %tmp.89 = lgetv %w.3;
+        symbol [ w %tmp.89 41 20 21 ];
+        %tmp.90 = 2;
+        %tmp.91 = div %tmp.89 %tmp.90;
+        %tmp.92 = 190;
+        symbol [ Graphics %tmp.93 41 30 38 ];
+        %tmp.93 = getm $.Toybox.Graphics;
+        symbol [ FONT_LARGE %tmp.94 41 39 49 ];
+        %tmp.94 = getv %tmp.93 :FONT_LARGE;
+        %tmp.95 = lgetv %state.2;
+        symbol [ state %tmp.95 41 51 56 ];
+        symbol [ getFormattedTime %tmp.96 41 57 73 ];
+        %tmp.96 = getv function %tmp.95 :getFormattedTime;
+        %tmp.97 = invoke %tmp.95 %tmp.96();
+        symbol [ Graphics %tmp.98 41 77 85 ];
+        %tmp.98 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.99 41 86 105 ];
+        %tmp.99 = getv %tmp.98 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.87 %tmp.88(%tmp.91, %tmp.92, %tmp.94, %tmp.97, %tmp.99);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 43 8 ]
+        %tmp.100 = lgetv %dc;
+        symbol [ dc %tmp.100 43 8 10 ];
+        symbol [ setColor %tmp.101 43 11 19 ];
+        %tmp.101 = getv function %tmp.100 :setColor;
+        symbol [ Graphics %tmp.102 43 20 28 ];
+        %tmp.102 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.103 43 29 40 ];
+        %tmp.103 = getv %tmp.102 :COLOR_WHITE;
+        symbol [ Graphics %tmp.104 43 42 50 ];
+        %tmp.104 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.105 43 51 68 ];
+        %tmp.105 = getv %tmp.104 :COLOR_TRANSPARENT;
+        invoke %tmp.100 %tmp.101(%tmp.103, %tmp.105);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 44 8 ]
+        %tmp.106 = lgetv %dc;
+        symbol [ dc %tmp.106 44 8 10 ];
+        symbol [ drawText %tmp.107 44 11 19 ];
+        %tmp.107 = getv function %tmp.106 :drawText;
+        %tmp.108 = lgetv %w.3;
+        symbol [ w %tmp.108 44 20 21 ];
+        %tmp.109 = 2;
+        %tmp.110 = div %tmp.108 %tmp.109;
+        %tmp.111 = 250;
+        symbol [ Graphics %tmp.112 44 30 38 ];
+        %tmp.112 = getm $.Toybox.Graphics;
+        symbol [ FONT_LARGE %tmp.113 44 39 49 ];
+        %tmp.113 = getv %tmp.112 :FONT_LARGE;
+        %tmp.114 = "-- yds";
+        symbol [ Graphics %tmp.115 44 61 69 ];
+        %tmp.115 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.116 44 70 89 ];
+        %tmp.116 = getv %tmp.115 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.106 %tmp.107(%tmp.110, %tmp.111, %tmp.113, %tmp.114, %tmp.116);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 47 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_stop" ]
+        %cx.5 = local;
+        symbol [ cx %cx.5 47 12 14 ];
+        %tmp.117 = lgetv %w.3;
+        symbol [ w %tmp.117 47 17 18 ];
+        %tmp.118 = 2;
+        %tmp.119 = div %tmp.117 %tmp.118;
+        lputv %cx.5 %tmp.119;
+        symbol [ cx %cx.5 47 12 14 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 48 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_stop" ]
+        %cy.6 = local;
+        symbol [ cy %cy.6 48 12 14 ];
+        %tmp.120 = 140;
+        lputv %cy.6 %tmp.120;
+        symbol [ cy %cy.6 48 12 14 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 49 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_stop" ]
+        %r.7 = local;
+        symbol [ r %r.7 49 12 13 ];
+        %tmp.121 = 40;
+        lputv %r.7 %tmp.121;
+        symbol [ r %r.7 49 12 13 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 51 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_stop" ]
+        %heading.8 = local;
+        symbol [ heading %heading.8 51 12 19 ];
+        %tmp.122 = lgetv %state.2;
+        symbol [ state %tmp.122 51 22 27 ];
+        symbol [ heading %tmp.123 51 28 35 ];
+        %tmp.123 = getv %tmp.122 :heading;
+        lputv %heading.8 %tmp.123;
+        symbol [ heading %heading.8 51 12 19 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 54 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_stop" ]
+        %tipX.9 = local;
+        symbol [ tipX %tipX.9 54 12 16 ];
+        %tmp.124 = lgetv %cx.5;
+        symbol [ cx %tmp.124 54 19 21 ];
+        %tmp.125 = lgetv %r.7;
+        symbol [ r %tmp.125 54 25 26 ];
+        symbol [ Math %tmp.126 54 29 33 ];
+        %tmp.126 = getm $.Toybox.Math;
+        symbol [ sin %tmp.127 54 34 37 ];
+        %tmp.127 = getv function %tmp.126 :sin;
+        %tmp.128 = lgetv %heading.8;
+        symbol [ heading %tmp.128 54 38 45 ];
+        %tmp.129 = invoke %tmp.126 %tmp.127(%tmp.128);
+        %tmp.130 = mul %tmp.125 %tmp.129;
+        symbol [ toNumber %tmp.131 54 48 56 ];
+        %tmp.131 = getv function %tmp.130 :toNumber;
+        %tmp.132 = invoke %tmp.130 %tmp.131();
+        %tmp.133 = add %tmp.124 %tmp.132;
+        lputv %tipX.9 %tmp.133;
+        symbol [ tipX %tipX.9 54 12 16 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 55 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_stop" ]
+        %tipY.10 = local;
+        symbol [ tipY %tipY.10 55 12 16 ];
+        %tmp.134 = lgetv %cy.6;
+        symbol [ cy %tmp.134 55 19 21 ];
+        %tmp.135 = lgetv %r.7;
+        symbol [ r %tmp.135 55 25 26 ];
+        symbol [ Math %tmp.136 55 29 33 ];
+        %tmp.136 = getm $.Toybox.Math;
+        symbol [ cos %tmp.137 55 34 37 ];
+        %tmp.137 = getv function %tmp.136 :cos;
+        %tmp.138 = lgetv %heading.8;
+        symbol [ heading %tmp.138 55 38 45 ];
+        %tmp.139 = invoke %tmp.136 %tmp.137(%tmp.138);
+        %tmp.140 = mul %tmp.135 %tmp.139;
+        symbol [ toNumber %tmp.141 55 48 56 ];
+        %tmp.141 = getv function %tmp.140 :toNumber;
+        %tmp.142 = invoke %tmp.140 %tmp.141();
+        %tmp.143 = sub %tmp.134 %tmp.142;
+        lputv %tipY.10 %tmp.143;
+        symbol [ tipY %tipY.10 55 12 16 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 58 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_stop" ]
+        %tailX.11 = local;
+        symbol [ tailX %tailX.11 58 12 17 ];
+        %tmp.144 = lgetv %cx.5;
+        symbol [ cx %tmp.144 58 20 22 ];
+        %tmp.145 = lgetv %r.7;
+        symbol [ r %tmp.145 58 26 27 ];
+        %tmp.146 = 0.6;
+        %tmp.147 = mul %tmp.145 %tmp.146;
+        symbol [ Math %tmp.148 58 36 40 ];
+        %tmp.148 = getm $.Toybox.Math;
+        symbol [ sin %tmp.149 58 41 44 ];
+        %tmp.149 = getv function %tmp.148 :sin;
+        %tmp.150 = lgetv %heading.8;
+        symbol [ heading %tmp.150 58 45 52 ];
+        %tmp.151 = invoke %tmp.148 %tmp.149(%tmp.150);
+        %tmp.152 = mul %tmp.147 %tmp.151;
+        symbol [ toNumber %tmp.153 58 55 63 ];
+        %tmp.153 = getv function %tmp.152 :toNumber;
+        %tmp.154 = invoke %tmp.152 %tmp.153();
+        %tmp.155 = sub %tmp.144 %tmp.154;
+        lputv %tailX.11 %tmp.155;
+        symbol [ tailX %tailX.11 58 12 17 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 59 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_stop" ]
+        %tailY.12 = local;
+        symbol [ tailY %tailY.12 59 12 17 ];
+        %tmp.156 = lgetv %cy.6;
+        symbol [ cy %tmp.156 59 20 22 ];
+        %tmp.157 = lgetv %r.7;
+        symbol [ r %tmp.157 59 26 27 ];
+        %tmp.158 = 0.6;
+        %tmp.159 = mul %tmp.157 %tmp.158;
+        symbol [ Math %tmp.160 59 36 40 ];
+        %tmp.160 = getm $.Toybox.Math;
+        symbol [ cos %tmp.161 59 41 44 ];
+        %tmp.161 = getv function %tmp.160 :cos;
+        %tmp.162 = lgetv %heading.8;
+        symbol [ heading %tmp.162 59 45 52 ];
+        %tmp.163 = invoke %tmp.160 %tmp.161(%tmp.162);
+        %tmp.164 = mul %tmp.159 %tmp.163;
+        symbol [ toNumber %tmp.165 59 55 63 ];
+        %tmp.165 = getv function %tmp.164 :toNumber;
+        %tmp.166 = invoke %tmp.164 %tmp.165();
+        %tmp.167 = add %tmp.156 %tmp.166;
+        lputv %tailY.12 %tmp.167;
+        symbol [ tailY %tailY.12 59 12 17 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 62 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_stop" ]
+        %wingAngle.13 = local;
+        symbol [ wingAngle %wingAngle.13 62 12 21 ];
+        %tmp.168 = lgetv %heading.8;
+        symbol [ heading %tmp.168 62 24 31 ];
+        %tmp.169 = 2.4;
+        %tmp.170 = sub %tmp.168 %tmp.169;
+        lputv %wingAngle.13 %tmp.170;
+        symbol [ wingAngle %wingAngle.13 62 12 21 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 63 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_stop" ]
+        %wingLX.14 = local;
+        symbol [ wingLX %wingLX.14 63 12 18 ];
+        %tmp.171 = lgetv %cx.5;
+        symbol [ cx %tmp.171 63 21 23 ];
+        %tmp.172 = lgetv %r.7;
+        symbol [ r %tmp.172 63 27 28 ];
+        %tmp.173 = 0.5;
+        %tmp.174 = mul %tmp.172 %tmp.173;
+        symbol [ Math %tmp.175 63 37 41 ];
+        %tmp.175 = getm $.Toybox.Math;
+        symbol [ sin %tmp.176 63 42 45 ];
+        %tmp.176 = getv function %tmp.175 :sin;
+        %tmp.177 = lgetv %wingAngle.13;
+        symbol [ wingAngle %tmp.177 63 46 55 ];
+        %tmp.178 = invoke %tmp.175 %tmp.176(%tmp.177);
+        %tmp.179 = mul %tmp.174 %tmp.178;
+        symbol [ toNumber %tmp.180 63 58 66 ];
+        %tmp.180 = getv function %tmp.179 :toNumber;
+        %tmp.181 = invoke %tmp.179 %tmp.180();
+        %tmp.182 = add %tmp.171 %tmp.181;
+        lputv %wingLX.14 %tmp.182;
+        symbol [ wingLX %wingLX.14 63 12 18 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 64 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_stop" ]
+        %wingLY.15 = local;
+        symbol [ wingLY %wingLY.15 64 12 18 ];
+        %tmp.183 = lgetv %cy.6;
+        symbol [ cy %tmp.183 64 21 23 ];
+        %tmp.184 = lgetv %r.7;
+        symbol [ r %tmp.184 64 27 28 ];
+        %tmp.185 = 0.5;
+        %tmp.186 = mul %tmp.184 %tmp.185;
+        symbol [ Math %tmp.187 64 37 41 ];
+        %tmp.187 = getm $.Toybox.Math;
+        symbol [ cos %tmp.188 64 42 45 ];
+        %tmp.188 = getv function %tmp.187 :cos;
+        %tmp.189 = lgetv %wingAngle.13;
+        symbol [ wingAngle %tmp.189 64 46 55 ];
+        %tmp.190 = invoke %tmp.187 %tmp.188(%tmp.189);
+        %tmp.191 = mul %tmp.186 %tmp.190;
+        symbol [ toNumber %tmp.192 64 58 66 ];
+        %tmp.192 = getv function %tmp.191 :toNumber;
+        %tmp.193 = invoke %tmp.191 %tmp.192();
+        %tmp.194 = sub %tmp.183 %tmp.193;
+        lputv %wingLY.15 %tmp.194;
+        symbol [ wingLY %wingLY.15 64 12 18 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 67 8 ]
+        %tmp.195 = lgetv %heading.8;
+        symbol [ heading %tmp.195 67 20 27 ];
+        %tmp.196 = 2.4;
+        %tmp.197 = add %tmp.195 %tmp.196;
+        lputv %wingAngle.13 %tmp.197;
+        symbol [ wingAngle %wingAngle.13 67 8 17 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 68 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_stop" ]
+        %wingRX.16 = local;
+        symbol [ wingRX %wingRX.16 68 12 18 ];
+        %tmp.198 = lgetv %cx.5;
+        symbol [ cx %tmp.198 68 21 23 ];
+        %tmp.199 = lgetv %r.7;
+        symbol [ r %tmp.199 68 27 28 ];
+        %tmp.200 = 0.5;
+        %tmp.201 = mul %tmp.199 %tmp.200;
+        symbol [ Math %tmp.202 68 37 41 ];
+        %tmp.202 = getm $.Toybox.Math;
+        symbol [ sin %tmp.203 68 42 45 ];
+        %tmp.203 = getv function %tmp.202 :sin;
+        %tmp.204 = lgetv %wingAngle.13;
+        symbol [ wingAngle %tmp.204 68 46 55 ];
+        %tmp.205 = invoke %tmp.202 %tmp.203(%tmp.204);
+        %tmp.206 = mul %tmp.201 %tmp.205;
+        symbol [ toNumber %tmp.207 68 58 66 ];
+        %tmp.207 = getv function %tmp.206 :toNumber;
+        %tmp.208 = invoke %tmp.206 %tmp.207();
+        %tmp.209 = add %tmp.198 %tmp.208;
+        lputv %wingRX.16 %tmp.209;
+        symbol [ wingRX %wingRX.16 68 12 18 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 69 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_stop" ]
+        %wingRY.17 = local;
+        symbol [ wingRY %wingRY.17 69 12 18 ];
+        %tmp.210 = lgetv %cy.6;
+        symbol [ cy %tmp.210 69 21 23 ];
+        %tmp.211 = lgetv %r.7;
+        symbol [ r %tmp.211 69 27 28 ];
+        %tmp.212 = 0.5;
+        %tmp.213 = mul %tmp.211 %tmp.212;
+        symbol [ Math %tmp.214 69 37 41 ];
+        %tmp.214 = getm $.Toybox.Math;
+        symbol [ cos %tmp.215 69 42 45 ];
+        %tmp.215 = getv function %tmp.214 :cos;
+        %tmp.216 = lgetv %wingAngle.13;
+        symbol [ wingAngle %tmp.216 69 46 55 ];
+        %tmp.217 = invoke %tmp.214 %tmp.215(%tmp.216);
+        %tmp.218 = mul %tmp.213 %tmp.217;
+        symbol [ toNumber %tmp.219 69 58 66 ];
+        %tmp.219 = getv function %tmp.218 :toNumber;
+        %tmp.220 = invoke %tmp.218 %tmp.219();
+        %tmp.221 = sub %tmp.210 %tmp.220;
+        lputv %wingRY.17 %tmp.221;
+        symbol [ wingRY %wingRY.17 69 12 18 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 71 8 ]
+        %tmp.222 = lgetv %dc;
+        symbol [ dc %tmp.222 71 8 10 ];
+        symbol [ setColor %tmp.223 71 11 19 ];
+        %tmp.223 = getv function %tmp.222 :setColor;
+        symbol [ Graphics %tmp.224 71 20 28 ];
+        %tmp.224 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.225 71 29 40 ];
+        %tmp.225 = getv %tmp.224 :COLOR_WHITE;
+        symbol [ Graphics %tmp.226 71 42 50 ];
+        %tmp.226 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.227 71 51 68 ];
+        %tmp.227 = getv %tmp.226 :COLOR_TRANSPARENT;
+        invoke %tmp.222 %tmp.223(%tmp.225, %tmp.227);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 72 8 ]
+        %tmp.228 = lgetv %dc;
+        symbol [ dc %tmp.228 72 8 10 ];
+        symbol [ fillPolygon %tmp.229 72 11 22 ];
+        %tmp.229 = getv function %tmp.228 :fillPolygon;
+        %tmp.230 = newa 4;
+        %tmp.231 = newa 2;
+        %tmp.232 = lgetv %tipX.9;
+        symbol [ tipX %tmp.232 72 25 29 ];
+        %tmp.233 = dup %tmp.231;
+        %tmp.234 = aputv %tmp.233 0 %tmp.232;
+        %tmp.235 = lgetv %tipY.10;
+        symbol [ tipY %tmp.235 72 31 35 ];
+        %tmp.236 = dup %tmp.234;
+        %tmp.237 = aputv %tmp.236 1 %tmp.235;
+        %tmp.238 = dup %tmp.230;
+        %tmp.239 = aputv %tmp.238 0 %tmp.237;
+        %tmp.240 = newa 2;
+        %tmp.241 = lgetv %wingLX.14;
+        symbol [ wingLX %tmp.241 72 39 45 ];
+        %tmp.242 = dup %tmp.240;
+        %tmp.243 = aputv %tmp.242 0 %tmp.241;
+        %tmp.244 = lgetv %wingLY.15;
+        symbol [ wingLY %tmp.244 72 47 53 ];
+        %tmp.245 = dup %tmp.243;
+        %tmp.246 = aputv %tmp.245 1 %tmp.244;
+        %tmp.247 = dup %tmp.239;
+        %tmp.248 = aputv %tmp.247 1 %tmp.246;
+        %tmp.249 = newa 2;
+        %tmp.250 = lgetv %tailX.11;
+        symbol [ tailX %tmp.250 72 57 62 ];
+        %tmp.251 = dup %tmp.249;
+        %tmp.252 = aputv %tmp.251 0 %tmp.250;
+        %tmp.253 = lgetv %tailY.12;
+        symbol [ tailY %tmp.253 72 64 69 ];
+        %tmp.254 = dup %tmp.252;
+        %tmp.255 = aputv %tmp.254 1 %tmp.253;
+        %tmp.256 = dup %tmp.248;
+        %tmp.257 = aputv %tmp.256 2 %tmp.255;
+        %tmp.258 = newa 2;
+        %tmp.259 = lgetv %wingRX.16;
+        symbol [ wingRX %tmp.259 72 73 79 ];
+        %tmp.260 = dup %tmp.258;
+        %tmp.261 = aputv %tmp.260 0 %tmp.259;
+        %tmp.262 = lgetv %wingRY.17;
+        symbol [ wingRY %tmp.262 72 81 87 ];
+        %tmp.263 = dup %tmp.261;
+        %tmp.264 = aputv %tmp.263 1 %tmp.262;
+        %tmp.265 = dup %tmp.257;
+        %tmp.266 = aputv %tmp.265 3 %tmp.264;
+        invoke %tmp.228 %tmp.229(%tmp.266);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 75 8 ]
+        %tmp.267 = lgetv %dc;
+        symbol [ dc %tmp.267 75 8 10 ];
+        symbol [ setColor %tmp.268 75 11 19 ];
+        %tmp.268 = getv function %tmp.267 :setColor;
+        symbol [ Graphics %tmp.269 75 20 28 ];
+        %tmp.269 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.270 75 29 40 ];
+        %tmp.270 = getv %tmp.269 :COLOR_WHITE;
+        symbol [ Graphics %tmp.271 75 42 50 ];
+        %tmp.271 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.272 75 51 68 ];
+        %tmp.272 = getv %tmp.271 :COLOR_TRANSPARENT;
+        invoke %tmp.267 %tmp.268(%tmp.270, %tmp.272);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 76 8 ]
+        %tmp.273 = lgetv %dc;
+        symbol [ dc %tmp.273 76 8 10 ];
+        symbol [ drawText %tmp.274 76 11 19 ];
+        %tmp.274 = getv function %tmp.273 :drawText;
+        %tmp.275 = lgetv %w.3;
+        symbol [ w %tmp.275 76 20 21 ];
+        %tmp.276 = 2;
+        %tmp.277 = div %tmp.275 %tmp.276;
+        %tmp.278 = 340;
+        symbol [ Graphics %tmp.279 76 30 38 ];
+        %tmp.279 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.280 76 39 49 ];
+        %tmp.280 = getv %tmp.279 :FONT_SMALL;
+        %tmp.281 = "Strokes: ";
+        %tmp.282 = lgetv %state.2;
+        symbol [ state %tmp.282 76 65 70 ];
+        symbol [ strokeCount %tmp.283 76 71 82 ];
+        %tmp.283 = getv %tmp.282 :strokeCount;
+        %tmp.284 = add %tmp.281 %tmp.283;
+        symbol [ Graphics %tmp.285 76 84 92 ];
+        %tmp.285 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.286 76 93 112 ];
+        %tmp.286 = getv %tmp.285 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.273 %tmp.274(%tmp.277, %tmp.278, %tmp.280, %tmp.284, %tmp.286);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 78 8 ]
+        %tmp.287 = lgetv %dc;
+        symbol [ dc %tmp.287 78 8 10 ];
+        symbol [ setColor %tmp.288 78 11 19 ];
+        %tmp.288 = getv function %tmp.287 :setColor;
+        symbol [ Graphics %tmp.289 78 20 28 ];
+        %tmp.289 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.290 78 29 40 ];
+        %tmp.290 = getv %tmp.289 :COLOR_WHITE;
+        symbol [ Graphics %tmp.291 78 42 50 ];
+        %tmp.291 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.292 78 51 68 ];
+        %tmp.292 = getv %tmp.291 :COLOR_TRANSPARENT;
+        invoke %tmp.287 %tmp.288(%tmp.290, %tmp.292);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 79 8 ]
+        %tmp.293 = lgetv %dc;
+        symbol [ dc %tmp.293 79 8 10 ];
+        symbol [ drawText %tmp.294 79 11 19 ];
+        %tmp.294 = getv function %tmp.293 :drawText;
+        %tmp.295 = lgetv %w.3;
+        symbol [ w %tmp.295 79 20 21 ];
+        %tmp.296 = 2;
+        %tmp.297 = div %tmp.295 %tmp.296;
+        %tmp.298 = 385;
+        symbol [ Graphics %tmp.299 79 30 38 ];
+        %tmp.299 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.300 79 39 49 ];
+        %tmp.300 = getv %tmp.299 :FONT_SMALL;
+        %tmp.301 = "Score: ";
+        %tmp.302 = lgetv %state.2;
+        symbol [ state %tmp.302 79 63 68 ];
+        symbol [ getSpeedScore %tmp.303 79 69 82 ];
+        %tmp.303 = getv function %tmp.302 :getSpeedScore;
+        %tmp.304 = invoke %tmp.302 %tmp.303();
+        symbol [ format %tmp.305 79 85 91 ];
+        %tmp.305 = getv function %tmp.304 :format;
+        %tmp.306 = "%d";
+        %tmp.307 = invoke %tmp.304 %tmp.305(%tmp.306);
+        %tmp.308 = add %tmp.301 %tmp.307;
+        symbol [ Graphics %tmp.309 79 99 107 ];
+        %tmp.309 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.310 79 108 127 ];
+        %tmp.310 = getv %tmp.309 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.293 %tmp.294(%tmp.297, %tmp.298, %tmp.300, %tmp.308, %tmp.310);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 81 8 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_81_8_95_8_if_stmt:
+        %tmp.311 = lgetv %state.2;
+        symbol [ state %tmp.311 81 12 17 ];
+        symbol [ isPaused %tmp.312 81 18 26 ];
+        %tmp.312 = getv %tmp.311 :isPaused;
+        bf %tmp.312 @C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_81_8_95_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_81_8_95_8_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_81_28_95_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 83 12 ]
+        %tmp.313 = lgetv %dc;
+        symbol [ dc %tmp.313 83 12 14 ];
+        symbol [ setColor %tmp.314 83 15 23 ];
+        %tmp.314 = getv function %tmp.313 :setColor;
+        symbol [ Graphics %tmp.315 83 24 32 ];
+        %tmp.315 = getm $.Toybox.Graphics;
+        symbol [ COLOR_DK_GRAY %tmp.316 83 33 46 ];
+        %tmp.316 = getv %tmp.315 :COLOR_DK_GRAY;
+        symbol [ Graphics %tmp.317 83 48 56 ];
+        %tmp.317 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.318 83 57 74 ];
+        %tmp.318 = getv %tmp.317 :COLOR_TRANSPARENT;
+        invoke %tmp.313 %tmp.314(%tmp.316, %tmp.318);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 84 12 ]
+        %tmp.319 = lgetv %dc;
+        symbol [ dc %tmp.319 84 12 14 ];
+        symbol [ setPenWidth %tmp.320 84 15 26 ];
+        %tmp.320 = getv function %tmp.319 :setPenWidth;
+        %tmp.321 = 1;
+        invoke %tmp.319 %tmp.320(%tmp.321);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 86 12 ]
+        for @C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_86_12_88_12_for_test @C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_86_12_88_12_for_incr @C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_86_12_88_12_for_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_86_12_88_12_for_init:
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_86_12_88_12_for_begin" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_86_12_88_12_for_end" ]
+        %y.18 = local;
+        symbol [ y %y.18 86 21 22 ];
+        %tmp.322 = 0;
+        lputv %y.18 %tmp.322;
+        symbol [ y %y.18 86 21 22 ];
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_86_12_88_12_for_test:
+        %tmp.323 = lgetv %y.18;
+        symbol [ y %tmp.323 86 28 29 ];
+        %tmp.324 = lgetv %h.4;
+        symbol [ h %tmp.324 86 32 33 ];
+        %tmp.325 = lt %tmp.323 %tmp.324;
+        bf %tmp.325 @C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_86_12_88_12_for_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_86_12_88_12_for_begin:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_86_43_88_12_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 87 16 ]
+        %tmp.326 = lgetv %dc;
+        symbol [ dc %tmp.326 87 16 18 ];
+        symbol [ drawLine %tmp.327 87 19 27 ];
+        %tmp.327 = getv function %tmp.326 :drawLine;
+        %tmp.328 = 0;
+        %tmp.329 = lgetv %y.18;
+        symbol [ y %tmp.329 87 31 32 ];
+        %tmp.330 = lgetv %w.3;
+        symbol [ w %tmp.330 87 34 35 ];
+        %tmp.331 = lgetv %y.18;
+        symbol [ y %tmp.331 87 37 38 ];
+        invoke %tmp.326 %tmp.327(%tmp.328, %tmp.329, %tmp.330, %tmp.331);
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_86_43_88_12_stop:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_86_12_88_12_for_incr:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 86 ]
+        %tmp.332 = lgetv %y.18;
+        symbol [ y %tmp.332 86 35 36 ];
+        %tmp.333 = 4;
+        %tmp.334 = add %tmp.332 %tmp.333;
+        lputv %y.18 %tmp.334;
+        symbol [ y %y.18 86 35 36 ];
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_86_12_88_12_for_test;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_86_12_88_12_for_end:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 90 12 ]
+        for @C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_90_12_92_12_for_test @C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_90_12_92_12_for_incr @C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_90_12_92_12_for_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_90_12_92_12_for_init:
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_90_12_92_12_for_begin" "C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_90_12_92_12_for_end" ]
+        %x.19 = local;
+        symbol [ x %x.19 90 21 22 ];
+        %tmp.335 = 0;
+        lputv %x.19 %tmp.335;
+        symbol [ x %x.19 90 21 22 ];
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_90_12_92_12_for_test:
+        %tmp.336 = lgetv %x.19;
+        symbol [ x %tmp.336 90 28 29 ];
+        %tmp.337 = lgetv %w.3;
+        symbol [ w %tmp.337 90 32 33 ];
+        %tmp.338 = lt %tmp.336 %tmp.337;
+        bf %tmp.338 @C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_90_12_92_12_for_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_90_12_92_12_for_begin:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_90_43_92_12_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 91 16 ]
+        %tmp.339 = lgetv %dc;
+        symbol [ dc %tmp.339 91 16 18 ];
+        symbol [ drawLine %tmp.340 91 19 27 ];
+        %tmp.340 = getv function %tmp.339 :drawLine;
+        %tmp.341 = lgetv %x.19;
+        symbol [ x %tmp.341 91 28 29 ];
+        %tmp.342 = 0;
+        %tmp.343 = lgetv %x.19;
+        symbol [ x %tmp.343 91 34 35 ];
+        %tmp.344 = lgetv %h.4;
+        symbol [ h %tmp.344 91 37 38 ];
+        invoke %tmp.339 %tmp.340(%tmp.341, %tmp.342, %tmp.343, %tmp.344);
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_90_43_92_12_stop:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_90_12_92_12_for_incr:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 90 ]
+        %tmp.345 = lgetv %x.19;
+        symbol [ x %tmp.345 90 35 36 ];
+        %tmp.346 = 4;
+        %tmp.347 = add %tmp.345 %tmp.346;
+        lputv %x.19 %tmp.347;
+        symbol [ x %x.19 90 35 36 ];
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_90_12_92_12_for_test;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_90_12_92_12_for_end:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 93 12 ]
+        %tmp.348 = lgetv %dc;
+        symbol [ dc %tmp.348 93 12 14 ];
+        symbol [ setColor %tmp.349 93 15 23 ];
+        %tmp.349 = getv function %tmp.348 :setColor;
+        symbol [ Graphics %tmp.350 93 24 32 ];
+        %tmp.350 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.351 93 33 44 ];
+        %tmp.351 = getv %tmp.350 :COLOR_WHITE;
+        symbol [ Graphics %tmp.352 93 46 54 ];
+        %tmp.352 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.353 93 55 72 ];
+        %tmp.353 = getv %tmp.352 :COLOR_TRANSPARENT;
+        invoke %tmp.348 %tmp.349(%tmp.351, %tmp.353);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc" 94 12 ]
+        %tmp.354 = lgetv %dc;
+        symbol [ dc %tmp.354 94 12 14 ];
+        symbol [ drawText %tmp.355 94 15 23 ];
+        %tmp.355 = getv function %tmp.354 :drawText;
+        %tmp.356 = lgetv %w.3;
+        symbol [ w %tmp.356 94 24 25 ];
+        %tmp.357 = 2;
+        %tmp.358 = div %tmp.356 %tmp.357;
+        %tmp.359 = lgetv %h.4;
+        symbol [ h %tmp.359 94 29 30 ];
+        %tmp.360 = 3;
+        %tmp.361 = div %tmp.359 %tmp.360;
+        %tmp.362 = 30;
+        %tmp.363 = sub %tmp.361 %tmp.362;
+        symbol [ Graphics %tmp.364 94 39 47 ];
+        %tmp.364 = getm $.Toybox.Graphics;
+        symbol [ FONT_LARGE %tmp.365 94 48 58 ];
+        %tmp.365 = getv %tmp.364 :FONT_LARGE;
+        %tmp.366 = "PAUSED";
+        symbol [ Graphics %tmp.367 94 70 78 ];
+        %tmp.367 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.368 94 79 98 ];
+        %tmp.368 = getv %tmp.367 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.354 %tmp.355(%tmp.358, %tmp.363, %tmp.365, %tmp.366, %tmp.368);
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_81_28_95_8_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_81_8_95_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_81_8_95_8_if_end:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_old_PrettyView_mc_18_26_97_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc"; @line = 98; @symbol_functiondef = [onHide,98,13,19]; ]
+    function onHide() {
+    }
+}
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\old\PrettyView.mc"; @line = 1; ]
+<init> {
+}

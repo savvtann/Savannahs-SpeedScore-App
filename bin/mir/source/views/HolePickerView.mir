@@ -1,0 +1,78 @@
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\HolePickerView.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [WatchUi,1,13,20]; ]
+using Toybox.WatchUi;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\HolePickerView.mc"; @line = 3; @symbol_classdef = [HolePickerView,3,6,20]; @symbol_extends<0> = [WatchUi,3,29,36]; @symbol_extends<1> = [Menu2,3,37,42]; ]
+class HolePickerView extends WatchUi.Menu2 {
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\HolePickerView.mc"; @line = 3; ]
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\HolePickerView.mc"; @line = 3; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\HolePickerView.mc"; @line = 4; @symbol_functiondef = [initialize,4,13,23]; @symbol_param<0> = [numHoles,4,24,32]; ]
+    function initialize(numHoles) as Void {
+C__Users_roset_OneDrive_Desktop_garmin_source_views_HolePickerView_mc_4_34_9_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\HolePickerView.mc" 5 8 ]
+        symbol [ Menu2 %tmp.2 5 8 13 ];
+        %tmp.2 = getv ? :Menu2;
+        symbol [ initialize %tmp.3 5 14 24 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        %tmp.4 = newd 1;
+        %tmp.6 = const :title;
+        symbol [ title %tmp.6 5 27 32 const ];
+        %tmp.7 = "Start Hole";
+        %tmp.8 = dup %tmp.4;
+        %tmp.9 = aputv %tmp.8 %tmp.6 %tmp.7;
+        invoke %tmp.2 %tmp.3(%tmp.9);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\HolePickerView.mc" 6 8 ]
+        for @C__Users_roset_OneDrive_Desktop_garmin_source_views_HolePickerView_mc_6_8_8_8_for_test @C__Users_roset_OneDrive_Desktop_garmin_source_views_HolePickerView_mc_6_8_8_8_for_incr @C__Users_roset_OneDrive_Desktop_garmin_source_views_HolePickerView_mc_6_8_8_8_for_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_HolePickerView_mc_6_8_8_8_for_init:
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_views_HolePickerView_mc_6_8_8_8_for_begin" "C__Users_roset_OneDrive_Desktop_garmin_source_views_HolePickerView_mc_6_8_8_8_for_end" ]
+        %i.1 = local;
+        symbol [ i %i.1 6 17 18 ];
+        %tmp.10 = 1;
+        lputv %i.1 %tmp.10;
+        symbol [ i %i.1 6 17 18 ];
+C__Users_roset_OneDrive_Desktop_garmin_source_views_HolePickerView_mc_6_8_8_8_for_test:
+        %tmp.11 = lgetv %i.1;
+        symbol [ i %tmp.11 6 24 25 ];
+        %tmp.12 = lgetv %numHoles;
+        symbol [ numHoles %tmp.12 6 29 37 ];
+        %tmp.13 = lte %tmp.11 %tmp.12;
+        bf %tmp.13 @C__Users_roset_OneDrive_Desktop_garmin_source_views_HolePickerView_mc_6_8_8_8_for_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_HolePickerView_mc_6_8_8_8_for_begin:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_HolePickerView_mc_6_44_8_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\HolePickerView.mc" 7 12 ]
+        %tmp.14 = self;
+        symbol [ addItem %tmp.15 7 12 19 ];
+        %tmp.15 = getv function %tmp.14 :addItem;
+        symbol [ WatchUi %tmp.18 7 24 31 ];
+        %tmp.18 = getm $.Toybox.WatchUi;
+        symbol [ MenuItem %tmp.19 7 32 40 ];
+        %tmp.19 = getv function ? %tmp.18 :MenuItem;
+        %tmp.20 = "Hole ";
+        %tmp.21 = lgetv %i.1;
+        symbol [ i %tmp.21 7 51 52 ];
+        %tmp.22 = add %tmp.20 %tmp.21;
+        %tmp.23 = null;
+        %tmp.24 = lgetv %i.1;
+        symbol [ i %tmp.24 7 60 61 ];
+        %tmp.25 = newd 0;
+        %tmp.16 = newc %tmp.19 (%tmp.22, %tmp.23, %tmp.24, %tmp.25);
+        invoke %tmp.14 %tmp.15(%tmp.16);
+C__Users_roset_OneDrive_Desktop_garmin_source_views_HolePickerView_mc_6_44_8_8_stop:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_HolePickerView_mc_6_8_8_8_for_incr:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\views\HolePickerView.mc" 6 ]
+        %tmp.28 = lgetv %i.1;
+        symbol [ i %tmp.28 6 39 40 ];
+        %tmp.29 = add %tmp.28 1;
+        lputv %i.1 %tmp.29;
+        symbol [ i %i.1 6 39 40 ];
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_views_HolePickerView_mc_6_8_8_8_for_test;
+C__Users_roset_OneDrive_Desktop_garmin_source_views_HolePickerView_mc_6_8_8_8_for_end:
+C__Users_roset_OneDrive_Desktop_garmin_source_views_HolePickerView_mc_4_34_9_4_stop:
+    }
+}
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\views\HolePickerView.mc"; @line = 1; ]
+<init> {
+}

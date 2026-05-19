@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<properties>
+    <!-- Authentication token (JWT) -->
+    <property id="authToken" type="string">null</property>
+    
+    <!-- User ID (from login response) -->
+    <property id="userID" type="string">null</property>
+    
+    <!-- Refresh token for obtaining new JWT -->
+    <property id="refreshToken" type="string">null</property>
+    
+    <!-- Device ID (from login response) -->
+    <property id="deviceId" type="string"></property>
+
+    <!-- Token expiry timestamp (as string, e.g., ISO 8601) -->
+    <property id="tokenExpiry" type="string">null</property>
+    
+    <!-- Optional: user email for convenience -->
+    <property id="userEmail" type="string">null</property>
+
+    <!-- Optional: user password for convenience -->
+    <property id="userPassword" type="string">null</property>
+
+    <!-- Pairing code for watch linking -->
+    <property id="pairingCode" type="string"></property>
+
+    <!-- For Settongs Menu -->
+    <property id="bulkEntry" type="boolean">false</property>
+    <property id="touchInput" type="boolean">false</property>
+
+    <property id="courseCache" type="string"></property>
+    <property id="courseCacheTime" type="number">0</property>
+
+    <property id="showHoleNumber" type="boolean">true</property>
+    <property id="showPar" type="boolean">true</property>
+    <property id="showStrokes" type="boolean">true</property>
+    <property id="showSpeedScore" type="boolean">true</property>
+    <property id="showGolfScore" type="boolean">true</property>
+    <property id="showArrow" type="boolean">true</property>
+    <property id="showRoundTimer" type="boolean">true</property>
+    <property id="showHoleTimer" type="boolean">true</property>
+    <property id="statsAfterHole" type="boolean">false</property>
+    <property id="useImperial" type="boolean">true</property>
+    <property id="womensParMode" type="boolean">true</property>
+    
+    <property id="favoriteCourses" type="string"></property>
+
+    <property id="swingDetection" type="boolean">false</property>
+    <property id="swingVibration" type="boolean">true</property>
+    <!-- 0=Low, 1=Medium, 2=High -->
+    <property id="swingDetectionSensitivity" type="number">1</property>
+
+</properties>

@@ -1,0 +1,174 @@
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\RoundHistoryDelegate.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [WatchUi,1,13,20]; ]
+using Toybox.WatchUi;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\RoundHistoryDelegate.mc"; @line = 3; @symbol_classdef = [RoundHistoryDelegate,3,6,26]; @symbol_extends<0> = [WatchUi,3,35,42]; @symbol_extends<1> = [Menu2InputDelegate,3,43,61]; ]
+class RoundHistoryDelegate extends WatchUi.Menu2InputDelegate {
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\RoundHistoryDelegate.mc"; @line = 3; ]
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\RoundHistoryDelegate.mc"; @line = 3; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\RoundHistoryDelegate.mc"; @line = 4; @position = 15; @symbol_vardef = [_screenManager,4,15,29]; ]
+    protected
+    var _screenManager;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\RoundHistoryDelegate.mc"; @line = 5; @position = 15; @symbol_vardef = [_rounds,5,15,22]; ]
+    protected
+    var _rounds;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\RoundHistoryDelegate.mc"; @line = 7; @symbol_functiondef = [initialize,7,13,23]; @symbol_param<0> = [screenManager,7,24,37]; @symbol_param<1> = [rounds,7,39,45]; ]
+    function initialize(screenManager, rounds) as Void {
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_7_47_11_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\RoundHistoryDelegate.mc" 8 8 ]
+        symbol [ Menu2InputDelegate %tmp.2 8 8 26 ];
+        %tmp.2 = getv ? :Menu2InputDelegate;
+        symbol [ initialize %tmp.3 8 27 37 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\RoundHistoryDelegate.mc" 9 8 ]
+        %tmp.4 = lgetv %screenManager;
+        symbol [ screenManager %tmp.4 9 25 38 ];
+        symbol [ _screenManager ? 9 8 22 ];
+        putv self :_screenManager %tmp.4;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\RoundHistoryDelegate.mc" 10 8 ]
+        %tmp.5 = lgetv %rounds;
+        symbol [ rounds %tmp.5 10 25 31 ];
+        symbol [ _rounds ? 10 8 15 ];
+        putv self :_rounds %tmp.5;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_7_47_11_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\RoundHistoryDelegate.mc"; @line = 13; @symbol_functiondef = [onSelect,13,13,21]; @symbol_param<0> = [item,13,22,26]; ]
+    function onSelect(item) {
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_13_28_25_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\RoundHistoryDelegate.mc" 14 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_13_28_25_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_13_28_25_4_stop" ]
+        %id.1 = local;
+        symbol [ id %id.1 14 12 14 ];
+        %tmp.1 = lgetv %item;
+        symbol [ item %tmp.1 14 17 21 ];
+        symbol [ getId %tmp.2 14 22 27 ];
+        %tmp.2 = getv function %tmp.1 :getId;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %id.1 %tmp.3;
+        symbol [ id %id.1 14 12 14 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\RoundHistoryDelegate.mc" 15 8 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_15_8_15_35_if_stmt:
+        %tmp.4 = lgetv %id.1;
+        symbol [ id %tmp.4 15 12 14 ];
+        %tmp.6 = const :none;
+        symbol [ none %tmp.6 15 19 23 const ];
+        %tmp.7 = eq %tmp.4 %tmp.6;
+        bf %tmp.7 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_15_8_15_35_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_15_8_15_35_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_15_25_15_35_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\RoundHistoryDelegate.mc" 15 27 ]
+        ret ?;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_15_25_15_35_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_15_8_15_35_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_15_8_15_35_if_end:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\RoundHistoryDelegate.mc" 16 8 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_16_8_16_66_if_stmt:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_16_12_16_53_begin:
+        symbol [ _rounds %tmp.9 16 12 19 ];
+        %tmp.9 = getv ? :_rounds;
+        %tmp.10 = null;
+        %tmp.11 = eq %tmp.9 %tmp.10;
+        bt %tmp.11 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_16_8_16_66_if_true;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_16_31_16_53_false:
+        %tmp.12 = lgetv %id.1;
+        symbol [ id %tmp.12 16 33 35 ];
+        symbol [ Number %tmp.14 16 47 53 ];
+        %tmp.14 = getv ? :Number;
+        %tmp.15 = isa %tmp.12 %tmp.14;
+        %tmp.16 = not %tmp.15;
+        push %tmp.16;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_16_31_16_53_end:
+        %tmp.17 = phi [%tmp.11 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_16_12_16_53_begin] [%tmp.16 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_16_31_16_53_false] [%tmp.17 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_16_31_16_53_end];
+        bf %tmp.17 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_16_8_16_66_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_16_8_16_66_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_16_56_16_66_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\RoundHistoryDelegate.mc" 16 58 ]
+        ret ?;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_16_56_16_66_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_16_8_16_66_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_16_8_16_66_if_end:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\RoundHistoryDelegate.mc" 17 8 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_17_8_17_54_if_stmt:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_17_12_17_41_begin:
+        %tmp.18 = lgetv %id.1;
+        symbol [ id %tmp.18 17 12 14 ];
+        %tmp.19 = 0;
+        %tmp.20 = lt %tmp.18 %tmp.19;
+        bt %tmp.20 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_17_8_17_54_if_true;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_17_22_17_41_false:
+        %tmp.21 = lgetv %id.1;
+        symbol [ id %tmp.21 17 22 24 ];
+        symbol [ _rounds %tmp.23 17 28 35 ];
+        %tmp.23 = getv ? :_rounds;
+        symbol [ size %tmp.24 17 36 40 ];
+        %tmp.24 = getv function %tmp.23 :size;
+        %tmp.25 = invoke %tmp.23 %tmp.24();
+        %tmp.26 = gte %tmp.21 %tmp.25;
+        push %tmp.26;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_17_22_17_41_end:
+        %tmp.27 = phi [%tmp.20 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_17_12_17_41_begin] [%tmp.26 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_17_22_17_41_false] [%tmp.27 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_17_22_17_41_end];
+        bf %tmp.27 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_17_8_17_54_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_17_8_17_54_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_17_44_17_54_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\RoundHistoryDelegate.mc" 17 46 ]
+        ret ?;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_17_44_17_54_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_17_8_17_54_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_17_8_17_54_if_end:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\RoundHistoryDelegate.mc" 19 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_13_28_25_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_13_28_25_4_stop" ]
+        %round.2 = local;
+        symbol [ round %round.2 19 12 17 ];
+        symbol [ _rounds %tmp.29 19 20 27 ];
+        %tmp.29 = getv ? :_rounds;
+        %tmp.30 = lgetv %id.1;
+        symbol [ id %tmp.30 19 28 30 ];
+        %tmp.31 = agetv %tmp.29 %tmp.30;
+        lputv %round.2 %tmp.31;
+        symbol [ round %round.2 19 12 17 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\RoundHistoryDelegate.mc" 20 8 ]
+        symbol [ WatchUi %tmp.32 20 8 15 ];
+        %tmp.32 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.33 20 16 24 ];
+        %tmp.33 = getv function %tmp.32 :pushView;
+        symbol [ HistoricalRoundSummaryView %tmp.37 21 16 42 ];
+        %tmp.37 = getv ? :HistoricalRoundSummaryView;
+        %tmp.38 = lgetv %round.2;
+        symbol [ round %tmp.38 21 43 48 ];
+        %tmp.34 = newc %tmp.37 (%tmp.38);
+        symbol [ HistoricalRoundSummaryDelegate %tmp.42 22 16 46 ];
+        %tmp.42 = getv ? :HistoricalRoundSummaryDelegate;
+        %tmp.39 = newc %tmp.42 ();
+        symbol [ WatchUi %tmp.43 23 12 19 ];
+        %tmp.43 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_LEFT %tmp.44 23 20 30 ];
+        %tmp.44 = getv %tmp.43 :SLIDE_LEFT;
+        invoke %tmp.32 %tmp.33(%tmp.34, %tmp.39, %tmp.44);
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_13_28_25_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\RoundHistoryDelegate.mc"; @line = 27; @symbol_functiondef = [onBack,27,13,19]; ]
+    function onBack() {
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_27_22_30_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\RoundHistoryDelegate.mc" 28 8 ]
+        symbol [ WatchUi %tmp.1 28 8 15 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.2 28 16 23 ];
+        %tmp.2 = getv function %tmp.1 :popView;
+        symbol [ WatchUi %tmp.3 28 24 31 ];
+        %tmp.3 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_RIGHT %tmp.4 28 32 43 ];
+        %tmp.4 = getv %tmp.3 :SLIDE_RIGHT;
+        invoke %tmp.1 %tmp.2(%tmp.4);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\RoundHistoryDelegate.mc" 29 8 ]
+        %tmp.5 = true;
+        ret %tmp.5;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_RoundHistoryDelegate_mc_27_22_30_4_stop:
+    }
+}
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\RoundHistoryDelegate.mc"; @line = 1; ]
+<init> {
+}

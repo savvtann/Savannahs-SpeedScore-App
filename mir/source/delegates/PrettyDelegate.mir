@@ -1,0 +1,553 @@
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [WatchUi,1,13,20]; @symbol_usingAlias = [Ui,1,24,26]; ]
+using Toybox.WatchUi as :Ui;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [Application,2,13,24]; ]
+using Toybox.Application;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc"; @line = 3; @symbol_usingdef<0> = [Toybox,3,6,12]; @symbol_usingdef<1> = [System,3,13,19]; ]
+using Toybox.System;
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc"; @line = 5; @symbol_classdef = [PrettyDelegate,5,6,20]; @symbol_extends<0> = [Ui,5,29,31]; @symbol_extends<1> = [BehaviorDelegate,5,32,48]; ]
+class PrettyDelegate extends Ui.BehaviorDelegate {
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc"; @line = 5; ]
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc"; @line = 5; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc"; @line = 6; @position = 8; @symbol_vardef = [_screenManager,6,8,22]; ]
+    var _screenManager;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc"; @line = 7; @position = 15; @symbol_vardef = [_keyDownTime,7,15,27]; ]
+    protected
+    var _keyDownTime = null;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc"; @line = 8; @position = 15; @symbol_vardef = [_keyUpTime,8,15,25]; ]
+    protected
+    var _keyUpTime = null;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc"; @line = 9; @position = 17; @symbol_constdef = [HOLD_THRESHOLD,9,17,31]; ]
+    protected
+    const HOLD_THRESHOLD = 600;
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc"; @line = 11; @symbol_functiondef = [initialize,11,13,23]; @symbol_param<0> = [screenManager,11,24,37]; ]
+    function initialize(screenManager) as Void {
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_11_39_14_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 12 8 ]
+        symbol [ BehaviorDelegate %tmp.2 12 8 24 ];
+        %tmp.2 = getv ? :BehaviorDelegate;
+        symbol [ initialize %tmp.3 12 25 35 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 13 8 ]
+        %tmp.4 = lgetv %screenManager;
+        symbol [ screenManager %tmp.4 13 25 38 ];
+        symbol [ _screenManager ? 13 8 22 ];
+        putv self :_screenManager %tmp.4;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_11_39_14_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc"; @line = 16; @symbol_functiondef = [onKeyPressed,16,13,25]; @symbol_param<0> = [keyEvent,16,26,34]; ]
+    function onKeyPressed(keyEvent) {
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_16_36_21_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 17 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_16_36_21_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_16_36_21_4_stop" ]
+        %key.1 = local;
+        symbol [ key %key.1 17 12 15 ];
+        %tmp.1 = lgetv %keyEvent;
+        symbol [ keyEvent %tmp.1 17 18 26 ];
+        symbol [ getKey %tmp.2 17 27 33 ];
+        %tmp.2 = getv function %tmp.1 :getKey;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %key.1 %tmp.3;
+        symbol [ key %key.1 17 12 15 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 18 8 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_18_8_18_68_if_stmt:
+        %tmp.4 = lgetv %key.1;
+        symbol [ key %tmp.4 18 12 15 ];
+        symbol [ Ui %tmp.5 18 19 21 ];
+        %tmp.5 = getm $.Toybox.WatchUi;
+        symbol [ KEY_DOWN %tmp.6 18 22 30 ];
+        %tmp.6 = getv %tmp.5 :KEY_DOWN;
+        %tmp.7 = eq %tmp.4 %tmp.6;
+        bf %tmp.7 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_18_8_18_68_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_18_8_18_68_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_18_32_18_68_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 18 34 ]
+        symbol [ System %tmp.8 18 49 55 ];
+        %tmp.8 = getm $.Toybox.System;
+        symbol [ getTimer %tmp.9 18 56 64 ];
+        %tmp.9 = getv function %tmp.8 :getTimer;
+        %tmp.10 = invoke %tmp.8 %tmp.9();
+        symbol [ _keyDownTime ? 18 34 46 ];
+        putv self :_keyDownTime %tmp.10;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_18_32_18_68_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_18_8_18_68_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_18_8_18_68_if_end:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 19 8 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_19_8_19_68_if_stmt:
+        %tmp.11 = lgetv %key.1;
+        symbol [ key %tmp.11 19 12 15 ];
+        symbol [ Ui %tmp.12 19 19 21 ];
+        %tmp.12 = getm $.Toybox.WatchUi;
+        symbol [ KEY_UP %tmp.13 19 22 28 ];
+        %tmp.13 = getv %tmp.12 :KEY_UP;
+        %tmp.14 = eq %tmp.11 %tmp.13;
+        bf %tmp.14 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_19_8_19_68_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_19_8_19_68_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_19_32_19_68_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 19 34 ]
+        symbol [ System %tmp.15 19 49 55 ];
+        %tmp.15 = getm $.Toybox.System;
+        symbol [ getTimer %tmp.16 19 56 64 ];
+        %tmp.16 = getv function %tmp.15 :getTimer;
+        %tmp.17 = invoke %tmp.15 %tmp.16();
+        symbol [ _keyUpTime ? 19 34 44 ];
+        putv self :_keyUpTime %tmp.17;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_19_32_19_68_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_19_8_19_68_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_19_8_19_68_if_end:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 20 8 ]
+        %tmp.18 = false;
+        ret %tmp.18;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_16_36_21_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc"; @line = 23; @symbol_functiondef = [onKeyReleased,23,13,26]; @symbol_param<0> = [keyEvent,23,27,35]; ]
+    function onKeyReleased(keyEvent) {
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_23_37_72_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 24 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_23_37_72_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_23_37_72_4_stop" ]
+        %key.1 = local;
+        symbol [ key %key.1 24 12 15 ];
+        %tmp.1 = lgetv %keyEvent;
+        symbol [ keyEvent %tmp.1 24 20 28 ];
+        symbol [ getKey %tmp.2 24 29 35 ];
+        %tmp.2 = getv function %tmp.1 :getKey;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %key.1 %tmp.3;
+        symbol [ key %key.1 24 12 15 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 25 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_23_37_72_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_23_37_72_4_stop" ]
+        %state.2 = local;
+        symbol [ state %state.2 25 12 17 ];
+        symbol [ Application %tmp.4 25 20 31 ];
+        %tmp.4 = getm $.Toybox.Application;
+        symbol [ getApp %tmp.5 25 32 38 ];
+        %tmp.5 = getv function %tmp.4 :getApp;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        symbol [ getRoundState %tmp.7 25 41 54 ];
+        %tmp.7 = getv function %tmp.6 :getRoundState;
+        %tmp.8 = invoke %tmp.6 %tmp.7();
+        lputv %state.2 %tmp.8;
+        symbol [ state %state.2 25 12 17 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 27 8 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_27_8_39_8_if_stmt:
+        %tmp.9 = lgetv %key.1;
+        symbol [ key %tmp.9 27 12 15 ];
+        symbol [ Ui %tmp.10 27 19 21 ];
+        %tmp.10 = getm $.Toybox.WatchUi;
+        symbol [ KEY_DOWN %tmp.11 27 22 30 ];
+        %tmp.11 = getv %tmp.10 :KEY_DOWN;
+        %tmp.12 = eq %tmp.9 %tmp.11;
+        bf %tmp.12 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_27_8_39_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_27_8_39_8_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_27_32_39_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 28 12 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_28_12_38_12_if_stmt:
+        %tmp.13 = lgetv %state.2;
+        symbol [ state %tmp.13 28 17 22 ];
+        symbol [ isPaused %tmp.14 28 23 31 ];
+        %tmp.14 = getv %tmp.13 :isPaused;
+        %tmp.15 = not %tmp.14;
+        bf %tmp.15 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_28_12_38_12_if_else_false;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_28_12_38_12_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_28_32_35_12_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 29 16 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_28_32_35_12_start" "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_28_32_35_12_stop" ]
+        %held.3 = local;
+        symbol [ held %held.3 29 20 24 ];
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_29_27_29_89_begin:
+        symbol [ _keyDownTime %tmp.17 29 27 39 ];
+        %tmp.17 = getv ? :_keyDownTime;
+        %tmp.18 = null;
+        %tmp.19 = ne %tmp.17 %tmp.18;
+        %tmp.20 = dup %tmp.19;
+        bf %tmp.20 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_29_51_29_89_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_29_51_29_89_true:
+        symbol [ System %tmp.21 29 52 58 ];
+        %tmp.21 = getm $.Toybox.System;
+        symbol [ getTimer %tmp.22 29 59 67 ];
+        %tmp.22 = getv function %tmp.21 :getTimer;
+        %tmp.23 = invoke %tmp.21 %tmp.22();
+        symbol [ _keyDownTime %tmp.25 29 72 84 ];
+        %tmp.25 = getv ? :_keyDownTime;
+        %tmp.26 = sub %tmp.23 %tmp.25;
+        symbol [ HOLD_THRESHOLD %tmp.28 29 89 103 ];
+        %tmp.28 = getv ? :HOLD_THRESHOLD;
+        %tmp.29 = gte %tmp.26 %tmp.28;
+        %tmp.30 = and %tmp.19 %tmp.29;
+        push %tmp.30;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_29_51_29_89_end:
+        %tmp.31 = phi [%tmp.20 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_29_27_29_89_begin] [%tmp.30 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_29_51_29_89_true] [%tmp.31 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_29_51_29_89_end];
+        lputv %held.3 %tmp.31;
+        symbol [ held %held.3 29 20 24 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 30 16 ]
+        %tmp.32 = null;
+        symbol [ _keyDownTime ? 30 16 28 ];
+        putv self :_keyDownTime %tmp.32;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 31 16 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_31_16_32_47_if_stmt:
+        %tmp.33 = lgetv %held.3;
+        symbol [ held %tmp.33 31 20 24 ];
+        bf %tmp.33 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_31_16_32_47_if_else_false;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_31_16_32_47_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_31_26_31_50_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 31 28 ]
+        %tmp.34 = lgetv %state.2;
+        symbol [ state %tmp.34 31 28 33 ];
+        symbol [ removeStroke %tmp.35 31 34 46 ];
+        %tmp.35 = getv function %tmp.34 :removeStroke;
+        invoke %tmp.34 %tmp.35();
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_31_26_31_50_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_31_16_32_47_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_31_16_32_47_if_else_false:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_32_26_32_47_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 32 28 ]
+        %tmp.36 = lgetv %state.2;
+        symbol [ state %tmp.36 32 28 33 ];
+        symbol [ addStroke %tmp.37 32 34 43 ];
+        %tmp.37 = getv function %tmp.36 :addStroke;
+        invoke %tmp.36 %tmp.37();
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_32_26_32_47_stop:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_31_16_32_47_if_end:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 33 16 ]
+        symbol [ Ui %tmp.38 33 16 18 ];
+        %tmp.38 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.39 33 19 32 ];
+        %tmp.39 = getv function %tmp.38 :requestUpdate;
+        invoke %tmp.38 %tmp.39();
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 34 16 ]
+        %tmp.40 = true;
+        ret %tmp.40;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_28_32_35_12_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_28_12_38_12_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_28_12_38_12_if_else_false:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_36_16_38_12_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 37 16 ]
+        %tmp.41 = true;
+        ret %tmp.41;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_36_16_38_12_stop:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_28_12_38_12_if_end:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_27_32_39_8_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_27_8_39_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_27_8_39_8_if_end:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 40 8 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_40_8_63_8_if_stmt:
+        %tmp.42 = lgetv %key.1;
+        symbol [ key %tmp.42 40 12 15 ];
+        symbol [ Ui %tmp.43 40 19 21 ];
+        %tmp.43 = getm $.Toybox.WatchUi;
+        symbol [ KEY_UP %tmp.44 40 22 28 ];
+        %tmp.44 = getv %tmp.43 :KEY_UP;
+        %tmp.45 = eq %tmp.42 %tmp.44;
+        bf %tmp.45 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_40_8_63_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_40_8_63_8_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_40_30_63_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 41 12 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_41_12_46_12_if_stmt:
+        %tmp.46 = lgetv %state.2;
+        symbol [ state %tmp.46 41 16 21 ];
+        symbol [ isPaused %tmp.47 41 22 30 ];
+        %tmp.47 = getv %tmp.46 :isPaused;
+        bf %tmp.47 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_41_12_46_12_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_41_12_46_12_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_41_32_46_12_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 42 16 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_41_32_46_12_start" "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_41_32_46_12_stop" ]
+        %detailsView.4 = local;
+        symbol [ detailsView %detailsView.4 42 20 31 ];
+        symbol [ HoleDetailsView %tmp.51 42 42 57 ];
+        %tmp.51 = getv ? :HoleDetailsView;
+        %tmp.48 = newc %tmp.51 ();
+        lputv %detailsView.4 %tmp.48;
+        symbol [ detailsView %detailsView.4 42 20 31 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 43 16 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_41_32_46_12_start" "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_41_32_46_12_stop" ]
+        %detailsDelegate.5 = local;
+        symbol [ detailsDelegate %detailsDelegate.5 43 20 35 ];
+        symbol [ HoleDetailsDelegate %tmp.55 43 42 61 ];
+        %tmp.55 = getv ? :HoleDetailsDelegate;
+        symbol [ _screenManager %tmp.57 43 62 76 ];
+        %tmp.57 = getv ? :_screenManager;
+        %tmp.52 = newc %tmp.55 (%tmp.57);
+        lputv %detailsDelegate.5 %tmp.52;
+        symbol [ detailsDelegate %detailsDelegate.5 43 20 35 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 44 16 ]
+        symbol [ Ui %tmp.58 44 16 18 ];
+        %tmp.58 = getm $.Toybox.WatchUi;
+        symbol [ switchToView %tmp.59 44 19 31 ];
+        %tmp.59 = getv function %tmp.58 :switchToView;
+        %tmp.60 = lgetv %detailsView.4;
+        symbol [ detailsView %tmp.60 44 32 43 ];
+        %tmp.61 = lgetv %detailsDelegate.5;
+        symbol [ detailsDelegate %tmp.61 44 45 60 ];
+        symbol [ Ui %tmp.62 44 62 64 ];
+        %tmp.62 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_UP %tmp.63 44 65 73 ];
+        %tmp.63 = getv %tmp.62 :SLIDE_UP;
+        invoke %tmp.58 %tmp.59(%tmp.60, %tmp.61, %tmp.63);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 45 16 ]
+        %tmp.64 = true;
+        ret %tmp.64;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_41_32_46_12_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_41_12_46_12_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_41_12_46_12_if_end:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 47 12 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_40_30_63_8_start" "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_40_30_63_8_stop" ]
+        %held.6 = local;
+        symbol [ held %held.6 47 16 20 ];
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_47_23_47_81_begin:
+        symbol [ _keyUpTime %tmp.66 47 23 33 ];
+        %tmp.66 = getv ? :_keyUpTime;
+        %tmp.67 = null;
+        %tmp.68 = ne %tmp.66 %tmp.67;
+        %tmp.69 = dup %tmp.68;
+        bf %tmp.69 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_47_45_47_81_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_47_45_47_81_true:
+        symbol [ System %tmp.70 47 46 52 ];
+        %tmp.70 = getm $.Toybox.System;
+        symbol [ getTimer %tmp.71 47 53 61 ];
+        %tmp.71 = getv function %tmp.70 :getTimer;
+        %tmp.72 = invoke %tmp.70 %tmp.71();
+        symbol [ _keyUpTime %tmp.74 47 66 76 ];
+        %tmp.74 = getv ? :_keyUpTime;
+        %tmp.75 = sub %tmp.72 %tmp.74;
+        symbol [ HOLD_THRESHOLD %tmp.77 47 81 95 ];
+        %tmp.77 = getv ? :HOLD_THRESHOLD;
+        %tmp.78 = gte %tmp.75 %tmp.77;
+        %tmp.79 = and %tmp.68 %tmp.78;
+        push %tmp.79;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_47_45_47_81_end:
+        %tmp.80 = phi [%tmp.69 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_47_23_47_81_begin] [%tmp.79 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_47_45_47_81_true] [%tmp.80 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_47_45_47_81_end];
+        lputv %held.6 %tmp.80;
+        symbol [ held %held.6 47 16 20 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 48 12 ]
+        %tmp.81 = null;
+        symbol [ _keyUpTime ? 48 12 22 ];
+        putv self :_keyUpTime %tmp.81;
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 49 12 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_49_12_60_12_if_stmt:
+        %tmp.82 = lgetv %held.6;
+        symbol [ held %tmp.82 49 16 20 ];
+        bf %tmp.82 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_49_12_60_12_if_else_false;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_49_12_60_12_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_49_22_51_12_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 50 16 ]
+        %tmp.83 = lgetv %state.2;
+        symbol [ state %tmp.83 50 16 21 ];
+        symbol [ backAHole %tmp.84 50 22 31 ];
+        %tmp.84 = getv function %tmp.83 :backAHole;
+        invoke %tmp.83 %tmp.84();
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_49_22_51_12_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_49_12_60_12_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_49_12_60_12_if_else_false:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_51_19_60_12_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 52 16 ]
+        %tmp.85 = lgetv %state.2;
+        symbol [ state %tmp.85 52 16 21 ];
+        symbol [ advanceHole %tmp.86 52 22 33 ];
+        %tmp.86 = getv function %tmp.85 :advanceHole;
+        invoke %tmp.85 %tmp.86();
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 53 16 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_53_16_59_16_if_stmt:
+        %tmp.87 = lgetv %state.2;
+        symbol [ state %tmp.87 53 20 25 ];
+        symbol [ isComplete %tmp.88 53 26 36 ];
+        %tmp.88 = getv %tmp.87 :isComplete;
+        bf %tmp.88 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_53_16_59_16_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_53_16_59_16_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_53_38_59_16_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 54 20 ]
+        symbol [ Application %tmp.89 54 20 31 ];
+        %tmp.89 = getm $.Toybox.Application;
+        symbol [ getApp %tmp.90 54 32 38 ];
+        %tmp.90 = getv function %tmp.89 :getApp;
+        %tmp.91 = invoke %tmp.89 %tmp.90();
+        symbol [ stopTimer %tmp.92 54 41 50 ];
+        %tmp.92 = getv function %tmp.91 :stopTimer;
+        invoke %tmp.91 %tmp.92();
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 55 20 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_53_38_59_16_start" "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_53_38_59_16_stop" ]
+        %finishView.7 = local;
+        symbol [ finishView %finishView.7 55 24 34 ];
+        symbol [ FinishView %tmp.96 55 45 55 ];
+        %tmp.96 = getv ? :FinishView;
+        %tmp.93 = newc %tmp.96 ();
+        lputv %finishView.7 %tmp.93;
+        symbol [ finishView %finishView.7 55 24 34 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 56 20 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_53_38_59_16_start" "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_53_38_59_16_stop" ]
+        %finishDelegate.8 = local;
+        symbol [ finishDelegate %finishDelegate.8 56 24 38 ];
+        symbol [ FinishDelegate %tmp.100 56 45 59 ];
+        %tmp.100 = getv ? :FinishDelegate;
+        symbol [ _screenManager %tmp.102 56 60 74 ];
+        %tmp.102 = getv ? :_screenManager;
+        %tmp.97 = newc %tmp.100 (%tmp.102);
+        lputv %finishDelegate.8 %tmp.97;
+        symbol [ finishDelegate %finishDelegate.8 56 24 38 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 57 20 ]
+        symbol [ Ui %tmp.103 57 20 22 ];
+        %tmp.103 = getm $.Toybox.WatchUi;
+        symbol [ switchToView %tmp.104 57 23 35 ];
+        %tmp.104 = getv function %tmp.103 :switchToView;
+        %tmp.105 = lgetv %finishView.7;
+        symbol [ finishView %tmp.105 57 36 46 ];
+        %tmp.106 = lgetv %finishDelegate.8;
+        symbol [ finishDelegate %tmp.106 57 48 62 ];
+        symbol [ Ui %tmp.107 57 64 66 ];
+        %tmp.107 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_UP %tmp.108 57 67 75 ];
+        %tmp.108 = getv %tmp.107 :SLIDE_UP;
+        invoke %tmp.103 %tmp.104(%tmp.105, %tmp.106, %tmp.108);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 58 20 ]
+        %tmp.109 = true;
+        ret %tmp.109;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_53_38_59_16_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_53_16_59_16_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_53_16_59_16_if_end:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_51_19_60_12_stop:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_49_12_60_12_if_end:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 61 12 ]
+        symbol [ Ui %tmp.110 61 12 14 ];
+        %tmp.110 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.111 61 15 28 ];
+        %tmp.111 = getv function %tmp.110 :requestUpdate;
+        invoke %tmp.110 %tmp.111();
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 62 12 ]
+        %tmp.112 = true;
+        ret %tmp.112;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_40_30_63_8_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_40_8_63_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_40_8_63_8_if_end:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 65 8 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_65_8_69_8_if_stmt:
+        %tmp.113 = lgetv %key.1;
+        symbol [ key %tmp.113 65 12 15 ];
+        symbol [ Ui %tmp.114 65 19 21 ];
+        %tmp.114 = getm $.Toybox.WatchUi;
+        symbol [ KEY_ENTER %tmp.115 65 22 31 ];
+        %tmp.115 = getv %tmp.114 :KEY_ENTER;
+        %tmp.116 = eq %tmp.113 %tmp.115;
+        bf %tmp.116 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_65_8_69_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_65_8_69_8_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_65_33_69_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 66 12 ]
+        %tmp.117 = lgetv %state.2;
+        symbol [ state %tmp.117 66 12 17 ];
+        symbol [ togglePause %tmp.118 66 18 29 ];
+        %tmp.118 = getv function %tmp.117 :togglePause;
+        invoke %tmp.117 %tmp.118();
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 67 12 ]
+        symbol [ Ui %tmp.119 67 12 14 ];
+        %tmp.119 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.120 67 15 28 ];
+        %tmp.120 = getv function %tmp.119 :requestUpdate;
+        invoke %tmp.119 %tmp.120();
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 68 12 ]
+        %tmp.121 = true;
+        ret %tmp.121;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_65_33_69_8_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_65_8_69_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_65_8_69_8_if_end:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 71 8 ]
+        symbol [ _screenManager %tmp.123 71 15 29 ];
+        %tmp.123 = getv ? :_screenManager;
+        symbol [ switchView %tmp.124 71 30 40 ];
+        %tmp.124 = getv function %tmp.123 :switchView;
+        %tmp.125 = lgetv %keyEvent;
+        symbol [ keyEvent %tmp.125 71 41 49 ];
+        symbol [ getKey %tmp.126 71 50 56 ];
+        %tmp.126 = getv function %tmp.125 :getKey;
+        %tmp.127 = invoke %tmp.125 %tmp.126();
+        %tmp.128 = invoke %tmp.123 %tmp.124(%tmp.127);
+        ret %tmp.128;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_23_37_72_4_stop:
+    }
+    [ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc"; @line = 74; @symbol_functiondef = [onBack,74,13,19]; ]
+    function onBack() {
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_74_22_85_4_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 75 8 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_74_22_85_4_start" "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_74_22_85_4_stop" ]
+        %state.1 = local;
+        symbol [ state %state.1 75 12 17 ];
+        symbol [ Application %tmp.1 75 20 31 ];
+        %tmp.1 = getm $.Toybox.Application;
+        symbol [ getApp %tmp.2 75 32 38 ];
+        %tmp.2 = getv function %tmp.1 :getApp;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        symbol [ getRoundState %tmp.4 75 41 54 ];
+        %tmp.4 = getv function %tmp.3 :getRoundState;
+        %tmp.5 = invoke %tmp.3 %tmp.4();
+        lputv %state.1 %tmp.5;
+        symbol [ state %state.1 75 12 17 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 76 8 ]
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_76_8_83_8_if_stmt:
+        %tmp.6 = lgetv %state.1;
+        symbol [ state %tmp.6 76 12 17 ];
+        symbol [ isPaused %tmp.7 76 18 26 ];
+        %tmp.7 = getv %tmp.6 :isPaused;
+        bf %tmp.7 @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_76_8_83_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_76_8_83_8_if_true:
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_76_28_83_8_start:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 78 12 ]
+        symbol [ Application %tmp.8 78 12 23 ];
+        %tmp.8 = getm $.Toybox.Application;
+        symbol [ getApp %tmp.9 78 24 30 ];
+        %tmp.9 = getv function %tmp.8 :getApp;
+        %tmp.10 = invoke %tmp.8 %tmp.9();
+        symbol [ stopTimer %tmp.11 78 33 42 ];
+        %tmp.11 = getv function %tmp.10 :stopTimer;
+        invoke %tmp.10 %tmp.11();
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 79 12 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_76_28_83_8_start" "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_76_28_83_8_stop" ]
+        %finishView.2 = local;
+        symbol [ finishView %finishView.2 79 16 26 ];
+        symbol [ FinishView %tmp.15 79 37 47 ];
+        %tmp.15 = getv ? :FinishView;
+        %tmp.12 = newc %tmp.15 ();
+        lputv %finishView.2 %tmp.12;
+        symbol [ finishView %finishView.2 79 16 26 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 80 12 ]
+        [ "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_76_28_83_8_start" "C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_76_28_83_8_stop" ]
+        %finishDelegate.3 = local;
+        symbol [ finishDelegate %finishDelegate.3 80 16 30 ];
+        symbol [ FinishDelegate %tmp.19 80 37 51 ];
+        %tmp.19 = getv ? :FinishDelegate;
+        symbol [ _screenManager %tmp.21 80 52 66 ];
+        %tmp.21 = getv ? :_screenManager;
+        %tmp.16 = newc %tmp.19 (%tmp.21);
+        lputv %finishDelegate.3 %tmp.16;
+        symbol [ finishDelegate %finishDelegate.3 80 16 30 ];
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 81 12 ]
+        symbol [ Ui %tmp.22 81 12 14 ];
+        %tmp.22 = getm $.Toybox.WatchUi;
+        symbol [ switchToView %tmp.23 81 15 27 ];
+        %tmp.23 = getv function %tmp.22 :switchToView;
+        %tmp.24 = lgetv %finishView.2;
+        symbol [ finishView %tmp.24 81 28 38 ];
+        %tmp.25 = lgetv %finishDelegate.3;
+        symbol [ finishDelegate %tmp.25 81 40 54 ];
+        symbol [ Ui %tmp.26 81 56 58 ];
+        %tmp.26 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_UP %tmp.27 81 59 67 ];
+        %tmp.27 = getv %tmp.26 :SLIDE_UP;
+        invoke %tmp.22 %tmp.23(%tmp.24, %tmp.25, %tmp.27);
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 82 12 ]
+        %tmp.28 = true;
+        ret %tmp.28;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_76_28_83_8_stop:
+        goto @C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_76_8_83_8_if_end;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_76_8_83_8_if_end:
+[ "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc" 84 8 ]
+        %tmp.29 = false;
+        ret %tmp.29;
+C__Users_roset_OneDrive_Desktop_garmin_source_delegates_PrettyDelegate_mc_74_22_85_4_stop:
+    }
+}
+[ @file = "C:\Users\roset\OneDrive\Desktop\garmin\source\delegates\PrettyDelegate.mc"; @line = 1; ]
+<init> {
+}
